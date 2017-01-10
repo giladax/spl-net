@@ -14,6 +14,31 @@ public abstract class BaseServer<T> implements Server<T> {
     private final Supplier<MessageEncoderDecoder<T>> encdecFactory;
     private ServerSocket sock;
 
+
+    public enum Opcode {
+
+        RRQ("Read request"),
+        WRQ("Write request"),
+        DATA("Data"),
+        ACK("Acknowledgment"),
+        ERROR("Error"),
+        DIRQ("Directory listing request"),
+        LOGRQ("Login request"),
+        DELRQ("Delete request"),
+        BCAST("Broadcast file added/deleted"),
+        DISC("Broadcast file added/deleted");
+
+        // Saves the long name of every Opcode
+        private final String operation;
+
+        Opcode(String operation) {
+            this.operation = operation;
+        }
+        public String getOperation() { return operation; }
+    }
+
+
+
     public BaseServer(
             int port,
             Supplier<MessagingProtocol<T>> protocolFactory,
