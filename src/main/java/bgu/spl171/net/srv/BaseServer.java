@@ -26,7 +26,7 @@ public abstract class BaseServer<T> implements Server<T> {
         LOGRQ("Login request"),
         DELRQ("Delete request"),
         BCAST("Broadcast file added/deleted"),
-        DISC("Broadcast file added/deleted");
+        DISC("Disconnect");
 
         // Saves the long name of every Opcode
         private final String operation;
@@ -34,6 +34,7 @@ public abstract class BaseServer<T> implements Server<T> {
         Opcode(String operation) {
             this.operation = operation;
         }
+
         public String getOperation() { return operation; }
     }
 
