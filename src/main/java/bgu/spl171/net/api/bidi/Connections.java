@@ -1,5 +1,7 @@
 package bgu.spl171.net.api.bidi;
 
+import bgu.spl171.net.srv.NonBlockingConnectionHandler;
+
 import java.io.IOException;
 
 public interface Connections<T> {
@@ -9,4 +11,6 @@ public interface Connections<T> {
     void broadcast(T msg);
 
     void disconnect(int connectionId);
+
+    void add(NonBlockingConnectionHandler handler);
 }

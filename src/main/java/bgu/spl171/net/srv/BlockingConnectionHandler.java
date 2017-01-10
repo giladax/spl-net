@@ -54,4 +54,9 @@ public class BlockingConnectionHandler<T> implements Runnable, bgu.spl171.net.sr
         connected = false;
         sock.close();
     }
+
+    @Override
+    public void send(T msg) {
+
+    }
 }

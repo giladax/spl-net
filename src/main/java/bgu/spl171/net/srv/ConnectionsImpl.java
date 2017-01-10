@@ -1,13 +1,13 @@
 package bgu.spl171.net.srv;
 
 import bgu.spl171.net.api.bidi.Connections;
-import bgu.spl171.net.srv.*
+import bgu.spl171.net.srv.*;
 
 import java.util.HashMap;
 import java.util.WeakHashMap;
 
 /**
- * Created by dorgreen on 09/01/2017.
+ * Created by dor green on 09/01/2017.
  *
  * This class is OUR implementation of Connections<T>.
  *
@@ -38,5 +38,13 @@ public class ConnectionsImpl<T> implements Connections<T> {
         // Should use the close() promised by Closable interface
     }
 
+    @Override
+    public void add(NonBlockingConnectionHandler handler) {
+
+    }
+
+    public void add(ConnectionHandler handler) {
+
+    }
 
 }
