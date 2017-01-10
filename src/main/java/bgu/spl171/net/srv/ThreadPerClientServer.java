@@ -22,6 +22,6 @@ public class ThreadPerClientServer<T> extends BaseServer<T> {
 
     @Override
     protected void execute(BlockingConnectionHandler<T> handler) {
-        new Thread(handler.run(););
+        new Thread(handler);
     }
 }
