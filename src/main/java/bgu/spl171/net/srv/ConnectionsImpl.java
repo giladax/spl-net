@@ -21,6 +21,7 @@ public class ConnectionsImpl<T> implements Connections<T> {
 
     private HashMap<Integer, NonBlockingConnectionHandler<T>> handlers;
 
+
     @Override
     public void broadcast(T msg) {
         // Should be something like: for(Connection C : connections) C.send(msg);
