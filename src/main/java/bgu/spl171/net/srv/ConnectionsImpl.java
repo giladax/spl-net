@@ -19,7 +19,7 @@ import java.util.WeakHashMap;
  */
 public class ConnectionsImpl<T> implements Connections<T> {
 
-    private HashMap<Integer, NonBlockingConnectionHandler<T>> handlers;
+    private HashMap<Integer, NonBlockingConnectionHandler<T>> handlers; // Maybe WeakHashMap per today's lecture
 
 
     @Override
