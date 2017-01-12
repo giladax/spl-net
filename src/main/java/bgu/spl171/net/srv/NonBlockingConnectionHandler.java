@@ -89,7 +89,9 @@ public class NonBlockingConnectionHandler<T> implements ConnectionHandler<T> {
                 if (top.hasRemaining()) {
                     return;
                 } else {
+                    // Nothing more to write. Remove from queue and RELEASE THE BUFFER
                     writeQueue.remove();
+                    releaseBuffer(top);
                 }
             } catch (IOException ex) {
                 ex.printStackTrace();
@@ -119,6 +121,7 @@ public class NonBlockingConnectionHandler<T> implements ConnectionHandler<T> {
 
     @Override
     public void send(T msg) {
-
+        // We'll release that buffer when the message is sent
+        writeQueue.add(leaseBuffer().put(encdec.encode(msg)));
     }
 }
