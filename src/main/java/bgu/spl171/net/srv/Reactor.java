@@ -2,6 +2,8 @@ package bgu.spl171.net.srv;
 
 import bgu.spl171.net.api.MessageEncoderDecoder;
 import bgu.spl171.net.api.MessagingProtocol;
+import bgu.spl171.net.api.bidi.BidiMessagingProtocol;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.channels.ClosedSelectorException;
@@ -16,24 +18,27 @@ public class Reactor<T> implements Server<T> {
 
     private final int port;
     // TODO: should be changed to BIDI
-    private final Supplier<MessagingProtocol<T>> protocolFactory;
+    private final Supplier<BidiMessagingProtocol<T>> protocolFactory;
     private final Supplier<MessageEncoderDecoder<T>> readerFactory;
     private final ActorThreadPool pool;
     private Selector selector;
-
+    private int currentId;
+    private ConnectionsImpl<T> connections;
     private Thread selectorThread;
     private final ConcurrentLinkedQueue<Runnable> selectorTasks = new ConcurrentLinkedQueue<>();
 
     public Reactor(
             int numThreads,
             int port,
-            Supplier<MessagingProtocol<T>> protocolFactory,
+            Supplier<BidiMessagingProtocol<T>> protocolFactory,
             Supplier<MessageEncoderDecoder<T>> readerFactory) {
 
         this.pool = new ActorThreadPool(numThreads);
         this.port = port;
         this.protocolFactory = protocolFactory;
         this.readerFactory = readerFactory;
+        this.currentId = 0;
+        this.connections = new ConnectionsImpl<T>();
     }
 
     @Override
@@ -101,7 +106,12 @@ public class Reactor<T> implements Server<T> {
                 clientChan,
                 this);
 
+        // Add this handler to the ConnectionsImpl instance. We also increment the ID so that no two handlers get the same ID
+        connections.add(currentId, handler);
+        ++currentId;
+
         clientChan.register(selector, SelectionKey.OP_READ, handler);
+
     }
 
     private void handleReadWrite(SelectionKey key) {
