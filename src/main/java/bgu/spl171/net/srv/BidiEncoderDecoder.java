@@ -4,13 +4,15 @@ import bgu.spl171.net.api.MessageEncoderDecoder;
 
 import java.nio.charset.Charset;
 
+import static bgu.spl171.net.srv.PacketFactory.get;
+
 /**
  * Created by dorgreen on 13/01/2017.
  */
 public class BidiEncoderDecoder<T> implements MessageEncoderDecoder<T> {
 
-    private final Charset UTF8_CHARSET = Charset.forName("UTF-8");
-    private byte[] bytesRead = new byte[1 << 13];
+
+    private byte[] bytesRead = new byte[1 << 13]; // The same size as ByteBuffer so we won't overflow
     Packet packet;
     int numOfBytes = 0;
 
@@ -25,11 +27,11 @@ public class BidiEncoderDecoder<T> implements MessageEncoderDecoder<T> {
 
         if (numOfBytes > 1) {
             if (packet == null) {
-                packet = PacketFactory.get(bytesToShort(bytesRead));
+                packet = get(bytesToShort(bytesRead)); // Static reference to PackFactory.get(short opcode)
             }
 
-            // Get packet return's null if read is not complete
-            return packet.getPacket(bytesRead);
+            // Get packet returns null if read is not complete
+            return packet.getPacket(bytesRead, numOfBytes);
         } else {
             return null;
         }
@@ -46,7 +48,7 @@ public class BidiEncoderDecoder<T> implements MessageEncoderDecoder<T> {
     /**
      * Supplied by SPL staff
      **/
-    public short bytesToShort(byte[] byteArr) {
+    public static short bytesToShort(byte[] byteArr) {
         short result = (short) ((byteArr[0] & 0xff) << 8);
         result += (short) (byteArr[1] & 0xff);
         return result;

@@ -21,7 +21,7 @@ public class PacketFactory {
                 factoryMap.put(10, Packet.DISC.class);
             }};
 
-    public Packet getPacket(short opcode){
+    public static Packet get(short opcode){
         Packet ans = null;
         try {
             ans = factoryMap.get(new Integer(opcode)).getConstructor().newInstance();

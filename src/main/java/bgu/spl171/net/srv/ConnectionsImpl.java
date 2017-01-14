@@ -58,5 +58,6 @@ public class ConnectionsImpl<T> implements Connections<T> {
     public void add(int connectionID, ConnectionHandler handler) {
         handlers.put(connectionID, handler);
     }
-
+        // TODO: MAKE SURE WE WON'T RE-REGISTER THE SAME USER TWICE
+        // TODO: INITIATE AS NOT LOGGED-IN
 }
