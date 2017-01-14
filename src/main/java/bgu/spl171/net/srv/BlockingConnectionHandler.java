@@ -33,9 +33,9 @@ public class BlockingConnectionHandler<T> implements Runnable, bgu.spl171.net.sr
             out = new BufferedOutputStream(sock.getOutputStream());
 
             while (!protocol.shouldTerminate() && connected && (read = in.read()) >= 0) { // Changed as per staff instruction
-                T nextMessage = encdec.decodeNextByte((byte) read);
+                T nextMessage = encdec.decodeNextByte((byte) read); // Not null <==> Packet is complete
                 if (nextMessage != null) {
-                    T response = protocol.process(nextMessage);
+                    T response = protocol.process(nextMessage); // Protocol-specific logic is is to be implemented in this function
                     if (response != null) {
                         out.write(encdec.encode(response));
                         out.flush();
