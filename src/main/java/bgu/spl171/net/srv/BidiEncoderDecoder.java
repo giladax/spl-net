@@ -31,7 +31,7 @@ public class BidiEncoderDecoder<T> implements MessageEncoderDecoder<T> {
             }
 
             // Get packet returns null if read is not complete
-            return packet.getPacket(bytesRead, numOfBytes);
+            return (T)packet.getPacket(bytesRead, numOfBytes); // TODO: MUST THIS BE A "T"?
         } else {
             return null;
         }
@@ -39,6 +39,7 @@ public class BidiEncoderDecoder<T> implements MessageEncoderDecoder<T> {
 
     }
 
+    // TODO: IMPLEMENT
     @Override
     public byte[] encode(T message) {
         return new byte[0];

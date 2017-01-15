@@ -10,13 +10,21 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Created by dorgreen on 13/01/2017.
  */
-public class MessagingProtocolImpl<T> implements BidiMessagingProtocol<T> {
+public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
+    private final int MAX_PACKET_SIZE = 512; // Bytes. as per protocol
+
     private int connectionId;
     // TODO: HOW IS shouldTerminate BEING UPDATED?!
     private boolean shouldTerminate;
-    private Connections<T> connections;
+    private Connections<Packet> connections;
     private String username;
     private static ConcurrentHashMap<String, BidiMessagingProtocol> users;
+
+    // When the user asks for a file, this holds the path so that all packets can see it
+    private String fileReadPath = null;
+
+    // When the user asks to send a file, this holds all of the data
+    private byte[] dataRecived;
 
 
     public MessagingProtocolImpl() {
@@ -32,7 +40,7 @@ public class MessagingProtocolImpl<T> implements BidiMessagingProtocol<T> {
 
 
     @Override
-    public void start(int connectionId, Connections<T> connections) {
+    public void start(int connectionId, Connections<Packet> connections) {
         this.connections = connections;
         this.connectionId = connectionId;
 
@@ -45,10 +53,10 @@ public class MessagingProtocolImpl<T> implements BidiMessagingProtocol<T> {
      *
      * Has to use connection.send(), as per 2.2 in the document
      **/
-    public void process(T message) {
-        Packet packet = (Packet) message;
+    public void process(Packet message) {
+        Packet packet = message;
 
-        packet.handle(this);
+        packet.handle(this); // Is this the right return type? what in case of multiple DATA packets?
 
         //connections.send(connectionId, packet);
 
@@ -79,6 +87,30 @@ public class MessagingProtocolImpl<T> implements BidiMessagingProtocol<T> {
     public void removeClient() throws IOException {
         connections.disconnect(connectionId);
         users.remove(username);
+    }
+
+    public void setFileReadPath(String path){
+        this.fileReadPath = path;
+    }
+
+    public String getFileReadPath(){
+        return fileReadPath;
+    }
+
+    public void initiateDataArray(int packets){
+        this.dataRecived = new byte[packets*MAX_PACKET_SIZE];
+    }
+
+    public void insertIntoDataArray(byte[] data, int packetNum){
+        // Data packets does not care for order, We'll just insert the data
+        // According to protocol, each packet has 512 bytes of data
+
+    }
+
+    // TODO: IMPLEMENT
+    public boolean isFileAvailable(String fileName){
+
+        return false;
     }
 
 }

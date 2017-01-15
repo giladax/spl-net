@@ -70,6 +70,7 @@ public abstract class Packet {
 
     /**
      * Supplied by BGU staff
+     *
      * @param num
      * @return
      */
@@ -88,16 +89,15 @@ public abstract class Packet {
 
     /**
      * Supplied by BGU staff
+     *
      * @param byteArr
      * @return
      */
-    public short bytesToShort(byte[] byteArr)
-    {
-        short result = (short)((byteArr[0] & 0xff) << 8);
-        result += (short)(byteArr[1] & 0xff);
+    public short bytesToShort(byte[] byteArr) {
+        short result = (short) ((byteArr[0] & 0xff) << 8);
+        result += (short) (byteArr[1] & 0xff);
         return result;
     }
-
 
 
     public abstract class ZeroRecognizedPacket extends Packet {
@@ -109,7 +109,7 @@ public abstract class Packet {
 
         public Packet getPacket(byte[] bytes, int numOfBytes) {
             if (bytes[numOfBytes] == (byte) 0) {
-                packetContent = Arrays.copyOfRange(bytes, OP_CODE_SIZE, numOfBytes - 1);
+                packetContent = Arrays.copyOfRange(bytes, OP_CODE_SIZE, numOfBytes); //Maybe numOfBytes-1 ?
                 return this;
             } else {
                 return null;
@@ -119,45 +119,64 @@ public abstract class Packet {
 
     public class RRQ extends ZeroRecognizedPacket {
         public RRQ() {
-            super(1);
+            super((short) 1);
         }
 
         // TODO: IMPLEMENT
         @Override
         public Packet handle(MessagingProtocolImpl protocol) {
-            return null;
+            Packet ans = null;
+            protocol.setFileReadPath(new String(Arrays.copyOfRange(packetContent, OP_CODE_SIZE, packetContent.length)));
+
+            if(protocol.isFileAvailable(protocol.getFileReadPath())){
+                ans = new ACK(ACK_SUCCESSFUL);
+            }
+
+            else{
+                ans = new ERROR(1); // FILE NOT FOUND
+            }
+
+            // TODO: ADD CASE FOR "Access violation" ERROR (see document)
+
+            return ans;
+
         }
 
-        // TODO: IMPLEMENT
+        /**
+         * @return null since server never sends this
+         */
         @Override
         public byte[] toBytes() {
-            return new byte[0];
+            return null;
         }
     }
 
     public class WRQ extends ZeroRecognizedPacket {
 
         protected WRQ() {
-            super(2);
+            super((short) 2);
         }
 
         // TODO: IMPLEMENT
         @Override
         public Packet handle(MessagingProtocolImpl protocol) {
+
             return null;
         }
 
-        // TODO: IMPLEMENT
+        /**
+         * @return null since server never sends this
+         */
         @Override
         public byte[] toBytes() {
-            return new byte[0];
+            return null;
         }
     }
 
     public class DATA extends Packet {
 
         protected DATA() {
-            super(3);
+            super((short) 3);
         }
 
         @Override
@@ -184,27 +203,27 @@ public abstract class Packet {
         protected int block_number;
 
         protected ACK() {
-            super(4);
+            super((short) 4);
             block_number = ACK_SUCCESSFUL; // Defined in the protocol as the default value for anything but data packets
         }
 
         protected ACK(int block_number) {
-            super(4);
+            super((short) 4);
             this.block_number = block_number;
         }
 
         @Override
         public Packet getPacket(byte[] bytes, int numOfBytes) {
-            if(numOfBytes == 4){
-                this.block_number = bytesToShort(Arrays.copyOfRange(bytes,2,4));
+            if (numOfBytes == 4) {
+                this.block_number = bytesToShort(Arrays.copyOfRange(bytes, 2, 4));
                 return this;
-            }
-            else return null;
+            } else return null;
         }
 
         // TODO: IMPLEMENT
         @Override
         public Packet handle(MessagingProtocolImpl protocol) {
+            // This should communicate with packets awaiting acknowledgment
             return null;
         }
 
@@ -222,11 +241,11 @@ public abstract class Packet {
         protected int error_code;
 
         protected ERROR() {
-            super(5);
+            super((short) 5);
         }
 
         protected ERROR(int error_code) {
-            super(5);
+            super((short) 5);
             this.error_code = error_code;
         }
 
@@ -262,7 +281,7 @@ public abstract class Packet {
     public class DIRQ extends Packet {
 
         protected DIRQ() {
-            super(6);
+            super((short) 6);
         }
 
         @Override
@@ -287,7 +306,7 @@ public abstract class Packet {
     public class LOGRQ extends ZeroRecognizedPacket {
 
         protected LOGRQ() {
-            super(7);
+            super((short) 7);
         }
 
         @Override
@@ -320,7 +339,7 @@ public abstract class Packet {
     public class DELRQ extends ZeroRecognizedPacket {
 
         protected DELRQ() {
-            super(8);
+            super((short) 8);
         }
 
         // TODO: IMPLEMENT
@@ -343,7 +362,7 @@ public abstract class Packet {
         String fileName;
 
         protected BCAST(int addedOrDeleted, String fileName) {
-            super(9);
+            super((short) 9);
             this.addedOrDeleted = addedOrDeleted;
             this.fileName = fileName;
         }
@@ -384,7 +403,7 @@ public abstract class Packet {
     public class DISC extends Packet {
 
         protected DISC() {
-            super(10);
+            super((short) 10);
         }
 
         @Override

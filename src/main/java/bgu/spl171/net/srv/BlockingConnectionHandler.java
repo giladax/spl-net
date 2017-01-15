@@ -26,7 +26,7 @@ public class BlockingConnectionHandler<T> implements Runnable, bgu.spl171.net.sr
     @Override
     public void run() {
 
-        try (Socket sock = this.sock) { //just for automatic closing
+        try (Socket sock = this.sock) { // Just for automatic closing
             int read;
 
             in = new BufferedInputStream(sock.getInputStream());
@@ -35,7 +35,7 @@ public class BlockingConnectionHandler<T> implements Runnable, bgu.spl171.net.sr
             while (!protocol.shouldTerminate() && connected && (read = in.read()) >= 0) { // Changed as per staff instruction
                 T nextMessage = encdec.decodeNextByte((byte) read); // Not null <==> Packet is complete
                 if (nextMessage != null) {
-                    T response = protocol.process(nextMessage); // Protocol-specific logic is is to be implemented in this function
+                    T response = protocol.process(nextMessage); // Protocol-specific logic is to be implemented in this function
                     if (response != null) {
                         out.write(encdec.encode(response));
                         out.flush();
