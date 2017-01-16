@@ -15,6 +15,7 @@ public abstract class Packet {
     final protected short OP_CODE;
     final protected Charset UTF8_CHARSET = Charset.forName("UTF-8");
     final protected int ACK_SUCCESSFUL = 0;
+    private final int MAX_PACKET_SIZE = 512; // Bytes. as per protocol
     protected static HashMap<Integer, String> ERROR_CODES = null; // Initialized when the first packet is created
 
     /**
@@ -126,10 +127,13 @@ public abstract class Packet {
         @Override
         public Packet handle(MessagingProtocolImpl protocol) {
             Packet ans = null;
-            protocol.setFileReadPath(new String(Arrays.copyOfRange(packetContent, OP_CODE_SIZE, packetContent.length)));
+            protocol.setFileReadPath(new String(packetContent)); // TODO: this already has the '/0' at the end, make sure this isn't an issue
 
             if(protocol.isFileAvailable(protocol.getFileReadPath())){
                 ans = new ACK(ACK_SUCCESSFUL);
+
+                // This handles separating into packets, sending, awaiting ACK and clearing parameters in the end
+                protocol.sendFile();
             }
 
             else{
@@ -160,8 +164,22 @@ public abstract class Packet {
         // TODO: IMPLEMENT
         @Override
         public Packet handle(MessagingProtocolImpl protocol) {
+            Packet ans = null;
+            String fileName = new String(packetContent); // TODO: this already has the '/0' at the end, make sure this isn't an issue
 
-            return null;
+            if(!protocol.isFileAvailable(fileName)){
+                ans = new ACK(ACK_SUCCESSFUL);
+                // TODO: HERE WE SHOULD HAVE ACTUALLY GETTING THAT FILE!
+
+            }
+
+            else{
+                ans = new ERROR(5); // FILE ALREADY EXIST!
+            }
+
+            // TODO: ADD CASE FOR "Access violation" ERROR (see document)
+
+            return ans;
         }
 
         /**
@@ -175,25 +193,88 @@ public abstract class Packet {
 
     public class DATA extends Packet {
 
+        short packetSize;
+        short blockNumber;
+        byte[] data;
+
         protected DATA() {
             super((short) 3);
         }
 
+        public DATA(short packetSize, short blockNumber, byte[] data){
+            super((short) 3);
+            this.packetSize = packetSize;
+            this.blockNumber = blockNumber;
+            this.data = data;
+        }
+
         @Override
         public Packet getPacket(byte[] bytes, int numOfBytes) {
-            return null;
+
+            Packet ans = null;
+
+            // Too short to be a data packet, made of Opcode, Packet Size, Block # and at least 1 bytes of data.
+            if(numOfBytes < 2+2+2+1){
+                return ans; //
+            }
+
+            else{
+
+                short packetSize = bytesToShort(Arrays.copyOfRange(bytes,OP_CODE_SIZE,OP_CODE_SIZE+2));
+
+                if(numOfBytes == OP_CODE_SIZE + 2 + 2 + packetSize){ // "data" part of the packet is in the right size
+
+                    ans = new DATA(
+                            packetSize,
+                            bytesToShort(Arrays.copyOfRange(bytes,OP_CODE_SIZE+2,OP_CODE_SIZE+2+2)),
+                            Arrays.copyOfRange(bytes,OP_CODE_SIZE+2+2,bytes.length)
+                            );
+                }
+            }
+
+            return ans;
         }
 
-        // TODO: IMPLEMENT
         @Override
         public Packet handle(MessagingProtocolImpl protocol) {
-            return null;
+            Packet ans = null;
+            try {
+                // If all data received, insertIntoDataArray will take care of everything, e.g save the file, broadcast the new file and reset parameters
+                protocol.insertIntoDataArray(data, blockNumber);
+                ans = new ACK(blockNumber);
+
+            }
+            catch (ArrayIndexOutOfBoundsException e){
+                ans = new ERROR(0); // blockNumber is illegal
+            }
+
+
+
+
+            return ans;
         }
 
-        // TODO: IMPLEMENT
         @Override
         public byte[] toBytes() {
-            return new byte[0];
+            /**Packet format is:
+             * | 2 bytes|    2 bytes  | 2 bytes | n bytes|
+             * | Opcode | Packet Size | Block # | Data   |
+             */
+            byte[] ans = new byte[OP_CODE_SIZE+2+2+packetSize];
+
+            // Insert Opcode
+            insertArrayIntoArray(ans,shortToBytes(OP_CODE),0);
+
+            // Insert Packet size
+            insertArrayIntoArray(ans,shortToBytes(packetSize),OP_CODE_SIZE);
+
+            // Insert Block #
+            insertArrayIntoArray(ans, shortToBytes(blockNumber),OP_CODE_SIZE+2);
+
+            // Insert Data
+            insertArrayIntoArray(ans, data, OP_CODE_SIZE + 2 + 2);
+
+            return ans;
         }
 
     }
@@ -224,6 +305,11 @@ public abstract class Packet {
         @Override
         public Packet handle(MessagingProtocolImpl protocol) {
             // This should communicate with packets awaiting acknowledgment
+
+            // Send the next DATA packet awaiting confirmation
+            if(block_number > 0){
+                protocol.sendFile();
+            }
             return null;
         }
 
@@ -361,7 +447,7 @@ public abstract class Packet {
         int addedOrDeleted;
         String fileName;
 
-        protected BCAST(int addedOrDeleted, String fileName) {
+        public BCAST(int addedOrDeleted, String fileName) {
             super((short) 9);
             this.addedOrDeleted = addedOrDeleted;
             this.fileName = fileName;

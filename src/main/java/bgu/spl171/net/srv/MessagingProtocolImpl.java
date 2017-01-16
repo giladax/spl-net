@@ -4,7 +4,10 @@ import bgu.spl171.net.api.MessagingProtocol;
 import bgu.spl171.net.api.bidi.BidiMessagingProtocol;
 import bgu.spl171.net.api.bidi.Connections;
 
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.ByteBuffer;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -20,11 +23,20 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
     private String username;
     private static ConcurrentHashMap<String, BidiMessagingProtocol> users;
 
-    // When the user asks for a file, this holds the path so that all packets can see it
+    // RRQ HANDLING PARAMETERS
+    // When the user asks for a file, this holds all of the data related to this transaction
     private String fileReadPath = null;
+    private FileReader fileReader = null; // = new FileReader(inputFileName);
+    private int sentPacketNum = 0;
+    ByteBuffer buffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
 
-    // When the user asks to send a file, this holds all of the data
+    // WRQ HANDLING PARAMETERS
+    // When the user asks to send a file, this holds all of the data related to this transaction
     private byte[] dataRecived;
+    private int packetsReceived = 0;
+    private int numOfPacketsToReceive = 0;
+    private String fileWritePath = null;
+
 
 
     public MessagingProtocolImpl() {
@@ -49,7 +61,7 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
     @Override
     /**
      * Since ConnectionHandler.run() uses this, We'll hold all protocol-specific logic in this function
-     * Assuming T message is a valid packet
+     * Assuming message is a valid packet
      *
      * Has to use connection.send(), as per 2.2 in the document
      **/
@@ -103,14 +115,78 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
 
     public void insertIntoDataArray(byte[] data, int packetNum){
         // Data packets does not care for order, We'll just insert the data
-        // According to protocol, each packet has 512 bytes of data
+        // According to protocol, each packet has 512 bytes of data, unless it's the last one
+        // This also checks for completeness, saves the file and clear parameters used for this WRQ
+
+        for(int i = 0 ; i < data.length ; ++i){
+            dataRecived[(packetNum-1)*MAX_PACKET_SIZE + i] = data[i]; // packetNum starts with 1 not 0
+        }
+
+        if(data.length < MAX_PACKET_SIZE){
+            this.numOfPacketsToReceive = packetNum;
+        }
+
+        ++packetsReceived;
+
+        if(numOfPacketsToReceive==packetsReceived && numOfPacketsToReceive != 0){
+            saveReceivedFile();
+        }
 
     }
 
     // TODO: IMPLEMENT
     public boolean isFileAvailable(String fileName){
-
+        // This should probably run a "ls" command and search for "fileName" in it
         return false;
+    }
+
+    public void broadcast(Packet.BCAST packet){
+        connections.broadcast(packet);
+    }
+
+    private void saveReceivedFile(){
+        // TODO: IMPLEMENT FILE-RELATED THINGS
+        // TODO: Create a file named fileWritePath
+        // TODO: Fill it with data from dataReceived array
+
+        broadcast(new Packet.BCAST(0,fileWritePath ));
+
+        // Reset all parameters that holds data related to this transaction
+        dataRecived = null;
+        packetsReceived = 0;
+        numOfPacketsToReceive = 0;
+        fileWritePath = null;
+
+    }
+
+    /**
+     * Each call of this method sends ONE data packet
+     * If there is nothing more to send, it clears everything it made
+     * First call is made after receiving a RRQ packet, the next are made after receiving ACK packets for previous packets
+     */
+    public void sendFile(){
+        // TODO: Read from the file "fileReadPath" into a buffer if not initiated
+        // TODO: Send ONE data packet of size MAX_PACKET_SIZE (or smaller if this is the terminal packet)
+        if(fileReader == null){
+            fileReader = new FileReader(fileReadPath);
+        }
+
+        byte[] toSend = new byte[MAX_PACKET_SIZE];
+        int packetSize;
+
+        if(packetSize > 0){
+            connections.send(connectionId, new Packet.DATA(packetSize ,sentPacketNum,toSend) );
+        }
+
+        // IF THERE IS NOTHING MORE TO SEND, Reset all parameters that holds data related to this transaction
+        else(packetSize == 0){
+            fileWritePath = null;
+            fileReader.close();
+            fileReader = null;
+            sentPacketNum = 0;
+            buffer = null;
+            // TODO: ADD ALL OF THE OTHER PARAMETERS HERE FOR RESTARTING
+        }
     }
 
 }
