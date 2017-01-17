@@ -385,7 +385,8 @@ public abstract class Packet {
         // TODO: IMPLEMENT
         @Override
         public Packet handle(MessagingProtocolImpl protocol) {
-            return null;
+            protocol.sendFileListing();
+            return new ACK(ACK_SUCCESSFUL);
         }
 
         // TODO: IMPLEMENT

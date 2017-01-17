@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import java.nio.file.DirectoryStream;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -74,12 +75,12 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
      * Has to use connection.send(), as per 2.2 in the document
      **/
     public void process(Packet message) {
-        Packet packet = message;
 
-        packet.handle(this); // Is this the right return type? what in case of multiple DATA packets?
+        Packet packet = message.handle(this);
 
-        //connections.send(connectionId, packet);
-
+        if(packet != null){
+            connections.send(connectionId, packet); // TODO: MAYBE THIS SHOULD BE packet.toBytes() ???
+        }
     }
 
     @Override
@@ -160,9 +161,19 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
 
     }
 
-    // TODO: IMPLEMENT
     public boolean isFileAvailable(String fileName) {
-        // This should probably run a "ls" command and search for "fileName" in it
+
+        Path path = FileSystems.getDefault().getPath(FILES_DIR);
+        try(DirectoryStream<Path> dirStream = Files.newDirectoryStream(path)){
+            for (Path p : dirStream){
+                if(p.getFileName().toString().compareTo(fileName)==0){ // TODO: toString() might return FULL PATH not filename.
+                    return true;
+                }
+            }
+
+        }
+        catch (IOException ex){
+        }
         return false;
     }
 
@@ -224,6 +235,21 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
             fileWritePath = null;
             // TODO: ADD ALL OF THE OTHER PARAMETERS HERE FOR RESTARTING
         }
+    }
+
+    public boolean sendFileListing(){
+
+        Path path = FileSystems.getDefault().getPath(FILES_DIR);
+        boolean ans = false;
+        try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) {
+            for (Path p : stream) {
+                System.out.println(p.getFileName()); // INSTEAD OF PRINTING, PUT INTO STORAGE AND THEN SEND AS DATA PACKETS
+            }
+        }
+        catch(IOException ex){}
+
+        return ans;
+
     }
 
 }
