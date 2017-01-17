@@ -193,6 +193,7 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
         broadcast(new Packet.BCAST(0, fileWritePath));
 
         // Reset all parameters that holds data related to this transaction
+        // TODO: if we decide that file should have .tmp endings, change it here
         dataRecived = null;
         packetsReceived = 0;
         numOfPacketsToReceive = 0;
@@ -208,7 +209,7 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
     public void sendFile() throws IOException{
         // Read from the file "fileReadPath" into a buffer if not initiated
         if (fileChannel == null || ramFile == null) {
-            ramFile = new RandomAccessFile(getFileWritePath(), "r");
+            ramFile = new RandomAccessFile(getFileReadPath(), "r");
             fileChannel = ramFile.getChannel();
 
         }
@@ -237,19 +238,31 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
         }
     }
 
-    public boolean sendFileListing(){
+    public void sendFileListing(){
+        // This should send the next packet. Each call sends ONE packet.
+        // The last call (the packet being sent has less than MAX_PACKET_SIZE bytes) should clear everything.
 
         Path path = FileSystems.getDefault().getPath(FILES_DIR);
-        boolean ans = false;
         try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) {
             for (Path p : stream) {
-                System.out.println(p.getFileName()); // INSTEAD OF PRINTING, PUT INTO STORAGE AND THEN SEND AS DATA PACKETS
+                p.getFileName().toString().getBytes(); // TODO: PUT INTO STORAGE AND THEN SEND AS DATA PACKETS
             }
         }
         catch(IOException ex){}
 
-        return ans;
+    }
 
+    public void sendNextDataPacket(){
+
+        // File is being sent, continue sending it
+        if(fileReadPath!=null){
+            sendFile();
+        }
+
+        // Directory listing is being sent, continue sending it
+        else if(true){ // TODO: ADD CONDITION ON THE STORAGE HOLDING THE LISTING - enter "if" if it's not null
+            sendFileListing();
+        }
     }
 
 }

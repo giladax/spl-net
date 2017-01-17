@@ -312,10 +312,11 @@ public abstract class Packet {
         public Packet handle(MessagingProtocolImpl protocol) {
             // This should communicate with packets awaiting acknowledgment
 
-            // Send the next DATA packet awaiting confirmation
+            // Send the next DATA packet awaiting confirmation, whether it's RRQ or DIRQ
             if(block_number > 0){
-                protocol.sendFile();
+                protocol.sendNextDataPacket();
             }
+
             return null;
         }
 
@@ -385,14 +386,16 @@ public abstract class Packet {
         // TODO: IMPLEMENT
         @Override
         public Packet handle(MessagingProtocolImpl protocol) {
-            protocol.sendFileListing();
+            protocol.sendFileListing(); // Initiates the sending process. a call from incoming ACK packet will continue it.
             return new ACK(ACK_SUCCESSFUL);
         }
 
-        // TODO: IMPLEMENT
+        /**
+         * @return null since server never sends this
+         */
         @Override
         public byte[] toBytes() {
-            return new byte[0];
+            return null;
         }
     }
 
