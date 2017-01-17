@@ -6,7 +6,9 @@
 #define CLIENT_ENCODERDECODER_H
 
 
-class encoderDecoder {
+class EncoderDecoder {
+public:
+    virtual ~EncoderDecoder();
 
 };
 

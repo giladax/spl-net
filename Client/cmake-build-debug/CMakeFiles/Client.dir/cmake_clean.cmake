@@ -16,6 +16,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Client.dir/Packets/DELRQ.cpp.o"
   "CMakeFiles/Client.dir/Packets/BCAST.cpp.o"
   "CMakeFiles/Client.dir/Packets/DISC.cpp.o"
+  "CMakeFiles/Client.dir/Packets/Packet.cpp.o"
+  "CMakeFiles/Client.dir/Client.cpp.o"
   "Client.pdb"
   "Client"
 )

@@ -6,7 +6,9 @@
 #define CLIENT_DELRQ_H
 
 
-class DELRQ {
+#include "Packet.h"
+
+class DELRQ : public Packet{
 
 };
 

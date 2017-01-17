@@ -96,6 +96,12 @@
 		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/BidiProtocol/messagingProtocol.h">
 			<Option target="Client"/>
 		</Unit>
+		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Client.cpp">
+			<Option target="Client"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Client.h">
+			<Option target="Client"/>
+		</Unit>
 		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/ClientTsaks/KeyboardInput.cpp">
 			<Option target="Client"/>
 		</Unit>
@@ -166,6 +172,12 @@
 			<Option target="Client"/>
 		</Unit>
 		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/LOGRQ.h">
+			<Option target="Client"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/Packet.cpp">
+			<Option target="Client"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/Packet.h">
 			<Option target="Client"/>
 		</Unit>
 		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/RRQ.cpp">

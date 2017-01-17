@@ -177,6 +177,33 @@ BidiProtocol/messagingProtocol.cpp.s:
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.s
 .PHONY : BidiProtocol/messagingProtocol.cpp.s
 
+Client.o: Client.cpp.o
+
+.PHONY : Client.o
+
+# target to build an object file
+Client.cpp.o:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/Client.cpp.o
+.PHONY : Client.cpp.o
+
+Client.i: Client.cpp.i
+
+.PHONY : Client.i
+
+# target to preprocess a source file
+Client.cpp.i:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/Client.cpp.i
+.PHONY : Client.cpp.i
+
+Client.s: Client.cpp.s
+
+.PHONY : Client.s
+
+# target to generate assembly for a file
+Client.cpp.s:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/Client.cpp.s
+.PHONY : Client.cpp.s
+
 ClientTsaks/KeyboardInput.o: ClientTsaks/KeyboardInput.cpp.o
 
 .PHONY : ClientTsaks/KeyboardInput.o
@@ -528,6 +555,33 @@ Packets/LOGRQ.cpp.s:
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/Packets/LOGRQ.cpp.s
 .PHONY : Packets/LOGRQ.cpp.s
 
+Packets/Packet.o: Packets/Packet.cpp.o
+
+.PHONY : Packets/Packet.o
+
+# target to build an object file
+Packets/Packet.cpp.o:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/Packets/Packet.cpp.o
+.PHONY : Packets/Packet.cpp.o
+
+Packets/Packet.i: Packets/Packet.cpp.i
+
+.PHONY : Packets/Packet.i
+
+# target to preprocess a source file
+Packets/Packet.cpp.i:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/Packets/Packet.cpp.i
+.PHONY : Packets/Packet.cpp.i
+
+Packets/Packet.s: Packets/Packet.cpp.s
+
+.PHONY : Packets/Packet.s
+
+# target to generate assembly for a file
+Packets/Packet.cpp.s:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/Packets/Packet.cpp.s
+.PHONY : Packets/Packet.cpp.s
+
 Packets/RRQ.o: Packets/RRQ.cpp.o
 
 .PHONY : Packets/RRQ.o
@@ -597,6 +651,9 @@ help:
 	@echo "... BidiProtocol/messagingProtocol.o"
 	@echo "... BidiProtocol/messagingProtocol.i"
 	@echo "... BidiProtocol/messagingProtocol.s"
+	@echo "... Client.o"
+	@echo "... Client.i"
+	@echo "... Client.s"
 	@echo "... ClientTsaks/KeyboardInput.o"
 	@echo "... ClientTsaks/KeyboardInput.i"
 	@echo "... ClientTsaks/KeyboardInput.s"
@@ -636,6 +693,9 @@ help:
 	@echo "... Packets/LOGRQ.o"
 	@echo "... Packets/LOGRQ.i"
 	@echo "... Packets/LOGRQ.s"
+	@echo "... Packets/Packet.o"
+	@echo "... Packets/Packet.i"
+	@echo "... Packets/Packet.s"
 	@echo "... Packets/RRQ.o"
 	@echo "... Packets/RRQ.i"
 	@echo "... Packets/RRQ.s"

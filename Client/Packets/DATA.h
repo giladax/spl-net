@@ -6,7 +6,9 @@
 #define CLIENT_DATA_H
 
 
-class DATA {
+#include "Packet.h"
+
+class DATA : public Packet{
 
 };
 

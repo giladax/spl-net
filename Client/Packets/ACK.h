@@ -6,7 +6,9 @@
 #define CLIENT_ACK_H
 
 
-class ACK {
+#include "Packet.h"
+
+class ACK : public Packet{
 
 };
 

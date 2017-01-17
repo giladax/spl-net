@@ -6,7 +6,9 @@
 #define CLIENT_DIRQ_H
 
 
-class DIRQ {
+#include "Packet.h"
+
+class DIRQ : public Packet{
 
 };
 

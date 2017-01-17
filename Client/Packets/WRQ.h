@@ -5,8 +5,9 @@
 #ifndef CLIENT_WRQ_H
 #define CLIENT_WRQ_H
 
+#include "Packet.h"
 
-class WRQ {
+class WRQ : public Packet{
 
 };
 

@@ -5,8 +5,8 @@
 #ifndef CLIENT_DISC_H
 #define CLIENT_DISC_H
 
-
-class DISC {
+#include "Packet.h"
+class DISC : public Packet{
 
 };
 
