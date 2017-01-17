@@ -14,6 +14,7 @@ import java.nio.file.DirectoryStream;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.concurrent.ConcurrentHashMap;
 
 import static java.nio.file.StandardOpenOption.APPEND;
@@ -47,6 +48,11 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
     private int numOfPacketsToReceive = 0;
     private Path fileWritePath = null;
 
+    // DIRQ HANDLING PARAMETERS
+    private byte[] dirqToSend = null;
+    private int dirqPacketCounter = 0;
+    private int dirqPackets = 0;
+
 
     public MessagingProtocolImpl() {
 
@@ -78,7 +84,7 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
 
         Packet packet = message.handle(this);
 
-        if(packet != null){
+        if (packet != null) {
             connections.send(connectionId, packet); // TODO: MAYBE THIS SHOULD BE packet.toBytes() ???
         }
     }
@@ -122,7 +128,7 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
         this.fileWritePath = FileSystems.getDefault().getPath(FILES_DIR + fileName);
     }
 
-    public boolean createFile(){
+    public boolean createFile() {
         try {
             Files.createFile(fileWritePath);
             return true;
@@ -164,15 +170,14 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
     public boolean isFileAvailable(String fileName) {
 
         Path path = FileSystems.getDefault().getPath(FILES_DIR);
-        try(DirectoryStream<Path> dirStream = Files.newDirectoryStream(path)){
-            for (Path p : dirStream){
-                if(p.getFileName().toString().compareTo(fileName)==0){ // TODO: toString() might return FULL PATH not filename.
+        try (DirectoryStream<Path> dirStream = Files.newDirectoryStream(path)) {
+            for (Path p : dirStream) {
+                if (p.getFileName().toString().compareTo(fileName) == 0) { // TODO: toString() might return FULL PATH not filename.
                     return true;
                 }
             }
 
-        }
-        catch (IOException ex){
+        } catch (IOException ex) {
         }
         return false;
     }
@@ -206,7 +211,7 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
      * If there is nothing more to send, it clears everything it made
      * First call is made after receiving a RRQ packet, the next are made after receiving ACK packets for previous packets
      */
-    public void sendFile() throws IOException{
+    public void sendFile() throws IOException {
         // Read from the file "fileReadPath" into a buffer if not initiated
         if (fileChannel == null || ramFile == null) {
             ramFile = new RandomAccessFile(getFileReadPath(), "r");
@@ -214,7 +219,7 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
 
         }
         // Fill the buffer with MAX_PACKET_SIZE bytes from file (or smaller if this is the terminal packet)
-        int packetSize = fileChannel.read(buffer,sentPacketNum*MAX_PACKET_SIZE);
+        int packetSize = fileChannel.read(buffer, sentPacketNum * MAX_PACKET_SIZE);
         buffer.flip();
 
         // Send just ONE packet
@@ -238,29 +243,55 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
         }
     }
 
-    public void sendFileListing(){
-        // This should send the next packet. Each call sends ONE packet.
-        // The last call (the packet being sent has less than MAX_PACKET_SIZE bytes) should clear everything.
 
-        Path path = FileSystems.getDefault().getPath(FILES_DIR);
-        try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) {
-            for (Path p : stream) {
-                p.getFileName().toString().getBytes(); // TODO: PUT INTO STORAGE AND THEN SEND AS DATA PACKETS
+    /**
+     * Send the next packet. Each call sends ONE packet.
+     * The last call (the packet being sent has less than MAX_PACKET_SIZE bytes) clears everything created by this process.
+     */
+    public void sendFileListing() {
+
+        // Initiate...
+        if (dirqToSend == null) {
+            Path path = FileSystems.getDefault().getPath(FILES_DIR);
+            String listing = "";
+            try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) {
+                for (Path p : stream) {
+                    listing.concat(p.getFileName().toString());
+                }
+                dirqToSend = listing.getBytes();
+                dirqPacketCounter = 0;
+                dirqPackets = (dirqToSend.length / MAX_PACKET_SIZE) + 1;
+            } catch (IOException ex) {
             }
         }
-        catch(IOException ex){}
 
+        // Send the packet if it's not the last
+        if (dirqPacketCounter < dirqPackets) {
+            connections.send(connectionId, new Packet.DATA(MAX_PACKET_SIZE, dirqPacketCounter, Arrays.copyOfRange(dirqToSend, MAX_PACKET_SIZE * dirqPacketCounter, MAX_PACKET_SIZE * (dirqPacketCounter + 1))));
+            ++dirqPacketCounter;
+        }
+
+        // It's the last packet. send it and reset
+        else {
+            int lastPacketLength = dirqToSend.length % MAX_PACKET_SIZE;
+            connections.send(connectionId, new Packet.DATA((short) lastPacketLength, dirqPacketCounter, Arrays.copyOfRange(dirqToSend, MAX_PACKET_SIZE * dirqPacketCounter, dirqToSend.length)));
+
+            // Reset everything
+            dirqToSend = null;
+            dirqPacketCounter = 0;
+            dirqPackets = 0;
+        }
     }
 
-    public void sendNextDataPacket(){
+    public void sendNextDataPacket() {
 
         // File is being sent, continue sending it
-        if(fileReadPath!=null){
+        if (fileReadPath != null) {
             sendFile();
         }
 
         // Directory listing is being sent, continue sending it
-        else if(true){ // TODO: ADD CONDITION ON THE STORAGE HOLDING THE LISTING - enter "if" if it's not null
+        else if (true) { // TODO: ADD CONDITION ON THE STORAGE HOLDING THE LISTING - enter "if" if it's not null
             sendFileListing();
         }
     }

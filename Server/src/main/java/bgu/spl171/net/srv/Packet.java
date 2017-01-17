@@ -129,19 +129,16 @@ public abstract class Packet {
             Packet ans = null;
             protocol.setFileReadPath(new String(packetContent)); // TODO: this already has the '/0' at the end, make sure this isn't an issue
 
-            if(protocol.isFileAvailable(protocol.getFileReadPath())){
+            if (protocol.isFileAvailable(protocol.getFileReadPath())) {
                 ans = new ACK(ACK_SUCCESSFUL);
 
                 // This handles separating into packets, sending, awaiting ACK and clearing parameters in the end
-                try{
+                try {
                     protocol.sendFile();
-                }
-                catch (IOException ex){
+                } catch (IOException ex) {
                     ans = new ERROR(2); // ERROR: "Access violation – File cannot be written, read or deleted." as per 2.2 on document
                 }
-            }
-
-            else{
+            } else {
                 ans = new ERROR(1); // FILE NOT FOUND
             }
 
@@ -168,19 +165,16 @@ public abstract class Packet {
             Packet ans = null;
             String fileName = new String(packetContent); // TODO: this already has the '/0' at the end, make sure this isn't an issue
 
-            if(!protocol.isFileAvailable(fileName)){
+            if (!protocol.isFileAvailable(fileName)) {
 
                 protocol.setFileWritePath(fileName);
-                if(protocol.createFile()){
+                if (protocol.createFile()) {
                     // After the file was created, everything is being handled by incoming DATA packets.
                     ans = new ACK(ACK_SUCCESSFUL);
-                }
-                else{
+                } else {
                     ans = new ERROR(2); // "Access violation – File cannot be written, read or deleted"
                 }
-            }
-
-            else{
+            } else {
                 ans = new ERROR(5); // FILE ALREADY EXIST!
             }
 
@@ -206,7 +200,7 @@ public abstract class Packet {
             super((short) 3);
         }
 
-        public DATA(short packetSize, short blockNumber, byte[] data){
+        public DATA(short packetSize, short blockNumber, byte[] data) {
             super((short) 3);
             this.packetSize = packetSize;
             this.blockNumber = blockNumber;
@@ -219,21 +213,19 @@ public abstract class Packet {
             Packet ans = null;
 
             // Too short to be a data packet, made of Opcode, Packet Size, Block # and at least 1 bytes of data.
-            if(numOfBytes < 2+2+2+1){
+            if (numOfBytes < 2 + 2 + 2 + 1) {
                 return ans; //
-            }
+            } else {
 
-            else{
+                short packetSize = bytesToShort(Arrays.copyOfRange(bytes, OP_CODE_SIZE, OP_CODE_SIZE + 2));
 
-                short packetSize = bytesToShort(Arrays.copyOfRange(bytes,OP_CODE_SIZE,OP_CODE_SIZE+2));
-
-                if(numOfBytes == OP_CODE_SIZE + 2 + 2 + packetSize){ // "data" part of the packet is in the right size
+                if (numOfBytes == OP_CODE_SIZE + 2 + 2 + packetSize) { // "data" part of the packet is in the right size
 
                     ans = new DATA(
                             packetSize,
-                            bytesToShort(Arrays.copyOfRange(bytes,OP_CODE_SIZE+2,OP_CODE_SIZE+2+2)),
-                            Arrays.copyOfRange(bytes,OP_CODE_SIZE+2+2,bytes.length)
-                            );
+                            bytesToShort(Arrays.copyOfRange(bytes, OP_CODE_SIZE + 2, OP_CODE_SIZE + 2 + 2)),
+                            Arrays.copyOfRange(bytes, OP_CODE_SIZE + 2 + 2, bytes.length)
+                    );
                 }
             }
 
@@ -248,11 +240,9 @@ public abstract class Packet {
                 protocol.insertIntoDataArray(data, blockNumber);
                 ans = new ACK(blockNumber);
 
-            }
-            catch (ArrayIndexOutOfBoundsException ex){
+            } catch (ArrayIndexOutOfBoundsException ex) {
                 ans = new ERROR(0); // blockNumber is illegal
-            }
-            catch (IOException ex){
+            } catch (IOException ex) {
                 ans = new ERROR(2); // Access violation – File cannot be written, read or deleted.
             }
 
@@ -266,16 +256,16 @@ public abstract class Packet {
              * | 2 bytes|    2 bytes  | 2 bytes | n bytes|
              * | Opcode | Packet Size | Block # | Data   |
              */
-            byte[] ans = new byte[OP_CODE_SIZE+2+2+packetSize];
+            byte[] ans = new byte[OP_CODE_SIZE + 2 + 2 + packetSize];
 
             // Insert Opcode
-            insertArrayIntoArray(ans,shortToBytes(OP_CODE),0);
+            insertArrayIntoArray(ans, shortToBytes(OP_CODE), 0);
 
             // Insert Packet size
-            insertArrayIntoArray(ans,shortToBytes(packetSize),OP_CODE_SIZE);
+            insertArrayIntoArray(ans, shortToBytes(packetSize), OP_CODE_SIZE);
 
             // Insert Block #
-            insertArrayIntoArray(ans, shortToBytes(blockNumber),OP_CODE_SIZE+2);
+            insertArrayIntoArray(ans, shortToBytes(blockNumber), OP_CODE_SIZE + 2);
 
             // Insert Data
             insertArrayIntoArray(ans, data, OP_CODE_SIZE + 2 + 2);
@@ -313,7 +303,7 @@ public abstract class Packet {
             // This should communicate with packets awaiting acknowledgment
 
             // Send the next DATA packet awaiting confirmation, whether it's RRQ or DIRQ
-            if(block_number > 0){
+            if (block_number > 0) {
                 protocol.sendNextDataPacket();
             }
 
