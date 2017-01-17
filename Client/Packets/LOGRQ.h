@@ -5,8 +5,8 @@
 #ifndef CLIENT_LOGRQ_H
 #define CLIENT_LOGRQ_H
 
-
-class LOGRQ {
+#include "Packet.h"
+class LOGRQ : public Packet{
 
 };
 

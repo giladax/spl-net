@@ -5,8 +5,8 @@
 #ifndef CLIENT_ERROR_H
 #define CLIENT_ERROR_H
 
-
-class ERROR {
+#include "Packet.h"
+class ERROR : public Packet{
 
 };
 

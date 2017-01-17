@@ -5,8 +5,8 @@
 #ifndef CLIENT_RRQ_H
 #define CLIENT_RRQ_H
 
-
-class RRQ {
+#include "Packet.h"
+class RRQ : public Packet{
 
 };
 

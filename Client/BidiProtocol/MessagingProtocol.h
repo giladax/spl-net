@@ -6,7 +6,9 @@
 #define CLIENT_MESSAGINGPROTOCOL_H
 
 
-class messagingProtocol {
+class MessagingProtocol {
+public:
+    virtual ~MessagingProtocol();
 
 };
 

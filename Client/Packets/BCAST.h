@@ -6,7 +6,9 @@
 #define CLIENT_BCAST_H
 
 
-class BCAST {
+#include "Packet.h"
+
+class BCAST : public Packet {
 
 };
 

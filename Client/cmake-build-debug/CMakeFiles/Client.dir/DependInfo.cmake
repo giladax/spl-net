@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/users/studs/bsc/2016/dorgreen/spl-net/Client/BidiProtocol/encoderDecoder.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.o"
   "/users/studs/bsc/2016/dorgreen/spl-net/Client/BidiProtocol/messagingProtocol.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.o"
+  "/users/studs/bsc/2016/dorgreen/spl-net/Client/Client.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/Client.cpp.o"
   "/users/studs/bsc/2016/dorgreen/spl-net/Client/ClientTsaks/KeyboardInput.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.o"
   "/users/studs/bsc/2016/dorgreen/spl-net/Client/ClientTsaks/ServerListener.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.o"
   "/users/studs/bsc/2016/dorgreen/spl-net/Client/ConnectionHandler.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/ConnectionHandler.cpp.o"
@@ -19,6 +20,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DISC.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/Packets/DISC.cpp.o"
   "/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/ERROR.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/Packets/ERROR.cpp.o"
   "/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/LOGRQ.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/Packets/LOGRQ.cpp.o"
+  "/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/Packet.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/Packets/Packet.cpp.o"
   "/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/RRQ.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/Packets/RRQ.cpp.o"
   "/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/WRQ.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/Packets/WRQ.cpp.o"
   )
