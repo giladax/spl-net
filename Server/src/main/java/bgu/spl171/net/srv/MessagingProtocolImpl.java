@@ -143,7 +143,7 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
     }
 
 
-    // TODO: How do we know the length of the array? maybe use some other data structure
+    // TODO: How do we know the length of the array? maybe use some other data structure? String is weird but could work!
     public void initiateDataArray(int packets) {
         this.dataRecived = new byte[packets * MAX_PACKET_SIZE];
     }
@@ -258,8 +258,8 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
             String listing = "";
             try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) {
                 for (Path p : stream) {
-                    // TODO: IF ADDED .tmp TO FILES BEING TRANSFERRED, ADD 'if" HERE
-                    listing.concat(p.getFileName().toString()); // TODO: MAYBE CONCATENATE "\0" BETWEEN STRINGS?
+                    // TODO: IF ADDED .tmp TO FILES BEING TRANSFERRED, ADD 'if' HERE
+                    listing.concat(p.getFileName().toString()+ "/0"); // Separate lines with "\0", as per protocol
                 }
                 dirqToSend = listing.getBytes();
                 dirqPacketCounter = 0;
@@ -300,7 +300,7 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
      * This method only handles ongoing transfers
      * Is being called by incoming ACK(n) where n > 0
      * Assuming: no RRQ and DIRQ operations are ongoing concurrently
-     * both sendFile() and sendFileListing() reset parameters when finished
+     * both sendFile() and sendFileListing() reset their parameters when finished
      */
     public void sendNextDataPacket() {
 
