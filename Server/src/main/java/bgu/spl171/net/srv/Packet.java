@@ -161,23 +161,26 @@ public abstract class Packet {
             super((short) 2);
         }
 
-        // TODO: IMPLEMENT
         @Override
         public Packet handle(MessagingProtocolImpl protocol) {
             Packet ans = null;
             String fileName = new String(packetContent); // TODO: this already has the '/0' at the end, make sure this isn't an issue
 
             if(!protocol.isFileAvailable(fileName)){
-                ans = new ACK(ACK_SUCCESSFUL);
-                // TODO: HERE WE SHOULD HAVE ACTUALLY GETTING THAT FILE!
 
+                protocol.setFileWritePath(fileName);
+                if(protocol.createFile()){
+                    // After the file was created, everything is being handled by incoming DATA packets.
+                    ans = new ACK(ACK_SUCCESSFUL);
+                }
+                else{
+                    ans = new ERROR(2); // "Access violation – File cannot be written, read or deleted"
+                }
             }
 
             else{
                 ans = new ERROR(5); // FILE ALREADY EXIST!
             }
-
-            // TODO: ADD CASE FOR "Access violation" ERROR (see document)
 
             return ans;
         }
@@ -247,9 +250,6 @@ public abstract class Packet {
             catch (ArrayIndexOutOfBoundsException e){
                 ans = new ERROR(0); // blockNumber is illegal
             }
-
-
-
 
             return ans;
         }
