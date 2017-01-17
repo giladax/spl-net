@@ -428,10 +428,20 @@ public abstract class Packet {
             super((short) 8);
         }
 
-        // TODO: IMPLEMENT
         @Override
         public Packet handle(MessagingProtocolImpl protocol) {
-            return null;
+            Packet ans;
+            String fileName = new String(packetContent); // TODO: already has the "/0" at the end. Is that correct?
+            if(!protocol.isFileAvailable(fileName)){
+                ans = new ERROR(1); // FILE NOT FOUND
+            }
+            // If deleted successfully, this also sends the BCAST
+            else if (protocol.deleteFile(fileName)){
+                ans = new ACK(ACK_SUCCESSFUL);
+            }
+            else ans = new ERROR(2); // "Access violation – File cannot be written, read or deleted."
+
+            return ans;
         }
 
         /**

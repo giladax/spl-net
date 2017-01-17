@@ -142,6 +142,8 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
         return fileWritePath.toString();
     }
 
+
+    // TODO: How do we know the length of the array? maybe use some other data structure
     public void initiateDataArray(int packets) {
         this.dataRecived = new byte[packets * MAX_PACKET_SIZE];
     }
@@ -256,7 +258,8 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
             String listing = "";
             try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) {
                 for (Path p : stream) {
-                    listing.concat(p.getFileName().toString());
+                    // TODO: IF ADDED .tmp TO FILES BEING TRANSFERRED, ADD 'if" HERE
+                    listing.concat(p.getFileName().toString()); // TODO: MAYBE CONCATENATE "\0" BETWEEN STRINGS?
                 }
                 dirqToSend = listing.getBytes();
                 dirqPacketCounter = 0;
@@ -267,14 +270,24 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
 
         // Send the packet if it's not the last
         if (dirqPacketCounter < dirqPackets) {
-            connections.send(connectionId, new Packet.DATA(MAX_PACKET_SIZE, dirqPacketCounter, Arrays.copyOfRange(dirqToSend, MAX_PACKET_SIZE * dirqPacketCounter, MAX_PACKET_SIZE * (dirqPacketCounter + 1))));
+            connections.send(connectionId,
+                    new Packet.DATA(
+                            MAX_PACKET_SIZE,
+                            dirqPacketCounter,
+                            Arrays.copyOfRange(dirqToSend, MAX_PACKET_SIZE * dirqPacketCounter, MAX_PACKET_SIZE * (dirqPacketCounter + 1))
+                    ));
             ++dirqPacketCounter;
         }
 
         // It's the last packet. send it and reset
         else {
             int lastPacketLength = dirqToSend.length % MAX_PACKET_SIZE;
-            connections.send(connectionId, new Packet.DATA((short) lastPacketLength, dirqPacketCounter, Arrays.copyOfRange(dirqToSend, MAX_PACKET_SIZE * dirqPacketCounter, dirqToSend.length)));
+            connections.send(connectionId,
+                    new Packet.DATA(
+                            (short) lastPacketLength,
+                            dirqPacketCounter,
+                            Arrays.copyOfRange(dirqToSend, MAX_PACKET_SIZE * dirqPacketCounter, dirqToSend.length)
+                    ));
 
             // Reset everything
             dirqToSend = null;
@@ -283,6 +296,12 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
         }
     }
 
+    /**
+     * This method only handles ongoing transfers
+     * Is being called by incoming ACK(n) where n > 0
+     * Assuming: no RRQ and DIRQ operations are ongoing concurrently
+     * both sendFile() and sendFileListing() reset parameters when finished
+     */
     public void sendNextDataPacket() {
 
         // File is being sent, continue sending it
@@ -291,9 +310,22 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
         }
 
         // Directory listing is being sent, continue sending it
-        else if (true) { // TODO: ADD CONDITION ON THE STORAGE HOLDING THE LISTING - enter "if" if it's not null
+        else if (dirqToSend != null) {
             sendFileListing();
         }
+    }
+
+    public boolean deleteFile(String fileName){
+        boolean ans = false;
+        try{
+            Files.delete(FileSystems.getDefault().getPath(FILES_DIR + fileName));
+            connections.broadcast(new Packet.BCAST(1, fileName));
+        }
+        catch(IOException ex){
+            return false;
+        }
+
+        return ans;
     }
 
 }

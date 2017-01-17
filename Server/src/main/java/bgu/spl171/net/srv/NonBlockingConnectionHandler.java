@@ -52,6 +52,7 @@ public class NonBlockingConnectionHandler<T> implements ConnectionHandler<T> {
                     while (buf.hasRemaining()) {
                         T nextMessage = encdec.decodeNextByte(buf.get());
                         if (nextMessage != null) {
+                            // TODO: WHY IS THIS COMMENTED? should response be type "T"?
                             /*
                             T response = protocol.process(nextMessage); // This is pretty much the whole idea of the assignment
                             if (response != null) {
@@ -59,6 +60,7 @@ public class NonBlockingConnectionHandler<T> implements ConnectionHandler<T> {
                                 reactor.updateInterestedOps(chan, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
                             }
                             */
+
                         }
                     }
                 } finally {

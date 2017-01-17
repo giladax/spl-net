@@ -39,10 +39,9 @@ public class ConnectionsImpl<T> implements Connections<T> {
 
     @Override
     public boolean send(int connectionId, T msg) {
-        // Should be something like:  get(connecionId).sent(msg);
         handlers.get(new Integer(connectionId)).send(msg);
 
-        //TODO: SHOULD RETURN VALUE ACCORDING TO INCOMMING "ACK" PACKET. see "ACK" part of document
+        //Should this return something? maybe "false" only if no ACK received / received ERROR?
         return false; // TODO: DEBUG ONLY
     }
 
@@ -57,6 +56,6 @@ public class ConnectionsImpl<T> implements Connections<T> {
     public void add(int connectionID, ConnectionHandler handler) {
         handlers.put(connectionID, handler);
     }
-        // TODO: MAKE SURE WE WON'T RE-REGISTER THE SAME USER TWICE
-        // TODO: INITIATE AS NOT LOGGED-IN
+        // We won't register the same user twice - this is handled by Packet and MessagingProtocolImpl
+        // Packet and MessagingProtocolImpl promise that an ERROR packet of the right will be sent in that case
 }
