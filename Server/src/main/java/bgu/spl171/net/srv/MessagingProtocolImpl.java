@@ -37,7 +37,7 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
     private RandomAccessFile ramFile = null;
     private FileChannel fileChannel = null;
     private int sentPacketNum = 0;
-    ByteBuffer buffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
+    ByteBuffer buffer = ByteBuffer.allocate(MAX_PACKET_SIZE); // TODO: SHOULD WE KILL IT WHEN CLOSING CONNECTION?
 
     // WRQ HANDLING PARAMETERS
     // When the user asks to send a file, this holds all of the data related to this transaction
@@ -139,7 +139,7 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
         this.dataRecived = new byte[packets * MAX_PACKET_SIZE];
     }
 
-    public void insertIntoDataArray(byte[] data, int packetNum) {
+    public void insertIntoDataArray(byte[] data, int packetNum) throws IOException {
         // Data packets does not care for order, We'll just insert the data
         // According to protocol, each packet has 512 bytes of data, unless it's the last one
         // This also checks for completeness, saves the file and clear parameters used for this WRQ
@@ -194,30 +194,34 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
      * If there is nothing more to send, it clears everything it made
      * First call is made after receiving a RRQ packet, the next are made after receiving ACK packets for previous packets
      */
-    public void sendFile() {
-        // TODO: Read from the file "fileReadPath" into a buffer if not initiated
-        // TODO: Send ONE data packet of size MAX_PACKET_SIZE (or smaller if this is the terminal packet)
+    public void sendFile() throws IOException{
+        // Read from the file "fileReadPath" into a buffer if not initiated
         if (fileChannel == null || ramFile == null) {
             ramFile = new RandomAccessFile(getFileWritePath(), "r");
             fileChannel = ramFile.getChannel();
+
         }
+        // Fill the buffer with MAX_PACKET_SIZE bytes from file (or smaller if this is the terminal packet)
+        int packetSize = fileChannel.read(buffer,sentPacketNum*MAX_PACKET_SIZE);
+        buffer.flip();
 
-        byte[] toSend = new byte[MAX_PACKET_SIZE];
-        int packetSize;
-
+        // Send just ONE packet
         if (packetSize > 0) {
-            connections.send(connectionId, new Packet.DATA(packetSize, sentPacketNum, toSend));
+            connections.send(connectionId, new Packet.DATA(packetSize, sentPacketNum, buffer.array()));
             ++sentPacketNum;
             buffer.clear();
         }
 
         // IF THERE IS NOTHING MORE TO SEND, Reset all parameters that holds data related to this transaction
         else {
-            fileWritePath = null;
-            fileReader.close();
-            fileReader = null;
+
+            fileChannel.close();
+            fileChannel = null;
+            ramFile.close();
+            ramFile = null;
             sentPacketNum = 0;
-            buffer = null;
+            buffer.clear();
+            fileWritePath = null;
             // TODO: ADD ALL OF THE OTHER PARAMETERS HERE FOR RESTARTING
         }
     }

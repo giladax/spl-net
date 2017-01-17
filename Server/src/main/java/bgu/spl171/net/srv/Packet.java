@@ -133,17 +133,19 @@ public abstract class Packet {
                 ans = new ACK(ACK_SUCCESSFUL);
 
                 // This handles separating into packets, sending, awaiting ACK and clearing parameters in the end
-                protocol.sendFile();
+                try{
+                    protocol.sendFile();
+                }
+                catch (IOException ex){
+                    ans = new ERROR(2); // ERROR: "Access violation – File cannot be written, read or deleted." as per 2.2 on document
+                }
             }
 
             else{
                 ans = new ERROR(1); // FILE NOT FOUND
             }
 
-            // TODO: ADD CASE FOR "Access violation" ERROR (see document)
-
             return ans;
-
         }
 
         /**
@@ -208,7 +210,7 @@ public abstract class Packet {
             super((short) 3);
             this.packetSize = packetSize;
             this.blockNumber = blockNumber;
-            this.data = data;
+            this.data = Arrays.copyOf(data, packetSize);
         }
 
         @Override
@@ -247,9 +249,13 @@ public abstract class Packet {
                 ans = new ACK(blockNumber);
 
             }
-            catch (ArrayIndexOutOfBoundsException e){
+            catch (ArrayIndexOutOfBoundsException ex){
                 ans = new ERROR(0); // blockNumber is illegal
             }
+            catch (IOException ex){
+                ans = new ERROR(2); // Access violation – File cannot be written, read or deleted.
+            }
+
 
             return ans;
         }

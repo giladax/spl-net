@@ -16,39 +16,81 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Packet.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Packet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/bgu/spl171/net/srv/Packet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1411">
-              <caret line="252" column="0" lean-forward="false" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
+            <state relative-caret-position="268">
+              <caret line="159" column="2" lean-forward="true" selection-start-line="159" selection-start-column="2" selection-end-line="159" selection-end-column="2" />
               <folding>
-                <element signature="method#DATA#1;class#DATA#0;class#Packet#0" expanded="false" />
+                <element signature="docComment;class#Packet#0" expanded="false" />
+                <element signature="docComment;field#packetContent#0;class#Packet#0" expanded="false" />
+                <element signature="method#Packet#0;class#Packet#0" expanded="false" />
+                <element signature="class#966:1738" expanded="false" />
+                <element signature="initializer##0;class#966:1738" expanded="false" />
+                <element signature="docComment;method#getPacket#0;class#Packet#0" expanded="false" />
+                <element signature="docComment;method#toBytes#0;class#Packet#0" expanded="false" />
+                <element signature="docComment;method#shortToBytes#0;class#Packet#0" expanded="false" />
+                <element signature="method#shortToBytes#0;class#Packet#0" expanded="false" />
+                <element signature="method#insertArrayIntoArray#0;class#Packet#0" expanded="false" />
+                <element signature="docComment;method#bytesToShort#0;class#Packet#0" expanded="false" />
+                <element signature="method#bytesToShort#0;class#Packet#0" expanded="false" />
+                <element signature="class#ZeroRecognizedPacket#0;class#Packet#0" expanded="false" />
+                <element signature="method#getPacket#0;class#ZeroRecognizedPacket#0;class#Packet#0" expanded="false" />
+                <element signature="class#RRQ#0;class#Packet#0" expanded="false" />
+                <element signature="docComment;method#toBytes#0;class#RRQ#0;class#Packet#0" expanded="false" />
+                <element signature="docComment;method#toBytes#0;class#WRQ#0;class#Packet#0" expanded="false" />
+                <element signature="class#DATA#0;class#Packet#0" expanded="false" />
                 <element signature="method#getPacket#0;class#DATA#0;class#Packet#0" expanded="false" />
+                <element signature="method#handle#0;class#DATA#0;class#Packet#0" expanded="false" />
+                <element signature="method#toBytes#0;class#DATA#0;class#Packet#0" expanded="false" />
+                <element signature="class#ACK#0;class#Packet#0" expanded="false" />
+                <element signature="method#ACK#0;class#ACK#0;class#Packet#0" expanded="false" />
+                <element signature="method#ACK#1;class#ACK#0;class#Packet#0" expanded="false" />
+                <element signature="method#getPacket#0;class#ACK#0;class#Packet#0" expanded="false" />
+                <element signature="method#handle#0;class#ACK#0;class#Packet#0" expanded="false" />
+                <element signature="e#9668#9731#0" expanded="false" />
+                <element signature="method#toBytes#0;class#ACK#0;class#Packet#0" expanded="false" />
+                <element signature="class#ERROR#0;class#Packet#0" expanded="false" />
+                <element signature="method#ERROR#1;class#ERROR#0;class#Packet#0" expanded="false" />
+                <element signature="method#toBytes#0;class#ERROR#0;class#Packet#0" expanded="false" />
+                <element signature="class#DIRQ#0;class#Packet#0" expanded="false" />
+                <element signature="class#LOGRQ#0;class#Packet#0" expanded="false" />
+                <element signature="method#handle#0;class#LOGRQ#0;class#Packet#0" expanded="false" />
+                <element signature="docComment;method#toBytes#0;class#LOGRQ#0;class#Packet#0" expanded="false" />
+                <element signature="class#DELRQ#0;class#Packet#0" expanded="false" />
+                <element signature="docComment;method#toBytes#0;class#DELRQ#0;class#Packet#0" expanded="false" />
+                <element signature="class#BCAST#0;class#Packet#0" expanded="false" />
+                <element signature="method#BCAST#0;class#BCAST#0;class#Packet#0" expanded="false" />
+                <element signature="method#toBytes#0;class#BCAST#0;class#Packet#0" expanded="false" />
+                <element signature="class#DISC#0;class#Packet#0" expanded="false" />
+                <element signature="method#handle#0;class#DISC#0;class#Packet#0" expanded="false" />
+                <element signature="docComment;method#toBytes#0;class#DISC#0;class#Packet#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MessagingProtocolImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MessagingProtocolImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bgu/spl171/net/srv/MessagingProtocolImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="210" column="27" lean-forward="false" selection-start-line="210" selection-start-column="27" selection-end-line="210" selection-end-column="27" />
+            <state relative-caret-position="-142">
+              <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
               <folding>
                 <element signature="method#MessagingProtocolImpl#0;class#MessagingProtocolImpl#0" expanded="false" />
                 <element signature="method#start#0;class#MessagingProtocolImpl#0" expanded="false" />
                 <element signature="method#process#0;class#MessagingProtocolImpl#0" expanded="false" />
-                <element signature="e#2789#2790#0" expanded="true" />
-                <element signature="e#2870#2871#0" expanded="true" />
+                <element signature="e#2841#2842#0" expanded="true" />
+                <element signature="e#2922#2923#0" expanded="true" />
                 <element signature="method#logIn#0;class#MessagingProtocolImpl#0" expanded="false" />
                 <element signature="method#removeClient#0;class#MessagingProtocolImpl#0" expanded="false" />
                 <element signature="method#setFileReadPath#0;class#MessagingProtocolImpl#0" expanded="false" />
                 <element signature="method#setFileWritePath#0;class#MessagingProtocolImpl#0" expanded="false" />
                 <element signature="method#createFile#0;class#MessagingProtocolImpl#0" expanded="false" />
-                <element signature="e#3814#3815#0" expanded="true" />
-                <element signature="e#3861#3862#0" expanded="true" />
+                <element signature="e#3866#3867#0" expanded="true" />
+                <element signature="e#3913#3914#0" expanded="true" />
                 <element signature="method#insertIntoDataArray#0;class#MessagingProtocolImpl#0" expanded="false" />
-                <element signature="e#4995#4996#0" expanded="true" />
+                <element signature="method#isFileAvailable#0;class#MessagingProtocolImpl#0" expanded="false" />
+                <element signature="e#5066#5067#0" expanded="true" />
                 <element signature="method#saveReceivedFile#0;class#MessagingProtocolImpl#0" expanded="false" />
               </folding>
             </state>
@@ -373,42 +415,84 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/bgu/spl171/net/srv/Packet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1411">
-          <caret line="252" column="0" lean-forward="false" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
-          <folding>
-            <element signature="method#DATA#1;class#DATA#0;class#Packet#0" expanded="false" />
-            <element signature="method#getPacket#0;class#DATA#0;class#Packet#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bgu/spl171/net/srv/MessagingProtocolImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="210" column="27" lean-forward="false" selection-start-line="210" selection-start-column="27" selection-end-line="210" selection-end-column="27" />
+        <state relative-caret-position="-142">
+          <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
           <folding>
             <element signature="method#MessagingProtocolImpl#0;class#MessagingProtocolImpl#0" expanded="false" />
             <element signature="method#start#0;class#MessagingProtocolImpl#0" expanded="false" />
             <element signature="method#process#0;class#MessagingProtocolImpl#0" expanded="false" />
-            <element signature="e#2789#2790#0" expanded="true" />
-            <element signature="e#2870#2871#0" expanded="true" />
+            <element signature="e#2841#2842#0" expanded="true" />
+            <element signature="e#2922#2923#0" expanded="true" />
             <element signature="method#logIn#0;class#MessagingProtocolImpl#0" expanded="false" />
             <element signature="method#removeClient#0;class#MessagingProtocolImpl#0" expanded="false" />
             <element signature="method#setFileReadPath#0;class#MessagingProtocolImpl#0" expanded="false" />
             <element signature="method#setFileWritePath#0;class#MessagingProtocolImpl#0" expanded="false" />
             <element signature="method#createFile#0;class#MessagingProtocolImpl#0" expanded="false" />
-            <element signature="e#3814#3815#0" expanded="true" />
-            <element signature="e#3861#3862#0" expanded="true" />
+            <element signature="e#3866#3867#0" expanded="true" />
+            <element signature="e#3913#3914#0" expanded="true" />
             <element signature="method#insertIntoDataArray#0;class#MessagingProtocolImpl#0" expanded="false" />
-            <element signature="e#4995#4996#0" expanded="true" />
+            <element signature="method#isFileAvailable#0;class#MessagingProtocolImpl#0" expanded="false" />
+            <element signature="e#5066#5067#0" expanded="true" />
             <element signature="method#saveReceivedFile#0;class#MessagingProtocolImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bgu/spl171/net/srv/Packet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="159" column="2" lean-forward="true" selection-start-line="159" selection-start-column="2" selection-end-line="159" selection-end-column="2" />
+          <folding>
+            <element signature="docComment;class#Packet#0" expanded="false" />
+            <element signature="docComment;field#packetContent#0;class#Packet#0" expanded="false" />
+            <element signature="method#Packet#0;class#Packet#0" expanded="false" />
+            <element signature="class#966:1738" expanded="false" />
+            <element signature="initializer##0;class#966:1738" expanded="false" />
+            <element signature="docComment;method#getPacket#0;class#Packet#0" expanded="false" />
+            <element signature="docComment;method#toBytes#0;class#Packet#0" expanded="false" />
+            <element signature="docComment;method#shortToBytes#0;class#Packet#0" expanded="false" />
+            <element signature="method#shortToBytes#0;class#Packet#0" expanded="false" />
+            <element signature="method#insertArrayIntoArray#0;class#Packet#0" expanded="false" />
+            <element signature="docComment;method#bytesToShort#0;class#Packet#0" expanded="false" />
+            <element signature="method#bytesToShort#0;class#Packet#0" expanded="false" />
+            <element signature="class#ZeroRecognizedPacket#0;class#Packet#0" expanded="false" />
+            <element signature="method#getPacket#0;class#ZeroRecognizedPacket#0;class#Packet#0" expanded="false" />
+            <element signature="class#RRQ#0;class#Packet#0" expanded="false" />
+            <element signature="docComment;method#toBytes#0;class#RRQ#0;class#Packet#0" expanded="false" />
+            <element signature="docComment;method#toBytes#0;class#WRQ#0;class#Packet#0" expanded="false" />
+            <element signature="class#DATA#0;class#Packet#0" expanded="false" />
+            <element signature="method#getPacket#0;class#DATA#0;class#Packet#0" expanded="false" />
+            <element signature="method#handle#0;class#DATA#0;class#Packet#0" expanded="false" />
+            <element signature="method#toBytes#0;class#DATA#0;class#Packet#0" expanded="false" />
+            <element signature="class#ACK#0;class#Packet#0" expanded="false" />
+            <element signature="method#ACK#0;class#ACK#0;class#Packet#0" expanded="false" />
+            <element signature="method#ACK#1;class#ACK#0;class#Packet#0" expanded="false" />
+            <element signature="method#getPacket#0;class#ACK#0;class#Packet#0" expanded="false" />
+            <element signature="method#handle#0;class#ACK#0;class#Packet#0" expanded="false" />
+            <element signature="e#9668#9731#0" expanded="false" />
+            <element signature="method#toBytes#0;class#ACK#0;class#Packet#0" expanded="false" />
+            <element signature="class#ERROR#0;class#Packet#0" expanded="false" />
+            <element signature="method#ERROR#1;class#ERROR#0;class#Packet#0" expanded="false" />
+            <element signature="method#toBytes#0;class#ERROR#0;class#Packet#0" expanded="false" />
+            <element signature="class#DIRQ#0;class#Packet#0" expanded="false" />
+            <element signature="class#LOGRQ#0;class#Packet#0" expanded="false" />
+            <element signature="method#handle#0;class#LOGRQ#0;class#Packet#0" expanded="false" />
+            <element signature="docComment;method#toBytes#0;class#LOGRQ#0;class#Packet#0" expanded="false" />
+            <element signature="class#DELRQ#0;class#Packet#0" expanded="false" />
+            <element signature="docComment;method#toBytes#0;class#DELRQ#0;class#Packet#0" expanded="false" />
+            <element signature="class#BCAST#0;class#Packet#0" expanded="false" />
+            <element signature="method#BCAST#0;class#BCAST#0;class#Packet#0" expanded="false" />
+            <element signature="method#toBytes#0;class#BCAST#0;class#Packet#0" expanded="false" />
+            <element signature="class#DISC#0;class#Packet#0" expanded="false" />
+            <element signature="method#handle#0;class#DISC#0;class#Packet#0" expanded="false" />
+            <element signature="docComment;method#toBytes#0;class#DISC#0;class#Packet#0" expanded="false" />
           </folding>
         </state>
       </provider>
