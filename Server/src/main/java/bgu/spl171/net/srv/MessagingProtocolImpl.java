@@ -7,7 +7,9 @@ import bgu.spl171.net.api.bidi.Connections;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -32,7 +34,8 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
     // RRQ HANDLING PARAMETERS
     // When the user asks for a file, this holds all of the data related to this transaction
     private Path fileReadPath = null;
-    private FileReader fileReader = null; // = new FileReader(inputFileName);
+    private RandomAccessFile ramFile = null;
+    private FileChannel fileChannel = null;
     private int sentPacketNum = 0;
     ByteBuffer buffer = ByteBuffer.allocate(MAX_PACKET_SIZE);
 
@@ -194,8 +197,9 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
     public void sendFile() {
         // TODO: Read from the file "fileReadPath" into a buffer if not initiated
         // TODO: Send ONE data packet of size MAX_PACKET_SIZE (or smaller if this is the terminal packet)
-        if (fileReader == null) {
-            fileReader = new FileReader(fileReadPath);
+        if (fileChannel == null || ramFile == null) {
+            ramFile = new RandomAccessFile(getFileWritePath(), "r");
+            fileChannel = ramFile.getChannel();
         }
 
         byte[] toSend = new byte[MAX_PACKET_SIZE];
@@ -203,10 +207,12 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
 
         if (packetSize > 0) {
             connections.send(connectionId, new Packet.DATA(packetSize, sentPacketNum, toSend));
+            ++sentPacketNum;
+            buffer.clear();
         }
 
         // IF THERE IS NOTHING MORE TO SEND, Reset all parameters that holds data related to this transaction
-        else (packetSize == 0) {
+        else {
             fileWritePath = null;
             fileReader.close();
             fileReader = null;

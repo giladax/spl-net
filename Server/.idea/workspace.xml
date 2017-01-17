@@ -19,7 +19,7 @@
       <file leaf-file-name="Packet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bgu/spl171/net/srv/Packet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
+            <state relative-caret-position="1411">
               <caret line="252" column="0" lean-forward="false" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
               <folding>
                 <element signature="method#DATA#1;class#DATA#0;class#Packet#0" expanded="false" />
@@ -32,17 +32,24 @@
       <file leaf-file-name="MessagingProtocolImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/bgu/spl171/net/srv/MessagingProtocolImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="183" column="34" lean-forward="true" selection-start-line="183" selection-start-column="34" selection-end-line="183" selection-end-column="34" />
+            <state relative-caret-position="505">
+              <caret line="210" column="27" lean-forward="false" selection-start-line="210" selection-start-column="27" selection-end-line="210" selection-end-column="27" />
               <folding>
-                <element signature="e#2707#2708#0" expanded="true" />
-                <element signature="e#2788#2789#0" expanded="true" />
-                <element signature="e#3273#3274#0" expanded="true" />
-                <element signature="e#3319#3320#0" expanded="true" />
-                <element signature="e#3732#3733#0" expanded="true" />
-                <element signature="e#3779#3780#0" expanded="true" />
-                <element signature="e#3829#3830#0" expanded="true" />
-                <element signature="e#4913#4914#0" expanded="true" />
+                <element signature="method#MessagingProtocolImpl#0;class#MessagingProtocolImpl#0" expanded="false" />
+                <element signature="method#start#0;class#MessagingProtocolImpl#0" expanded="false" />
+                <element signature="method#process#0;class#MessagingProtocolImpl#0" expanded="false" />
+                <element signature="e#2789#2790#0" expanded="true" />
+                <element signature="e#2870#2871#0" expanded="true" />
+                <element signature="method#logIn#0;class#MessagingProtocolImpl#0" expanded="false" />
+                <element signature="method#removeClient#0;class#MessagingProtocolImpl#0" expanded="false" />
+                <element signature="method#setFileReadPath#0;class#MessagingProtocolImpl#0" expanded="false" />
+                <element signature="method#setFileWritePath#0;class#MessagingProtocolImpl#0" expanded="false" />
+                <element signature="method#createFile#0;class#MessagingProtocolImpl#0" expanded="false" />
+                <element signature="e#3814#3815#0" expanded="true" />
+                <element signature="e#3861#3862#0" expanded="true" />
+                <element signature="method#insertIntoDataArray#0;class#MessagingProtocolImpl#0" expanded="false" />
+                <element signature="e#4995#4996#0" expanded="true" />
+                <element signature="method#saveReceivedFile#0;class#MessagingProtocolImpl#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -53,14 +60,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/bgu/spl171/net/srv/MessagingProtocolImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/bgu/spl171/net/srv/Packet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/bgu/spl171/net/srv/MessagingProtocolImpl.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="468" />
-    <option name="width" value="972" />
+    <option name="x" value="574" />
+    <option name="width" value="866" />
     <option name="height" value="900" />
   </component>
   <component name="ProjectView">
@@ -335,7 +342,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="468" y="0" width="972" height="900" extended-state="6" />
+    <frame x="574" y="0" width="866" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -366,14 +373,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/bgu/spl171/net/srv/Packet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
+        <state relative-caret-position="1411">
           <caret line="252" column="0" lean-forward="false" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
           <folding>
             <element signature="method#DATA#1;class#DATA#0;class#Packet#0" expanded="false" />
@@ -384,17 +391,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bgu/spl171/net/srv/MessagingProtocolImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="183" column="34" lean-forward="true" selection-start-line="183" selection-start-column="34" selection-end-line="183" selection-end-column="34" />
+        <state relative-caret-position="505">
+          <caret line="210" column="27" lean-forward="false" selection-start-line="210" selection-start-column="27" selection-end-line="210" selection-end-column="27" />
           <folding>
-            <element signature="e#2707#2708#0" expanded="true" />
-            <element signature="e#2788#2789#0" expanded="true" />
-            <element signature="e#3273#3274#0" expanded="true" />
-            <element signature="e#3319#3320#0" expanded="true" />
-            <element signature="e#3732#3733#0" expanded="true" />
-            <element signature="e#3779#3780#0" expanded="true" />
-            <element signature="e#3829#3830#0" expanded="true" />
-            <element signature="e#4913#4914#0" expanded="true" />
+            <element signature="method#MessagingProtocolImpl#0;class#MessagingProtocolImpl#0" expanded="false" />
+            <element signature="method#start#0;class#MessagingProtocolImpl#0" expanded="false" />
+            <element signature="method#process#0;class#MessagingProtocolImpl#0" expanded="false" />
+            <element signature="e#2789#2790#0" expanded="true" />
+            <element signature="e#2870#2871#0" expanded="true" />
+            <element signature="method#logIn#0;class#MessagingProtocolImpl#0" expanded="false" />
+            <element signature="method#removeClient#0;class#MessagingProtocolImpl#0" expanded="false" />
+            <element signature="method#setFileReadPath#0;class#MessagingProtocolImpl#0" expanded="false" />
+            <element signature="method#setFileWritePath#0;class#MessagingProtocolImpl#0" expanded="false" />
+            <element signature="method#createFile#0;class#MessagingProtocolImpl#0" expanded="false" />
+            <element signature="e#3814#3815#0" expanded="true" />
+            <element signature="e#3861#3862#0" expanded="true" />
+            <element signature="method#insertIntoDataArray#0;class#MessagingProtocolImpl#0" expanded="false" />
+            <element signature="e#4995#4996#0" expanded="true" />
+            <element signature="method#saveReceivedFile#0;class#MessagingProtocolImpl#0" expanded="false" />
           </folding>
         </state>
       </provider>
