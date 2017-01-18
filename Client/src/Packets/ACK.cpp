@@ -9,11 +9,13 @@
 class ACK : public Packet {
 
 public:
-    ACK(char *incoming) {
-        Packet(ACK);
+    ACK::ACK(char *incoming) : Packet(ACK) {
+
     }
 
     ~ACK() {}
 
+private:
+    short block_num;
 
-};
+}
