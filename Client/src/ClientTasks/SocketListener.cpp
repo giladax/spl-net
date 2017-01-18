@@ -2,7 +2,7 @@
 // Created by dorgreen on 1/17/17.
 //
 
-#include "SocketListener.h"
+#include "../../ClientTasks/SocketListener.h"
 
 SocketListener::SocketListener(ConnectionHandler &handler, EncoderDecoder &encdec, MessagingProtocol &protocol):
         handler(handler),

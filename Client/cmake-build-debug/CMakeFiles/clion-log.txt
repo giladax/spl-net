@@ -1,18 +1,45 @@
 /Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/dorgreen/spl-net/Client
--- The C compiler identification is AppleClang 8.0.0.8000042
--- The CXX compiler identification is AppleClang 8.0.0.8000042
--- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc
--- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc -- works
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Detecting C compile features
--- Detecting C compile features - done
--- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++
--- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ -- works
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/dorgreen/spl-net/Client/cmake-build-debug
+CMake Error at /Applications/CLion.app/Contents/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:1132 (file):
+  file STRINGS file "/usr/local/Cellar/boost/1.63.0/boost/version.hpp" cannot
+  be read.
+Call Stack (most recent call first):
+  CMakeLists.txt:8 (find_package)
+
+
+CMake Warning at /Applications/CLion.app/Contents/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:743 (message):
+  Imported targets not available for Boost version 0
+Call Stack (most recent call first):
+  /Applications/CLion.app/Contents/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:842 (_Boost_COMPONENT_DEPENDENCIES)
+  /Applications/CLion.app/Contents/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:1395 (_Boost_MISSING_DEPENDENCIES)
+  CMakeLists.txt:8 (find_package)
+
+
+CMake Warning at /Applications/CLion.app/Contents/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:743 (message):
+  Imported targets not available for Boost version 0
+Call Stack (most recent call first):
+  /Applications/CLion.app/Contents/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:842 (_Boost_COMPONENT_DEPENDENCIES)
+  /Applications/CLion.app/Contents/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:1395 (_Boost_MISSING_DEPENDENCIES)
+  CMakeLists.txt:8 (find_package)
+
+
+CMake Error at /Applications/CLion.app/Contents/bin/cmake/share/cmake-3.6/Modules/FindBoost.cmake:1753 (message):
+  Unable to find the requested Boost libraries.
+
+  Boost version: 0.0.0
+
+  Boost include path: /usr/local/Cellar/boost/1.63.0
+
+  Could not find the following Boost libraries:
+
+          boost_system
+          boost_filesystem
+
+  No Boost libraries were found.  You may need to set BOOST_LIBRARYDIR to the
+  directory containing Boost libraries or BOOST_ROOT to the location of
+  Boost.
+Call Stack (most recent call first):
+  CMakeLists.txt:8 (find_package)
+
+
+-- Configuring incomplete, errors occurred!
+See also "/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/CMakeOutput.log".
