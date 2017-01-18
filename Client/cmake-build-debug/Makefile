@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /users/studs/bsc/2016/dorgreen/Downloads/clion-2016.3.2/bin/cmake/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /users/studs/bsc/2016/dorgreen/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /users/studs/bsc/2016/dorgreen/spl-net/Client
+CMAKE_SOURCE_DIR = /Users/dorgreen/spl-net/Client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/dorgreen/spl-net/Client/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-deb
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/users/studs/bsc/2016/dorgreen/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -70,7 +70,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/users/studs/bsc/2016/dorgreen/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles /users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles /Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,59 +123,59 @@ Client/fast:
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/build
 .PHONY : Client/fast
 
-BidiProtocol/encoderDecoder.o: BidiProtocol/encoderDecoder.cpp.o
+BidiProtocol/EncoderDecoder.o: BidiProtocol/EncoderDecoder.cpp.o
 
-.PHONY : BidiProtocol/encoderDecoder.o
-
-# target to build an object file
-BidiProtocol/encoderDecoder.cpp.o:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.o
-.PHONY : BidiProtocol/encoderDecoder.cpp.o
-
-BidiProtocol/encoderDecoder.i: BidiProtocol/encoderDecoder.cpp.i
-
-.PHONY : BidiProtocol/encoderDecoder.i
-
-# target to preprocess a source file
-BidiProtocol/encoderDecoder.cpp.i:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.i
-.PHONY : BidiProtocol/encoderDecoder.cpp.i
-
-BidiProtocol/encoderDecoder.s: BidiProtocol/encoderDecoder.cpp.s
-
-.PHONY : BidiProtocol/encoderDecoder.s
-
-# target to generate assembly for a file
-BidiProtocol/encoderDecoder.cpp.s:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.s
-.PHONY : BidiProtocol/encoderDecoder.cpp.s
-
-BidiProtocol/messagingProtocol.o: BidiProtocol/messagingProtocol.cpp.o
-
-.PHONY : BidiProtocol/messagingProtocol.o
+.PHONY : BidiProtocol/EncoderDecoder.o
 
 # target to build an object file
-BidiProtocol/messagingProtocol.cpp.o:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.o
-.PHONY : BidiProtocol/messagingProtocol.cpp.o
+BidiProtocol/EncoderDecoder.cpp.o:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.o
+.PHONY : BidiProtocol/EncoderDecoder.cpp.o
 
-BidiProtocol/messagingProtocol.i: BidiProtocol/messagingProtocol.cpp.i
+BidiProtocol/EncoderDecoder.i: BidiProtocol/EncoderDecoder.cpp.i
 
-.PHONY : BidiProtocol/messagingProtocol.i
+.PHONY : BidiProtocol/EncoderDecoder.i
 
 # target to preprocess a source file
-BidiProtocol/messagingProtocol.cpp.i:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.i
-.PHONY : BidiProtocol/messagingProtocol.cpp.i
+BidiProtocol/EncoderDecoder.cpp.i:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.i
+.PHONY : BidiProtocol/EncoderDecoder.cpp.i
 
-BidiProtocol/messagingProtocol.s: BidiProtocol/messagingProtocol.cpp.s
+BidiProtocol/EncoderDecoder.s: BidiProtocol/EncoderDecoder.cpp.s
 
-.PHONY : BidiProtocol/messagingProtocol.s
+.PHONY : BidiProtocol/EncoderDecoder.s
 
 # target to generate assembly for a file
-BidiProtocol/messagingProtocol.cpp.s:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.s
-.PHONY : BidiProtocol/messagingProtocol.cpp.s
+BidiProtocol/EncoderDecoder.cpp.s:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.s
+.PHONY : BidiProtocol/EncoderDecoder.cpp.s
+
+BidiProtocol/MessagingProtocol.o: BidiProtocol/MessagingProtocol.cpp.o
+
+.PHONY : BidiProtocol/MessagingProtocol.o
+
+# target to build an object file
+BidiProtocol/MessagingProtocol.cpp.o:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.o
+.PHONY : BidiProtocol/MessagingProtocol.cpp.o
+
+BidiProtocol/MessagingProtocol.i: BidiProtocol/MessagingProtocol.cpp.i
+
+.PHONY : BidiProtocol/MessagingProtocol.i
+
+# target to preprocess a source file
+BidiProtocol/MessagingProtocol.cpp.i:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.i
+.PHONY : BidiProtocol/MessagingProtocol.cpp.i
+
+BidiProtocol/MessagingProtocol.s: BidiProtocol/MessagingProtocol.cpp.s
+
+.PHONY : BidiProtocol/MessagingProtocol.s
+
+# target to generate assembly for a file
+BidiProtocol/MessagingProtocol.cpp.s:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.s
+.PHONY : BidiProtocol/MessagingProtocol.cpp.s
 
 Client.o: Client.cpp.o
 
@@ -231,32 +231,32 @@ ClientTsaks/KeyboardInput.cpp.s:
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.s
 .PHONY : ClientTsaks/KeyboardInput.cpp.s
 
-ClientTsaks/ServerListener.o: ClientTsaks/ServerListener.cpp.o
+ClientTsaks/SocketListener.o: ClientTsaks/SocketListener.cpp.o
 
-.PHONY : ClientTsaks/ServerListener.o
+.PHONY : ClientTsaks/SocketListener.o
 
 # target to build an object file
-ClientTsaks/ServerListener.cpp.o:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.o
-.PHONY : ClientTsaks/ServerListener.cpp.o
+ClientTsaks/SocketListener.cpp.o:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.o
+.PHONY : ClientTsaks/SocketListener.cpp.o
 
-ClientTsaks/ServerListener.i: ClientTsaks/ServerListener.cpp.i
+ClientTsaks/SocketListener.i: ClientTsaks/SocketListener.cpp.i
 
-.PHONY : ClientTsaks/ServerListener.i
+.PHONY : ClientTsaks/SocketListener.i
 
 # target to preprocess a source file
-ClientTsaks/ServerListener.cpp.i:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.i
-.PHONY : ClientTsaks/ServerListener.cpp.i
+ClientTsaks/SocketListener.cpp.i:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.i
+.PHONY : ClientTsaks/SocketListener.cpp.i
 
-ClientTsaks/ServerListener.s: ClientTsaks/ServerListener.cpp.s
+ClientTsaks/SocketListener.s: ClientTsaks/SocketListener.cpp.s
 
-.PHONY : ClientTsaks/ServerListener.s
+.PHONY : ClientTsaks/SocketListener.s
 
 # target to generate assembly for a file
-ClientTsaks/ServerListener.cpp.s:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.s
-.PHONY : ClientTsaks/ServerListener.cpp.s
+ClientTsaks/SocketListener.cpp.s:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.s
+.PHONY : ClientTsaks/SocketListener.cpp.s
 
 ConnectionHandler.o: ConnectionHandler.cpp.o
 
@@ -645,21 +645,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Client"
-	@echo "... BidiProtocol/encoderDecoder.o"
-	@echo "... BidiProtocol/encoderDecoder.i"
-	@echo "... BidiProtocol/encoderDecoder.s"
-	@echo "... BidiProtocol/messagingProtocol.o"
-	@echo "... BidiProtocol/messagingProtocol.i"
-	@echo "... BidiProtocol/messagingProtocol.s"
+	@echo "... BidiProtocol/EncoderDecoder.o"
+	@echo "... BidiProtocol/EncoderDecoder.i"
+	@echo "... BidiProtocol/EncoderDecoder.s"
+	@echo "... BidiProtocol/MessagingProtocol.o"
+	@echo "... BidiProtocol/MessagingProtocol.i"
+	@echo "... BidiProtocol/MessagingProtocol.s"
 	@echo "... Client.o"
 	@echo "... Client.i"
 	@echo "... Client.s"
 	@echo "... ClientTsaks/KeyboardInput.o"
 	@echo "... ClientTsaks/KeyboardInput.i"
 	@echo "... ClientTsaks/KeyboardInput.s"
-	@echo "... ClientTsaks/ServerListener.o"
-	@echo "... ClientTsaks/ServerListener.i"
-	@echo "... ClientTsaks/ServerListener.s"
+	@echo "... ClientTsaks/SocketListener.o"
+	@echo "... ClientTsaks/SocketListener.i"
+	@echo "... ClientTsaks/SocketListener.s"
 	@echo "... ConnectionHandler.o"
 	@echo "... ConnectionHandler.i"
 	@echo "... ConnectionHandler.s"

@@ -8,191 +8,189 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug"/>
+				<Option working_dir="/Users/dorgreen/spl-net/Client/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug"/>
+				<Option working_dir="/Users/dorgreen/spl-net/Client/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug"/>
+				<Option working_dir="/Users/dorgreen/spl-net/Client/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Client">
-				<Option output="/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Client" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug"/>
+				<Option output="/Users/dorgreen/spl-net/Client/cmake-build-debug/Client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dorgreen/spl-net/Client/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 Client"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 Client"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Client/fast">
-				<Option output="/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Client" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug"/>
+				<Option output="/Users/dorgreen/spl-net/Client/cmake-build-debug/Client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dorgreen/spl-net/Client/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 Client/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 Client/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dorgreen/spl-net/Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/BidiProtocol/encoderDecoder.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/BidiProtocol/EncoderDecoder.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/BidiProtocol/encoderDecoder.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/BidiProtocol/EncoderDecoder.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/BidiProtocol/messagingProtocol.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/BidiProtocol/MessagingProtocol.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/BidiProtocol/messagingProtocol.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/BidiProtocol/MessagingProtocol.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Client.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Client.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Client.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Client.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/ClientTsaks/KeyboardInput.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/ClientTsaks/KeyboardInput.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/ClientTsaks/KeyboardInput.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/ClientTsaks/KeyboardInput.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/ClientTsaks/ServerListener.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/ClientTsaks/SocketListener.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/ClientTsaks/ServerListener.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/ClientTsaks/SocketListener.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/ConnectionHandler.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/ConnectionHandler.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/ConnectionHandler.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/ConnectionHandler.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/EchoClient.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/EchoClient.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Main.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Main.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/ACK.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/ACK.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/ACK.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/ACK.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/BCAST.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/BCAST.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/BCAST.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/BCAST.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DATA.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/DATA.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DATA.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/DATA.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DELRQ.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/DELRQ.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DELRQ.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/DELRQ.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DIRQ.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/DIRQ.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DIRQ.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/DIRQ.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DISC.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/DISC.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DISC.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/DISC.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/ERROR.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/ERROR.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/ERROR.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/ERROR.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/LOGRQ.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/LOGRQ.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/LOGRQ.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/LOGRQ.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/Packet.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/Packet.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/Packet.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/Packet.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/RRQ.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/RRQ.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/RRQ.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/RRQ.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/WRQ.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/WRQ.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/WRQ.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/WRQ.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/CMakeLists.txt">
+		<Unit filename="/Users/dorgreen/spl-net/Client/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

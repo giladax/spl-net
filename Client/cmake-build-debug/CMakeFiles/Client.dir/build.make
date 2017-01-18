@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /users/studs/bsc/2016/dorgreen/Downloads/clion-2016.3.2/bin/cmake/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /users/studs/bsc/2016/dorgreen/Downloads/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /users/studs/bsc/2016/dorgreen/spl-net/Client
+CMAKE_SOURCE_DIR = /Users/dorgreen/spl-net/Client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/dorgreen/spl-net/Client/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Client.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/Client.dir/flags.make
 
 CMakeFiles/Client.dir/ConnectionHandler.cpp.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/ConnectionHandler.cpp.o: ../ConnectionHandler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Client.dir/ConnectionHandler.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/ConnectionHandler.cpp.o -c /users/studs/bsc/2016/dorgreen/spl-net/Client/ConnectionHandler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Client.dir/ConnectionHandler.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/ConnectionHandler.cpp.o -c /Users/dorgreen/spl-net/Client/ConnectionHandler.cpp
 
 CMakeFiles/Client.dir/ConnectionHandler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/ConnectionHandler.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/studs/bsc/2016/dorgreen/spl-net/Client/ConnectionHandler.cpp > CMakeFiles/Client.dir/ConnectionHandler.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dorgreen/spl-net/Client/ConnectionHandler.cpp > CMakeFiles/Client.dir/ConnectionHandler.cpp.i
 
 CMakeFiles/Client.dir/ConnectionHandler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/ConnectionHandler.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/studs/bsc/2016/dorgreen/spl-net/Client/ConnectionHandler.cpp -o CMakeFiles/Client.dir/ConnectionHandler.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dorgreen/spl-net/Client/ConnectionHandler.cpp -o CMakeFiles/Client.dir/ConnectionHandler.cpp.s
 
 CMakeFiles/Client.dir/ConnectionHandler.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/Client.dir/ConnectionHandler.cpp.o.provides.build: CMakeFiles/Client.
 
 CMakeFiles/Client.dir/EchoClient.cpp.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/EchoClient.cpp.o: ../EchoClient.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Client.dir/EchoClient.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/EchoClient.cpp.o -c /users/studs/bsc/2016/dorgreen/spl-net/Client/EchoClient.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Client.dir/EchoClient.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/EchoClient.cpp.o -c /Users/dorgreen/spl-net/Client/EchoClient.cpp
 
 CMakeFiles/Client.dir/EchoClient.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/EchoClient.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/studs/bsc/2016/dorgreen/spl-net/Client/EchoClient.cpp > CMakeFiles/Client.dir/EchoClient.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dorgreen/spl-net/Client/EchoClient.cpp > CMakeFiles/Client.dir/EchoClient.cpp.i
 
 CMakeFiles/Client.dir/EchoClient.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/EchoClient.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/studs/bsc/2016/dorgreen/spl-net/Client/EchoClient.cpp -o CMakeFiles/Client.dir/EchoClient.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dorgreen/spl-net/Client/EchoClient.cpp -o CMakeFiles/Client.dir/EchoClient.cpp.s
 
 CMakeFiles/Client.dir/EchoClient.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/Client.dir/EchoClient.cpp.o.provides.build: CMakeFiles/Client.dir/Ech
 
 CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.o: ../ClientTsaks/KeyboardInput.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.o -c /users/studs/bsc/2016/dorgreen/spl-net/Client/ClientTsaks/KeyboardInput.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.o -c /Users/dorgreen/spl-net/Client/ClientTsaks/KeyboardInput.cpp
 
 CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/studs/bsc/2016/dorgreen/spl-net/Client/ClientTsaks/KeyboardInput.cpp > CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dorgreen/spl-net/Client/ClientTsaks/KeyboardInput.cpp > CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.i
 
 CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/studs/bsc/2016/dorgreen/spl-net/Client/ClientTsaks/KeyboardInput.cpp -o CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dorgreen/spl-net/Client/ClientTsaks/KeyboardInput.cpp -o CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.s
 
 CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.o.requires:
 
@@ -129,42 +129,42 @@ CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.o.provides: CMakeFiles/Clien
 CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.o.provides.build: CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.o
 
 
-CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.o: CMakeFiles/Client.dir/flags.make
-CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.o: ../ClientTsaks/ServerListener.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.o -c /users/studs/bsc/2016/dorgreen/spl-net/Client/ClientTsaks/ServerListener.cpp
+CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.o: CMakeFiles/Client.dir/flags.make
+CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.o: ../ClientTsaks/SocketListener.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.o -c /Users/dorgreen/spl-net/Client/ClientTsaks/SocketListener.cpp
 
-CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/studs/bsc/2016/dorgreen/spl-net/Client/ClientTsaks/ServerListener.cpp > CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.i
+CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dorgreen/spl-net/Client/ClientTsaks/SocketListener.cpp > CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.i
 
-CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/studs/bsc/2016/dorgreen/spl-net/Client/ClientTsaks/ServerListener.cpp -o CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.s
+CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dorgreen/spl-net/Client/ClientTsaks/SocketListener.cpp -o CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.s
 
-CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.o.requires:
+CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.o.requires:
 
-.PHONY : CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.o.requires
+.PHONY : CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.o.requires
 
-CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.o.provides: CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.o.provides.build
-.PHONY : CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.o.provides
+CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.o.provides: CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.o.provides.build
+.PHONY : CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.o.provides
 
-CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.o.provides.build: CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.o
+CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.o.provides.build: CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.o
 
 
 CMakeFiles/Client.dir/Main.cpp.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/Main.cpp.o: ../Main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Client.dir/Main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Main.cpp.o -c /users/studs/bsc/2016/dorgreen/spl-net/Client/Main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Client.dir/Main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Main.cpp.o -c /Users/dorgreen/spl-net/Client/Main.cpp
 
 CMakeFiles/Client.dir/Main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/Main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/studs/bsc/2016/dorgreen/spl-net/Client/Main.cpp > CMakeFiles/Client.dir/Main.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dorgreen/spl-net/Client/Main.cpp > CMakeFiles/Client.dir/Main.cpp.i
 
 CMakeFiles/Client.dir/Main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/Main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/studs/bsc/2016/dorgreen/spl-net/Client/Main.cpp -o CMakeFiles/Client.dir/Main.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dorgreen/spl-net/Client/Main.cpp -o CMakeFiles/Client.dir/Main.cpp.s
 
 CMakeFiles/Client.dir/Main.cpp.o.requires:
 
@@ -177,66 +177,66 @@ CMakeFiles/Client.dir/Main.cpp.o.provides: CMakeFiles/Client.dir/Main.cpp.o.requ
 CMakeFiles/Client.dir/Main.cpp.o.provides.build: CMakeFiles/Client.dir/Main.cpp.o
 
 
-CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.o: CMakeFiles/Client.dir/flags.make
-CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.o: ../BidiProtocol/encoderDecoder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.o -c /users/studs/bsc/2016/dorgreen/spl-net/Client/BidiProtocol/encoderDecoder.cpp
+CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.o: CMakeFiles/Client.dir/flags.make
+CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.o: ../BidiProtocol/EncoderDecoder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.o -c /Users/dorgreen/spl-net/Client/BidiProtocol/EncoderDecoder.cpp
 
-CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/studs/bsc/2016/dorgreen/spl-net/Client/BidiProtocol/encoderDecoder.cpp > CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.i
+CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dorgreen/spl-net/Client/BidiProtocol/EncoderDecoder.cpp > CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.i
 
-CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/studs/bsc/2016/dorgreen/spl-net/Client/BidiProtocol/encoderDecoder.cpp -o CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.s
+CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dorgreen/spl-net/Client/BidiProtocol/EncoderDecoder.cpp -o CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.s
 
-CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.o.requires:
+CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.o.requires:
 
-.PHONY : CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.o.requires
+.PHONY : CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.o.requires
 
-CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.o.provides: CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.o.provides.build
-.PHONY : CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.o.provides
+CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.o.provides: CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.o.provides.build
+.PHONY : CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.o.provides
 
-CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.o.provides.build: CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.o
+CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.o.provides.build: CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.o
 
 
-CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.o: CMakeFiles/Client.dir/flags.make
-CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.o: ../BidiProtocol/messagingProtocol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.o -c /users/studs/bsc/2016/dorgreen/spl-net/Client/BidiProtocol/messagingProtocol.cpp
+CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.o: CMakeFiles/Client.dir/flags.make
+CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.o: ../BidiProtocol/MessagingProtocol.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.o -c /Users/dorgreen/spl-net/Client/BidiProtocol/MessagingProtocol.cpp
 
-CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/studs/bsc/2016/dorgreen/spl-net/Client/BidiProtocol/messagingProtocol.cpp > CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.i
+CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dorgreen/spl-net/Client/BidiProtocol/MessagingProtocol.cpp > CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.i
 
-CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/studs/bsc/2016/dorgreen/spl-net/Client/BidiProtocol/messagingProtocol.cpp -o CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.s
+CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dorgreen/spl-net/Client/BidiProtocol/MessagingProtocol.cpp -o CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.s
 
-CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.o.requires:
+CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.o.requires:
 
-.PHONY : CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.o.requires
+.PHONY : CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.o.requires
 
-CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.o.provides: CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.o.provides.build
-.PHONY : CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.o.provides
+CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.o.provides: CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.o.provides.build
+.PHONY : CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.o.provides
 
-CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.o.provides.build: CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.o
+CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.o.provides.build: CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.o
 
 
 CMakeFiles/Client.dir/Packets/RRQ.cpp.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/Packets/RRQ.cpp.o: ../Packets/RRQ.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Client.dir/Packets/RRQ.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/RRQ.cpp.o -c /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/RRQ.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Client.dir/Packets/RRQ.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/RRQ.cpp.o -c /Users/dorgreen/spl-net/Client/Packets/RRQ.cpp
 
 CMakeFiles/Client.dir/Packets/RRQ.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/Packets/RRQ.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/RRQ.cpp > CMakeFiles/Client.dir/Packets/RRQ.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dorgreen/spl-net/Client/Packets/RRQ.cpp > CMakeFiles/Client.dir/Packets/RRQ.cpp.i
 
 CMakeFiles/Client.dir/Packets/RRQ.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/Packets/RRQ.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/RRQ.cpp -o CMakeFiles/Client.dir/Packets/RRQ.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dorgreen/spl-net/Client/Packets/RRQ.cpp -o CMakeFiles/Client.dir/Packets/RRQ.cpp.s
 
 CMakeFiles/Client.dir/Packets/RRQ.cpp.o.requires:
 
@@ -251,16 +251,16 @@ CMakeFiles/Client.dir/Packets/RRQ.cpp.o.provides.build: CMakeFiles/Client.dir/Pa
 
 CMakeFiles/Client.dir/Packets/WRQ.cpp.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/Packets/WRQ.cpp.o: ../Packets/WRQ.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Client.dir/Packets/WRQ.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/WRQ.cpp.o -c /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/WRQ.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Client.dir/Packets/WRQ.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/WRQ.cpp.o -c /Users/dorgreen/spl-net/Client/Packets/WRQ.cpp
 
 CMakeFiles/Client.dir/Packets/WRQ.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/Packets/WRQ.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/WRQ.cpp > CMakeFiles/Client.dir/Packets/WRQ.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dorgreen/spl-net/Client/Packets/WRQ.cpp > CMakeFiles/Client.dir/Packets/WRQ.cpp.i
 
 CMakeFiles/Client.dir/Packets/WRQ.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/Packets/WRQ.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/WRQ.cpp -o CMakeFiles/Client.dir/Packets/WRQ.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dorgreen/spl-net/Client/Packets/WRQ.cpp -o CMakeFiles/Client.dir/Packets/WRQ.cpp.s
 
 CMakeFiles/Client.dir/Packets/WRQ.cpp.o.requires:
 
@@ -275,16 +275,16 @@ CMakeFiles/Client.dir/Packets/WRQ.cpp.o.provides.build: CMakeFiles/Client.dir/Pa
 
 CMakeFiles/Client.dir/Packets/DATA.cpp.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/Packets/DATA.cpp.o: ../Packets/DATA.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Client.dir/Packets/DATA.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/DATA.cpp.o -c /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DATA.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Client.dir/Packets/DATA.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/DATA.cpp.o -c /Users/dorgreen/spl-net/Client/Packets/DATA.cpp
 
 CMakeFiles/Client.dir/Packets/DATA.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/Packets/DATA.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DATA.cpp > CMakeFiles/Client.dir/Packets/DATA.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dorgreen/spl-net/Client/Packets/DATA.cpp > CMakeFiles/Client.dir/Packets/DATA.cpp.i
 
 CMakeFiles/Client.dir/Packets/DATA.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/Packets/DATA.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DATA.cpp -o CMakeFiles/Client.dir/Packets/DATA.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dorgreen/spl-net/Client/Packets/DATA.cpp -o CMakeFiles/Client.dir/Packets/DATA.cpp.s
 
 CMakeFiles/Client.dir/Packets/DATA.cpp.o.requires:
 
@@ -299,16 +299,16 @@ CMakeFiles/Client.dir/Packets/DATA.cpp.o.provides.build: CMakeFiles/Client.dir/P
 
 CMakeFiles/Client.dir/Packets/ACK.cpp.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/Packets/ACK.cpp.o: ../Packets/ACK.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Client.dir/Packets/ACK.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/ACK.cpp.o -c /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/ACK.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Client.dir/Packets/ACK.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/ACK.cpp.o -c /Users/dorgreen/spl-net/Client/Packets/ACK.cpp
 
 CMakeFiles/Client.dir/Packets/ACK.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/Packets/ACK.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/ACK.cpp > CMakeFiles/Client.dir/Packets/ACK.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dorgreen/spl-net/Client/Packets/ACK.cpp > CMakeFiles/Client.dir/Packets/ACK.cpp.i
 
 CMakeFiles/Client.dir/Packets/ACK.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/Packets/ACK.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/ACK.cpp -o CMakeFiles/Client.dir/Packets/ACK.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dorgreen/spl-net/Client/Packets/ACK.cpp -o CMakeFiles/Client.dir/Packets/ACK.cpp.s
 
 CMakeFiles/Client.dir/Packets/ACK.cpp.o.requires:
 
@@ -323,16 +323,16 @@ CMakeFiles/Client.dir/Packets/ACK.cpp.o.provides.build: CMakeFiles/Client.dir/Pa
 
 CMakeFiles/Client.dir/Packets/ERROR.cpp.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/Packets/ERROR.cpp.o: ../Packets/ERROR.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Client.dir/Packets/ERROR.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/ERROR.cpp.o -c /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/ERROR.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Client.dir/Packets/ERROR.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/ERROR.cpp.o -c /Users/dorgreen/spl-net/Client/Packets/ERROR.cpp
 
 CMakeFiles/Client.dir/Packets/ERROR.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/Packets/ERROR.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/ERROR.cpp > CMakeFiles/Client.dir/Packets/ERROR.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dorgreen/spl-net/Client/Packets/ERROR.cpp > CMakeFiles/Client.dir/Packets/ERROR.cpp.i
 
 CMakeFiles/Client.dir/Packets/ERROR.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/Packets/ERROR.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/ERROR.cpp -o CMakeFiles/Client.dir/Packets/ERROR.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dorgreen/spl-net/Client/Packets/ERROR.cpp -o CMakeFiles/Client.dir/Packets/ERROR.cpp.s
 
 CMakeFiles/Client.dir/Packets/ERROR.cpp.o.requires:
 
@@ -347,16 +347,16 @@ CMakeFiles/Client.dir/Packets/ERROR.cpp.o.provides.build: CMakeFiles/Client.dir/
 
 CMakeFiles/Client.dir/Packets/DIRQ.cpp.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/Packets/DIRQ.cpp.o: ../Packets/DIRQ.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Client.dir/Packets/DIRQ.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/DIRQ.cpp.o -c /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DIRQ.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Client.dir/Packets/DIRQ.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/DIRQ.cpp.o -c /Users/dorgreen/spl-net/Client/Packets/DIRQ.cpp
 
 CMakeFiles/Client.dir/Packets/DIRQ.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/Packets/DIRQ.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DIRQ.cpp > CMakeFiles/Client.dir/Packets/DIRQ.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dorgreen/spl-net/Client/Packets/DIRQ.cpp > CMakeFiles/Client.dir/Packets/DIRQ.cpp.i
 
 CMakeFiles/Client.dir/Packets/DIRQ.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/Packets/DIRQ.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DIRQ.cpp -o CMakeFiles/Client.dir/Packets/DIRQ.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dorgreen/spl-net/Client/Packets/DIRQ.cpp -o CMakeFiles/Client.dir/Packets/DIRQ.cpp.s
 
 CMakeFiles/Client.dir/Packets/DIRQ.cpp.o.requires:
 
@@ -371,16 +371,16 @@ CMakeFiles/Client.dir/Packets/DIRQ.cpp.o.provides.build: CMakeFiles/Client.dir/P
 
 CMakeFiles/Client.dir/Packets/LOGRQ.cpp.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/Packets/LOGRQ.cpp.o: ../Packets/LOGRQ.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Client.dir/Packets/LOGRQ.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/LOGRQ.cpp.o -c /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/LOGRQ.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Client.dir/Packets/LOGRQ.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/LOGRQ.cpp.o -c /Users/dorgreen/spl-net/Client/Packets/LOGRQ.cpp
 
 CMakeFiles/Client.dir/Packets/LOGRQ.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/Packets/LOGRQ.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/LOGRQ.cpp > CMakeFiles/Client.dir/Packets/LOGRQ.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dorgreen/spl-net/Client/Packets/LOGRQ.cpp > CMakeFiles/Client.dir/Packets/LOGRQ.cpp.i
 
 CMakeFiles/Client.dir/Packets/LOGRQ.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/Packets/LOGRQ.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/LOGRQ.cpp -o CMakeFiles/Client.dir/Packets/LOGRQ.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dorgreen/spl-net/Client/Packets/LOGRQ.cpp -o CMakeFiles/Client.dir/Packets/LOGRQ.cpp.s
 
 CMakeFiles/Client.dir/Packets/LOGRQ.cpp.o.requires:
 
@@ -395,16 +395,16 @@ CMakeFiles/Client.dir/Packets/LOGRQ.cpp.o.provides.build: CMakeFiles/Client.dir/
 
 CMakeFiles/Client.dir/Packets/DELRQ.cpp.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/Packets/DELRQ.cpp.o: ../Packets/DELRQ.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Client.dir/Packets/DELRQ.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/DELRQ.cpp.o -c /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DELRQ.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Client.dir/Packets/DELRQ.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/DELRQ.cpp.o -c /Users/dorgreen/spl-net/Client/Packets/DELRQ.cpp
 
 CMakeFiles/Client.dir/Packets/DELRQ.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/Packets/DELRQ.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DELRQ.cpp > CMakeFiles/Client.dir/Packets/DELRQ.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dorgreen/spl-net/Client/Packets/DELRQ.cpp > CMakeFiles/Client.dir/Packets/DELRQ.cpp.i
 
 CMakeFiles/Client.dir/Packets/DELRQ.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/Packets/DELRQ.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DELRQ.cpp -o CMakeFiles/Client.dir/Packets/DELRQ.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dorgreen/spl-net/Client/Packets/DELRQ.cpp -o CMakeFiles/Client.dir/Packets/DELRQ.cpp.s
 
 CMakeFiles/Client.dir/Packets/DELRQ.cpp.o.requires:
 
@@ -419,16 +419,16 @@ CMakeFiles/Client.dir/Packets/DELRQ.cpp.o.provides.build: CMakeFiles/Client.dir/
 
 CMakeFiles/Client.dir/Packets/BCAST.cpp.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/Packets/BCAST.cpp.o: ../Packets/BCAST.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Client.dir/Packets/BCAST.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/BCAST.cpp.o -c /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/BCAST.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Client.dir/Packets/BCAST.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/BCAST.cpp.o -c /Users/dorgreen/spl-net/Client/Packets/BCAST.cpp
 
 CMakeFiles/Client.dir/Packets/BCAST.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/Packets/BCAST.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/BCAST.cpp > CMakeFiles/Client.dir/Packets/BCAST.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dorgreen/spl-net/Client/Packets/BCAST.cpp > CMakeFiles/Client.dir/Packets/BCAST.cpp.i
 
 CMakeFiles/Client.dir/Packets/BCAST.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/Packets/BCAST.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/BCAST.cpp -o CMakeFiles/Client.dir/Packets/BCAST.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dorgreen/spl-net/Client/Packets/BCAST.cpp -o CMakeFiles/Client.dir/Packets/BCAST.cpp.s
 
 CMakeFiles/Client.dir/Packets/BCAST.cpp.o.requires:
 
@@ -443,16 +443,16 @@ CMakeFiles/Client.dir/Packets/BCAST.cpp.o.provides.build: CMakeFiles/Client.dir/
 
 CMakeFiles/Client.dir/Packets/DISC.cpp.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/Packets/DISC.cpp.o: ../Packets/DISC.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Client.dir/Packets/DISC.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/DISC.cpp.o -c /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DISC.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Client.dir/Packets/DISC.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/DISC.cpp.o -c /Users/dorgreen/spl-net/Client/Packets/DISC.cpp
 
 CMakeFiles/Client.dir/Packets/DISC.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/Packets/DISC.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DISC.cpp > CMakeFiles/Client.dir/Packets/DISC.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dorgreen/spl-net/Client/Packets/DISC.cpp > CMakeFiles/Client.dir/Packets/DISC.cpp.i
 
 CMakeFiles/Client.dir/Packets/DISC.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/Packets/DISC.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/DISC.cpp -o CMakeFiles/Client.dir/Packets/DISC.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dorgreen/spl-net/Client/Packets/DISC.cpp -o CMakeFiles/Client.dir/Packets/DISC.cpp.s
 
 CMakeFiles/Client.dir/Packets/DISC.cpp.o.requires:
 
@@ -467,16 +467,16 @@ CMakeFiles/Client.dir/Packets/DISC.cpp.o.provides.build: CMakeFiles/Client.dir/P
 
 CMakeFiles/Client.dir/Packets/Packet.cpp.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/Packets/Packet.cpp.o: ../Packets/Packet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Client.dir/Packets/Packet.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/Packet.cpp.o -c /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/Packet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Client.dir/Packets/Packet.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Packets/Packet.cpp.o -c /Users/dorgreen/spl-net/Client/Packets/Packet.cpp
 
 CMakeFiles/Client.dir/Packets/Packet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/Packets/Packet.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/Packet.cpp > CMakeFiles/Client.dir/Packets/Packet.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dorgreen/spl-net/Client/Packets/Packet.cpp > CMakeFiles/Client.dir/Packets/Packet.cpp.i
 
 CMakeFiles/Client.dir/Packets/Packet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/Packets/Packet.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/studs/bsc/2016/dorgreen/spl-net/Client/Packets/Packet.cpp -o CMakeFiles/Client.dir/Packets/Packet.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dorgreen/spl-net/Client/Packets/Packet.cpp -o CMakeFiles/Client.dir/Packets/Packet.cpp.s
 
 CMakeFiles/Client.dir/Packets/Packet.cpp.o.requires:
 
@@ -491,16 +491,16 @@ CMakeFiles/Client.dir/Packets/Packet.cpp.o.provides.build: CMakeFiles/Client.dir
 
 CMakeFiles/Client.dir/Client.cpp.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/Client.cpp.o: ../Client.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Client.dir/Client.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Client.cpp.o -c /users/studs/bsc/2016/dorgreen/spl-net/Client/Client.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Client.dir/Client.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/Client.cpp.o -c /Users/dorgreen/spl-net/Client/Client.cpp
 
 CMakeFiles/Client.dir/Client.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/Client.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/studs/bsc/2016/dorgreen/spl-net/Client/Client.cpp > CMakeFiles/Client.dir/Client.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dorgreen/spl-net/Client/Client.cpp > CMakeFiles/Client.dir/Client.cpp.i
 
 CMakeFiles/Client.dir/Client.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/Client.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/studs/bsc/2016/dorgreen/spl-net/Client/Client.cpp -o CMakeFiles/Client.dir/Client.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dorgreen/spl-net/Client/Client.cpp -o CMakeFiles/Client.dir/Client.cpp.s
 
 CMakeFiles/Client.dir/Client.cpp.o.requires:
 
@@ -518,10 +518,10 @@ Client_OBJECTS = \
 "CMakeFiles/Client.dir/ConnectionHandler.cpp.o" \
 "CMakeFiles/Client.dir/EchoClient.cpp.o" \
 "CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.o" \
-"CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.o" \
+"CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.o" \
 "CMakeFiles/Client.dir/Main.cpp.o" \
-"CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.o" \
-"CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.o" \
+"CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.o" \
+"CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.o" \
 "CMakeFiles/Client.dir/Packets/RRQ.cpp.o" \
 "CMakeFiles/Client.dir/Packets/WRQ.cpp.o" \
 "CMakeFiles/Client.dir/Packets/DATA.cpp.o" \
@@ -541,10 +541,10 @@ Client_EXTERNAL_OBJECTS =
 Client: CMakeFiles/Client.dir/ConnectionHandler.cpp.o
 Client: CMakeFiles/Client.dir/EchoClient.cpp.o
 Client: CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.o
-Client: CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.o
+Client: CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.o
 Client: CMakeFiles/Client.dir/Main.cpp.o
-Client: CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.o
-Client: CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.o
+Client: CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.o
+Client: CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.o
 Client: CMakeFiles/Client.dir/Packets/RRQ.cpp.o
 Client: CMakeFiles/Client.dir/Packets/WRQ.cpp.o
 Client: CMakeFiles/Client.dir/Packets/DATA.cpp.o
@@ -559,7 +559,7 @@ Client: CMakeFiles/Client.dir/Packets/Packet.cpp.o
 Client: CMakeFiles/Client.dir/Client.cpp.o
 Client: CMakeFiles/Client.dir/build.make
 Client: CMakeFiles/Client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable Client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable Client"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -570,10 +570,10 @@ CMakeFiles/Client.dir/build: Client
 CMakeFiles/Client.dir/requires: CMakeFiles/Client.dir/ConnectionHandler.cpp.o.requires
 CMakeFiles/Client.dir/requires: CMakeFiles/Client.dir/EchoClient.cpp.o.requires
 CMakeFiles/Client.dir/requires: CMakeFiles/Client.dir/ClientTsaks/KeyboardInput.cpp.o.requires
-CMakeFiles/Client.dir/requires: CMakeFiles/Client.dir/ClientTsaks/ServerListener.cpp.o.requires
+CMakeFiles/Client.dir/requires: CMakeFiles/Client.dir/ClientTsaks/SocketListener.cpp.o.requires
 CMakeFiles/Client.dir/requires: CMakeFiles/Client.dir/Main.cpp.o.requires
-CMakeFiles/Client.dir/requires: CMakeFiles/Client.dir/BidiProtocol/encoderDecoder.cpp.o.requires
-CMakeFiles/Client.dir/requires: CMakeFiles/Client.dir/BidiProtocol/messagingProtocol.cpp.o.requires
+CMakeFiles/Client.dir/requires: CMakeFiles/Client.dir/BidiProtocol/EncoderDecoder.cpp.o.requires
+CMakeFiles/Client.dir/requires: CMakeFiles/Client.dir/BidiProtocol/MessagingProtocol.cpp.o.requires
 CMakeFiles/Client.dir/requires: CMakeFiles/Client.dir/Packets/RRQ.cpp.o.requires
 CMakeFiles/Client.dir/requires: CMakeFiles/Client.dir/Packets/WRQ.cpp.o.requires
 CMakeFiles/Client.dir/requires: CMakeFiles/Client.dir/Packets/DATA.cpp.o.requires
@@ -594,6 +594,6 @@ CMakeFiles/Client.dir/clean:
 .PHONY : CMakeFiles/Client.dir/clean
 
 CMakeFiles/Client.dir/depend:
-	cd /users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /users/studs/bsc/2016/dorgreen/spl-net/Client /users/studs/bsc/2016/dorgreen/spl-net/Client /users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug /users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug /users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/dorgreen/spl-net/Client/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/dorgreen/spl-net/Client /Users/dorgreen/spl-net/Client /Users/dorgreen/spl-net/Client/cmake-build-debug /Users/dorgreen/spl-net/Client/cmake-build-debug /Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Client.dir/depend
 
