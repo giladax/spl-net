@@ -40,5 +40,9 @@ set(SOURCE_FILES
         Client/ConnectionHandler.h
         Client/EchoClient.cpp
         Client/Main.cpp)
+include_directories(.)
+include_directories(include)
+include_directories(src)
 
 add_executable(spl_net ${SOURCE_FILES})
+
