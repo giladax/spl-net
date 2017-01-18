@@ -3,3 +3,5 @@
 //
 
 #include "../../include/Packets/DELRQ.h"
+
+// @ Sends these packets to server ==> constructor from data

@@ -6,8 +6,15 @@
 #include <string>
 using namespace std;
 
+// This gets an input from the user, returns data to be sent to server
 const char * EncoderDecoder::encode(string line) {
-    
+
+
+    string token = strtok(line, " ");
     char const *c = line.c_str();
     return c;
+
+
+
+
 }

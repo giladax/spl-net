@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.6)
 project(Client)
-                                                                                    
+
 
 set(Boost_INCLUDE_DIR /usr/local/Cellar/boost/1.63.0)
 set(Boost_LIBRARY_DIR /usr/local/Cellar/boost/1.63.0/lib)

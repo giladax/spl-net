@@ -6,7 +6,8 @@
 
 class Packet {
 
-public: enum Opcode {
+public:
+    enum Opcode {
 
         RRQ = 1,
         WRQ = 2,
@@ -21,17 +22,31 @@ public: enum Opcode {
     };
     Opcode opcode;
 
-    Packet::Packet(){
+    Packet::Packet() {
 
     }
 
-    Packet::Packet(Opcode opcode) : opcode(opcode){}
+    virtual Packet::Packet(Opcode opcode) : opcode(opcode) {}
 
-    Packet::~Packet() {}
+    virtual Packet::~Packet() {}
 
-    Packet *Packet::getPacket(char *incomming){
+    virtual Packet *Packet::getPacket(char *incomming) {
         // All packets that shouldn't be responded will have that as default
         return nullptr;
+    }
+
+    // Also validate arguments are valid
+    virtual const char *userInputToBytes(string arguments) = 0;
+
+    static short bytesToShort(char *bytesArr) {
+        short result = (short) ((bytesArr[0] & 0xff) << 8);
+        result += (short) (bytesArr[1] & 0xff);
+        return result;
+    }
+
+    static void shortToBytes(short num, char *bytesArr) {
+        bytesArr[0] = ((num >> 8) & 0xFF);
+        bytesArr[1] = (num & 0xFF);
     }
 };
 
