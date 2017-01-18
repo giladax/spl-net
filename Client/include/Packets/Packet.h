@@ -8,7 +8,10 @@
 
 class Packet {
 
-public: enum Packets {
+public:
+    Packet(Opcode opcode);
+
+    enum Opcode {
         RRQ = 1,
         WRQ = 2,
         DATA = 3,
@@ -21,17 +24,14 @@ public: enum Packets {
         DISC = 10
     };
 
-    Packets opcode;
+    Opcode opcode;
+    Packet();
+    ~Packet();
 
-    Packet::Packet();
+    virtual Packet* getPacket(char *incomming) = 0;
 
-    Packet::Packet(Packets opcode);
-
-    Packet::~Packet();
-
-    Packet *Packet::getPacket(char *incomming) = 0;
-
-    short Packet::bytesToShort(char* bytesArr);
+    static short bytesToShort(char* bytesArr);
+    static void  shortToBytes(short num, char *bytesArr);
 
 };
 

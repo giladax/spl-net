@@ -3,10 +3,9 @@
 //
 
 #include "../../include/Packets/Packet.h"
+#include <string>
+using namespace std;
 
-class Packet {
-
-public:
     enum Opcode {
 
         RRQ = 1,
@@ -26,28 +25,31 @@ public:
 
     }
 
-    virtual Packet::Packet(Opcode opcode) : opcode(opcode) {}
+    Packet::Packet(Opcode opcode) : opcode(opcode) {}
 
-    virtual Packet::~Packet() {}
+    Packet::~Packet() {}
 
-    virtual Packet *Packet::getPacket(char *incomming) {
+    Packet *Packet::getPacket(char *incomming) {
         // All packets that shouldn't be responded will have that as default
         return nullptr;
     }
 
-    // Also validate arguments are valid
-    virtual const char *userInputToBytes(string arguments) = 0;
-
+    /*
+     * Supplied by BGU staff
+     */
     static short bytesToShort(char *bytesArr) {
         short result = (short) ((bytesArr[0] & 0xff) << 8);
         result += (short) (bytesArr[1] & 0xff);
         return result;
     }
 
-    static void shortToBytes(short num, char *bytesArr) {
+    /*
+     * Supplied by BGU Staff
+     */
+    static void Packet:: shortToBytes(short num, char *bytesArr) {
         bytesArr[0] = ((num >> 8) & 0xFF);
         bytesArr[1] = (num & 0xFF);
     }
-};
+
 
 
