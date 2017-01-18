@@ -8,7 +8,11 @@
 
 #include "Packet.h"
 
-class ACK : public Packet{
+class ACK : public Packet {
+public:
+    ACK(char *incomming);
+
+    ~ACK();
 
 };
 
