@@ -3,3 +3,5 @@
 //
 
 #include "BCAST.h"
+
+// @ Receives these packets ==> constructor from char*

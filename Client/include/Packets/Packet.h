@@ -30,6 +30,9 @@ public: enum Packets {
     Packet::~Packet();
 
     Packet *Packet::getPacket(char *incomming) = 0;
+
+    short Packet::bytesToShort(char* bytesArr);
+
 };
 
 
