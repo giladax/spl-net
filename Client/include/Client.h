@@ -6,7 +6,7 @@
 #define CLIENT_CLIENT_H
 
 #include "ConnectionHandler.h"
-#include "BidiProtocol/MessagingProtocol.h"
+
 #include "BidiProtocol/EncoderDecoder.h"
 using namespace std;
 

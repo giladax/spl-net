@@ -1,10 +1,16 @@
     #ifndef CONNECTION_HANDLER__
     #define CONNECTION_HANDLER__
                                                
-    #include <string>
+
     #include <iostream>
     #include <boost/asio.hpp>
-     
+    #include <string>
+
+#include "BidiProtocol/EncoderDecoder.h"
+
+    using namespace std;
+
+
     using boost::asio::ip::tcp;
      
     class ConnectionHandler {
@@ -12,7 +18,9 @@
         const std::string host_;
         const short port_;
         boost::asio::io_service io_service_;   // Provides core I/O functionality
-        tcp::socket socket_; 
+        tcp::socket socket_;
+        EncoderDecoder *encdec;
+
      
     public:
         ConnectionHandler(std::string host, short port);
@@ -35,7 +43,7 @@
         
         // Send an ascii line from the server
         // Returns false in case connection closed before all the data is sent.
-        bool sendLine(std::string& line);
+        void sendLine(std::string& line);
      
         // Get Ascii data from the server until the delimiter character
         // Returns false in case connection closed before null can be read.
@@ -47,6 +55,8 @@
         
         // Close down the connection properly.
         void close();
+
+
      
     }; //class ConnectionHandler
      
