@@ -10,7 +10,7 @@
 
 class ACK : public Packet {
 public:
-    ACK(char *incomming);
+    ACK(char *incoming);
 
     ~ACK();
 

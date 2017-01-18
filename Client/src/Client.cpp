@@ -1,10 +1,10 @@
 //
 // Created by dorgreen on 1/17/17.
 //
-#include "ConnectionHandler.h"
-#include "BidiProtocol/MessagingProtocol.h"
-#include "BidiProtocol/EncoderDecoder.h"
-#include "Client.h"
+#include "../include/ConnectionHandler.h"
+#include "../include/BidiProtocol/MessagingProtocol.h"
+#include "../include/BidiProtocol/EncoderDecoder.h"
+#include "../include/Client.h"
 using namespace std;
 
 

@@ -2,11 +2,12 @@
 // Created by dorgreen on 1/17/17.
 //
 
-#include "Packet.h"
+#include "../../include/Packets/Packet.h"
 
 class Packet {
 
 public: enum Opcode {
+
         RRQ = 1,
         WRQ = 2,
         DATA = 3,
@@ -18,7 +19,6 @@ public: enum Opcode {
         BCAST = 9,
         DISC = 10
     };
-
     Opcode opcode;
 
     Packet::Packet(){
@@ -32,7 +32,7 @@ public: enum Opcode {
     Packet::~Packet() {}
 
     Packet *Packet::getPacket(char *incomming){
-        // All packets that shouldn't be responded with nothing will have that as default
+        // All packets that shouldn't be responded will have that as default
         return nullptr;
     }
 };

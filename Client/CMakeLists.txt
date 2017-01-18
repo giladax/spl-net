@@ -9,8 +9,8 @@ find_package(Boost COMPONENTS system filesystem REQUIRED)
 include_directories(${Boost_INCLUDE_DIR})
 
 set(SOURCE_FILES
-        ConnectionHandler.cpp
-        ConnectionHandler.h
-        EchoClient.cpp ClientTasks/KeyboardListener.cpp ClientTasks/KeyboardListener.h ClientTasks/SocketListener.cpp ClientTasks/SocketListener.h Main.cpp BidiProtocol/EncoderDecoder.cpp BidiProtocol/EncoderDecoder.h BidiProtocol/MessagingProtocol.cpp BidiProtocol/MessagingProtocol.h Packets/RRQ.cpp Packets/RRQ.h Packets/WRQ.cpp Packets/WRQ.h Packets/DATA.cpp Packets/DATA.h Packets/ACK.cpp Packets/ACK.h Packets/ERROR.cpp Packets/ERROR.h Packets/DIRQ.cpp Packets/DIRQ.h Packets/LOGRQ.cpp Packets/LOGRQ.h Packets/DELRQ.cpp Packets/DELRQ.h Packets/BCAST.cpp Packets/BCAST.h Packets/DISC.cpp Packets/DISC.h Packets/Packet.cpp Packets/Packet.h Client.cpp Client.h)
+        src/ConnectionHandler.cpp
+        include/ConnectionHandler.h
+        src/EchoClient.cpp src/ClientTasks/KeyboardListener.cpp include/ClientTasks/KeyboardListener.h src/ClientTasks/SocketListener.cpp include/ClientTasks/SocketListener.h src/Main.cpp src/BidiProtocol/EncoderDecoder.cpp include/BidiProtocol/EncoderDecoder.h src/BidiProtocol/MessagingProtocol.cpp include/BidiProtocol/MessagingProtocol.h src/Packets/RRQ.cpp include/Packets/RRQ.h src/Packets/WRQ.cpp include/Packets/WRQ.h src/Packets/DATA.cpp include/Packets/DATA.h src/Packets/ACK.cpp include/Packets/ACK.h src/Packets/ERROR.cpp include/Packets/ERROR.h src/Packets/DIRQ.cpp include/Packets/DIRQ.h src/Packets/LOGRQ.cpp include/Packets/LOGRQ.h src/Packets/DELRQ.cpp include/Packets/DELRQ.h src/Packets/BCAST.cpp include/Packets/BCAST.h src/Packets/DISC.cpp include/Packets/DISC.h src/Packets/Packet.cpp include/Packets/Packet.h src/Client.cpp include/Client.h)
 
 add_executable(Client ${SOURCE_FILES})
