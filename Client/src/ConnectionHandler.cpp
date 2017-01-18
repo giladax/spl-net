@@ -1,5 +1,5 @@
     #include "../include/ConnectionHandler.h"
-     
+    #include "../Packets/Packet.h"
     using boost::asio::ip::tcp;
      
     using std::cin;
