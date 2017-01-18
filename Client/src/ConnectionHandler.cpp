@@ -1,5 +1,7 @@
     #include "../include/ConnectionHandler.h"
-    #include "../Packets/Packet.h"
+    #include "../include/Packets/Packet.h"
+
+#include <string>
     using boost::asio::ip::tcp;
      
     using std::cin;
@@ -8,12 +10,16 @@
     using std::endl;
     using std::string;
      
-    ConnectionHandler::ConnectionHandler(string host, short port): host_(host), port_(port), io_service_(), socket_(io_service_){}
+    ConnectionHandler::ConnectionHandler(string host, short port): host_(host), port_(port), io_service_(), socket_(io_service_) {
+        encdec = new EncoderDecoder();
+    }
         
     ConnectionHandler::~ConnectionHandler() {
         close();
     }
-     
+
+
+
     bool ConnectionHandler::connect() {
         std::cout << "Starting connect to " 
             << host_ << ":" << port_ << std::endl;
@@ -66,9 +72,13 @@
     bool ConnectionHandler::getLine(std::string& line) {
         return getFrameAscii(line, '\n');
     }
-     
-    bool ConnectionHandler::sendLine(std::string& line) {
-        return sendFrameAscii(line, '\n');
+
+    void ConnectionHandler::sendLine(std::string& line) {
+        //
+
+        sendBytes(encdec->encode(line),
+
+        // return sendFrameAscii(line, '\n');
     }
      
     bool ConnectionHandler::getFrameAscii(std::string& frame, char delimiter) {
@@ -86,12 +96,15 @@
         }
         return true;
     }
-     
+     /*
     bool ConnectionHandler::sendFrameAscii(const std::string& frame, char delimiter) {
         bool result=sendBytes(frame.c_str(),frame.length());
         if(!result) return false;
         return sendBytes(&delimiter,1);
     }
+      */
+
+
      
     // Close down the connection properly.
     void ConnectionHandler::close() {
@@ -101,5 +114,9 @@
             std::cout << "closing failed: connection already closed" << std::endl;
         }
     }
+
+
+
+
 
  

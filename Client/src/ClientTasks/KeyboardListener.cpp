@@ -4,16 +4,17 @@
 
 
 #include <string>
-#include ""
+#include "../../include/Packets/Packet.h"
+#include "../../include/ConnectionHandler.h"
+#include "../../include/ClientTasks/KeyboardListener.h"
 
 using namespace std;
 
 
 
-KeyboardListener::KeyboardListener(ConnectionHandler &handler, EncoderDecoder &encdec, MessagingProtocol &protocol) :
-        handler(handler),
-        encdec(encdec),
-        protocol(protocol) {
+KeyboardListener::KeyboardListener(ConnectionHandler& handler) :
+        handler(handler){
+    shouldTerminate = false;
 }
 
 
@@ -21,17 +22,24 @@ void KeyboardListener::run() {
     string line;
 
     // Wait for user's input
-    while (std::cin>>line) {
+    do {
+        std::cin>>line;
 
-        string token = strtok(line," ");
+        // Check if the client has requested to disconnect
+        shouldTerminate = this->disconnectOpReceived(line);
+        handler.sendLine(line);
 
 
 
-
-
-    }
+    }while (!shouldTerminate);
 
 }
+
+bool KeyboardListener::disconnectOpReceived(string line) {
+    return (line.compare("DISC") == 0);
+}
+
+
 
 
 

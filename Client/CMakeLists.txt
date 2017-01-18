@@ -1,11 +1,12 @@
 cmake_minimum_required(VERSION 3.6)
 project(Client)
-
-set(CMAKE_CXX_STANDARD 11)
+                                                                                    
 
 set(Boost_INCLUDE_DIR /usr/local/Cellar/boost/1.63.0)
 set(Boost_LIBRARY_DIR /usr/local/Cellar/boost/1.63.0/lib)
-find_package(Boost COMPONENTS system filesystem REQUIRED)
+find_package(Boost COMPONENTS system file
+
+        system REQUIRED)
 include_directories(${Boost_INCLUDE_DIR})
 
 set(SOURCE_FILES

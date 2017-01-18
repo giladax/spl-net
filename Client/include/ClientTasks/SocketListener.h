@@ -7,14 +7,14 @@
 
 #include "../ConnectionHandler.h"
 #include "../BidiProtocol/EncoderDecoder.h"
-#include "../BidiProtocol/MessagingProtocol.h"
 
 
 
 class SocketListener {
 public:
-    SocketListener(ConnectionHandler& handler, EncoderDecoder& encdec, MessagingProtocol& protocol);
+    SocketListener(ConnectionHandler& handler);
     ~SocketListener();
+
 
 private:
     ConnectionHandler handler;
