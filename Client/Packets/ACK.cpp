@@ -3,3 +3,17 @@
 //
 
 #include "ACK.h"
+#include "Packet.h"
+#include "Packet.cpp"
+
+class ACK : public Packet {
+
+public:
+    ACK(char *incomming) {
+        Packet(ACK);
+    }
+
+    ~ACK() {}
+
+
+};
