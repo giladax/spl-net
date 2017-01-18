@@ -3,6 +3,7 @@
 //
 
 #include "../../include/Packets/Packet.h"
+#include <string>
 
 class Packet {
 
