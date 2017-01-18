@@ -25,9 +25,7 @@ public: enum Opcode {
 
     }
 
-    Packet::Packet(Opcode opcode) {
-        this->opcode = opcode;
-    }
+    Packet::Packet(Opcode opcode) : opcode(opcode){}
 
     Packet::~Packet() {}
 
