@@ -32,7 +32,7 @@ int main (int argc, char *argv[]) {
 
     // TODO: "join" BOTH THREADS BEFORE TERMINATION
 
-    delete keyboardListener
+    delete keyboardListener;
     delete connectionHandler;
     delete socketListener;
 

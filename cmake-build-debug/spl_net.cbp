@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="spl_net"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="spl_net">
+				<Option output="/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/spl_net" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 spl_net"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="spl_net/fast">
+				<Option output="/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/spl_net" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 spl_net/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/users/studs/bsc/2016/kochg/spl-net/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/BidiProtocol/EncoderDecoder.cpp">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/BidiProtocol/EncoderDecoder.h">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/BidiProtocol/MessagingProtocol.cpp">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/BidiProtocol/MessagingProtocol.h">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Client.cpp">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Client.h">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/ClientTasks/KeyboardListener.cpp">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/ClientTasks/KeyboardListener.h">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/ClientTasks/SocketListener.cpp">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/ClientTasks/SocketListener.h">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/ConnectionHandler.cpp">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/ConnectionHandler.h">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/EchoClient.cpp">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Main.cpp">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/ACK.cpp">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/ACK.h">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/BCAST.cpp">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/BCAST.h">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/DATA.cpp">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/DATA.h">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/DELRQ.cpp">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/DELRQ.h">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/DIRQ.cpp">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/DIRQ.h">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/DISC.cpp">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/DISC.h">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/ERROR.cpp">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/ERROR.h">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/LOGRQ.cpp">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/LOGRQ.h">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/Packet.cpp">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/Packet.h">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/RRQ.cpp">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/RRQ.h">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/WRQ.cpp">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/Client/Packets/WRQ.h">
+			<Option target="spl_net"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/kochg/spl-net/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

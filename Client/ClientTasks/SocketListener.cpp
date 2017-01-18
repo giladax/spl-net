@@ -3,4 +3,10 @@
 //
 
 #include "SocketListener.h"
-d
+
+SocketListener::SocketListener(ConnectionHandler &handler, EncoderDecoder &encdec, MessagingProtocol &protocol):
+        handler(handler),
+        encdec(encdec),
+        protocol(protocol){
+
+}
