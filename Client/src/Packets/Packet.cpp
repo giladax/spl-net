@@ -3,8 +3,6 @@
 //
 
 #include "../../include/Packets/Packet.h"
-#include <string>
-using namespace std;
 
     enum Opcode {
 
