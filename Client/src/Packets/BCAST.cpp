@@ -32,7 +32,6 @@ BCAST::BCAST(char* incoming) : Packet((short)9) {
  *
  * When receiving:
  * - print to screen
- *
  */
 
 /*
@@ -58,7 +57,6 @@ BCAST::BCAST(char* incoming) : Packet((short)9) {
  * - if last block && was during DIRQ, print the data
  * - if not last block, add it to where data is stored
  * - either way, send ACK(Block #)
- *
  */
 
 /*

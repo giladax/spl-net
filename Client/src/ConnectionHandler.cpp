@@ -128,6 +128,18 @@ Packet ConnectionHandler::getPacket() {
     switch (nextShort) {
 
         // Data received
+        /*
+         * DATA PACKET STRUCTURE
+         * | 2 bytes| 2 bytes     | 2 bytes | n bytes |
+         * | Opcode | Packet Size | Block # | Data    |
+         *
+         * When receiving:
+         * - if last block (Packet Size < MAX_PACKET_SIZE = 512), add it and finish transfer
+         * - if last block && was during RRQ, print "RRQ filename complete"
+         * - if last block && was during DIRQ, print the data
+         * - if not last block, add it to where data is stored
+         * - either way, send ACK(Block #)
+         */
         case 3:
             this -> getBytes(bytes, 2);
             short packet_size = Packet::bytesToShort(bytes);
@@ -157,15 +169,43 @@ Packet ConnectionHandler::getPacket() {
 
             break;
 
-            // Ack received
+         // Ack received
+         /*
+         * ACK PACKET STRUCTURE
+         * |2 bytes| 2 bytes|
+         * |Opcode | Block# |
+         *
+         * When receiving:
+         * - print to screen
+         * - if user sent DISC, disconnect.
+         * - if sending file to server, send next packet
+         */
         case 4:
             break;
 
-            // Error received
+         // Error received
+         /*
+         * ERROR PACKET STRUCTURE
+         * | 2 bytes|   2 bytes | string |  1 byte |
+         * | Opcode | ErrorCode | ErrMsg | 0       |
+         *
+         * When receiving:
+         * - print to screen
+         *
+         */
         case 5:
             break;
 
-            //Bcast received
+         //Bcast received
+         /*
+         * BCAST PACKET STRUCTURE
+         *
+         * | 2 bytes| 1 byte        | string   | 1 byte |
+         * | Opcode | Deleted/Added | Filename | 0      |
+         *
+         * When receiving:
+         * - print to screen
+         */
         case 9:
             break;
     }
