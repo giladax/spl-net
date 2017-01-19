@@ -6,6 +6,8 @@
     #include <boost/asio.hpp>
     #include <string>
 
+    #include "../include/Packets/Packet.h"
+
 #include "BidiProtocol/EncoderDecoder.h"
 
     using namespace std;
@@ -21,6 +23,8 @@
         tcp::socket socket_;
         EncoderDecoder *encdec;
 
+        enum state {not_receving, DIRQ, RRQ};
+
      
     public:
         ConnectionHandler(std::string host, short port);
@@ -28,6 +32,8 @@
      
         // Connect to the remote machine
         bool connect();
+
+        Packet getPacket();
      
         // Read a fixed number of bytes from the server - blocking.
         // Returns false in case the connection is closed before bytesToRead bytes can be read.
@@ -55,6 +61,10 @@
         
         // Close down the connection properly.
         void close();
+
+        bool setRecievingState(int state);
+
+
 
 
      
