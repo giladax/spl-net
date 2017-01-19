@@ -10,6 +10,23 @@
 
 class BCAST : public Packet {
 
+public:
+
+    Opcode opcode;
+
+    string fileName;
+
+    bool added;
+
+    BCAST();
+
+    BCAST(char *incoming);
+
+    ~BCAST();
+
+    Packet *getPacket(char *incomming) = 0;
+
+
 };
 
 
