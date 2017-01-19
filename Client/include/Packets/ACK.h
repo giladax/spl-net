@@ -11,6 +11,9 @@
 class ACK : public Packet {
 public:
     ACK(char *incoming);
+    ACK(short block_num);
+    virtual char* toBytes();
+
 
     ~ACK();
 

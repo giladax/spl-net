@@ -7,10 +7,20 @@
 
 
 #include "Packet.h"
+#include <vector>
+using  namespace std;
+class DATA : public Packet {
 
-class DATA : public Packet{
+public:
+    DATA(short block_num, vector<char> data);
+    DATA::~DATA() {}
+    virtual char* toBytes();
+
+private:
+    short packet_size;
+    short block_num;
+    vector<char> data;
 
 };
 
 
-#endif //CLIENT_DATA_H

@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/Users/dorgreen/spl-net/Client/. -I/Users/dorgreen/spl-net/Client/include -I/Users/dorgreen/spl-net/Client/src -I/usr/local/include 
 

@@ -5,6 +5,10 @@
 #ifndef CLIENT_PACKET_H
 #define CLIENT_PACKET_H
 
+#include <vector>
+
+using namespace std;
+
 
 class Packet {
 
@@ -32,7 +36,14 @@ public:
 
     static short bytesToShort(char* bytesArr);
     static void  shortToBytes(short num, char *bytesArr);
+    static void  insertByteArrayToVector(char* bytesArr, vector<char> vec, int size);
 
+    // Only ERROR, DATA, ACK override this
+    virtual char* toBytes(){
+        return nullptr;
+    }
+
+    sta
 };
 
 

@@ -13,5 +13,11 @@ SocketListener::SocketListener(ConnectionHandler& handler):
 }
 
 void SocketListener::run() {
-   Packet ans = handler.getPacket();
+   char *bytes;
+
+   while (getBytes(bytes, 2)) {
+      Packet ans = handler.getPacket(bytes);
+
+      if()
+   }
 }

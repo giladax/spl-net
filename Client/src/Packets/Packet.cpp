@@ -3,6 +3,10 @@
 //
 
 #include "../../include/Packets/Packet.h"
+#include <iterator>
+#include <algorithm>
+
+using namespace std;
 
     enum Opcode {
 
@@ -48,6 +52,12 @@
         bytesArr[0] = ((num >> 8) & 0xFF);
         bytesArr[1] = (num & 0xFF);
     }
+
+    static void Packet::insertByteArrayToVector(char* bytesArr, vector<char> vec, int size){
+        // TODO: if this shit works -> put a petek in the kotel
+        copy(bytesArr, bytesArr + size, back_inserter(vec));
+    }
+
 
 
 

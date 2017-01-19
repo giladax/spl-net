@@ -27,6 +27,7 @@ void KeyboardListener::run() {
 
         // Check if the client has requested to disconnect
         shouldTerminate = this->disconnectOpReceived(line);
+
         handler.sendLine(line);
 
 
@@ -36,7 +37,9 @@ void KeyboardListener::run() {
 }
 
 bool KeyboardListener::disconnectOpReceived(string line) {
-    return (line.compare("DISC") == 0);
+    bool ans = line.compare("DISC") == 0;
+    handler.setShouldTerminate(ans);
+    return (ans);
 }
 
 

@@ -1,4 +1,4 @@
-    #ifndef CONNECTION_HANDLER__
+#ifndef CONNECTION_HANDLER__
     #define CONNECTION_HANDLER__
                                                
 
@@ -22,8 +22,14 @@
         boost::asio::io_service io_service_;   // Provides core I/O functionality
         tcp::socket socket_;
         EncoderDecoder *encdec;
+        bool shouldTerminate;
+        string requestedFile;
 
-        enum state {not_receving, DIRQ, RRQ};
+        enum state {not_receving, DIRQ, RRQ, WRQ};
+        bool requestApproved = false;
+        const short MAX_PACKET_SIZE = 512;
+
+        const short ACK_SUCCESSFUL_RESPONSE = 0;
 
      
     public:
@@ -33,7 +39,7 @@
         // Connect to the remote machine
         bool connect();
 
-        Packet getPacket();
+        Packet * getPacket(char* bytes);
      
         // Read a fixed number of bytes from the server - blocking.
         // Returns false in case the connection is closed before bytesToRead bytes can be read.
@@ -62,12 +68,20 @@
         // Close down the connection properly.
         void close();
 
-        bool setRecievingState(int state);
+        bool setRecievingState(string line);
+
+        void setShouldTerminate(bool value);
+
+        bool getShouldTerminate();
+
+        void setRequestedFile(string file);
+
+        string getRequestesFile();
 
 
+        bool setRecievingState(vector<char>);
 
-
-     
+        Packet* sendNextDataPacket(short block_num);
     }; //class ConnectionHandler
      
     #endif 

@@ -24,12 +24,18 @@ public:
     ~ACK() {}
 
     char* ACK::toBytes(){
-        char* opcode_bytes = shortToBytes(Packet::opcode(ACK));
-        char* block_num_bytes[2];
+
+        char* opcode_bytes;
+        shortToBytes((short)ACK,opcode_bytes);
+        char* block_num_bytes;
         shortToBytes(block_num, block_num_bytes);
 
-        return char*[] = {opcode_bytes[0], opcode_bytes[1], block_num_bytes[0], block_num_bytes[1]};
+        char toReturn[] = {opcode_bytes[0], opcode_bytes[1], block_num_bytes[0], block_num_bytes[1]};
 
+        delete opcode_bytes;
+        delete  block_num_bytes;
+
+        return toReturn;
 
     }
 

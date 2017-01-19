@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <iostream>
 #include <string>
-#include "include/ConnectionHandler.h"
-#include "include/Client.h"
-#include "include/ClientTasks/KeyboardListener.h"
-#include "include/ClientTasks/SocketListener.h"
+#include "../include/ConnectionHandler.h"
+#include "../include/Client.h"
+#include "../include/ClientTasks/KeyboardListener.h"
+#include "../include/ClientTasks/SocketListener.h"
 
 using namespace std;
 

@@ -44,6 +44,9 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/Users/dorgreen/spl-net/Client/."/>
+					<Add directory="/Users/dorgreen/spl-net/Client/include"/>
+					<Add directory="/Users/dorgreen/spl-net/Client/src"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../lib/clang/8.0.0/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
@@ -66,6 +69,9 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/Users/dorgreen/spl-net/Client/."/>
+					<Add directory="/Users/dorgreen/spl-net/Client/include"/>
+					<Add directory="/Users/dorgreen/spl-net/Client/src"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../lib/clang/8.0.0/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
@@ -82,112 +88,106 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/dorgreen/spl-net/Client/BidiProtocol/EncoderDecoder.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/include/BidiProtocol/EncoderDecoder.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/BidiProtocol/EncoderDecoder.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/include/Client.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/BidiProtocol/MessagingProtocol.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/include/ClientTasks/KeyboardListener.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/BidiProtocol/MessagingProtocol.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/include/ClientTasks/SocketListener.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Client.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/include/ConnectionHandler.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Client.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/include/Packets/ACK.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/ClientTsaks/KeyboardInput.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/include/Packets/BCAST.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/ClientTsaks/KeyboardInput.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/include/Packets/DATA.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/ClientTsaks/SocketListener.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/include/Packets/DELRQ.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/ClientTsaks/SocketListener.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/include/Packets/DIRQ.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/ConnectionHandler.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/include/Packets/DISC.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/ConnectionHandler.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/include/Packets/ERROR.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/EchoClient.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/include/Packets/LOGRQ.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Main.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/include/Packets/Packet.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/ACK.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/include/Packets/RRQ.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/ACK.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/include/Packets/WRQ.h">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/BCAST.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/src/BidiProtocol/EncoderDecoder.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/BCAST.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/src/Client.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/DATA.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/src/ClientTasks/KeyboardListener.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/DATA.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/src/ClientTasks/SocketListener.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/DELRQ.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/src/ConnectionHandler.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/DELRQ.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/src/EchoClient.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/DIRQ.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/src/Main.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/DIRQ.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/src/Packets/ACK.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/DISC.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/src/Packets/BCAST.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/DISC.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/src/Packets/DATA.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/ERROR.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/src/Packets/DELRQ.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/ERROR.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/src/Packets/DIRQ.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/LOGRQ.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/src/Packets/DISC.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/LOGRQ.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/src/Packets/ERROR.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/Packet.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/src/Packets/LOGRQ.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/Packet.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/src/Packets/Packet.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/RRQ.cpp">
+		<Unit filename="/Users/dorgreen/spl-net/Client/src/Packets/RRQ.cpp">
 			<Option target="Client"/>
 		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/RRQ.h">
-			<Option target="Client"/>
-		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/WRQ.cpp">
-			<Option target="Client"/>
-		</Unit>
-		<Unit filename="/Users/dorgreen/spl-net/Client/Packets/WRQ.h">
+		<Unit filename="/Users/dorgreen/spl-net/Client/src/Packets/WRQ.cpp">
 			<Option target="Client"/>
 		</Unit>
 		<Unit filename="/Users/dorgreen/spl-net/Client/CMakeLists.txt">
