@@ -14,12 +14,13 @@ class SocketListener {
 public:
     SocketListener(ConnectionHandler& handler);
     ~SocketListener();
+    void run();
 
 
 private:
     ConnectionHandler handler;
     EncoderDecoder encdec;
-    MessagingProtocol protocol;
+
 
 };
 
