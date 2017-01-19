@@ -387,7 +387,7 @@ Packet* ConnectionHandler::sendNextDataPacket(short block_num) {
     vector<char> newVec(first, last);
 
     char* bytes = newVec.data();
-    Packet ans = new DATA(block_num+1, newVec);
+    DATA *ans = new DATA(block_num + 1, newVec);
     delete vec;
     delete first;
     delete last;
