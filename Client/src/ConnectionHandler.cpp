@@ -1,8 +1,8 @@
-#include "../include/ConnectionHandler.h"
+#include "include/ConnectionHandler.h"
 
+#include <fstream>
 #include <include/Packets/ERROR.h>
 #include <include/Packets/ACK.h>
-#include <fstream>
 #include <include/Packets/DATA.h>
 
 
@@ -150,7 +150,7 @@ Packet *ConnectionHandler::getPacket(char *bytes) {
                 // Packet is complete. Check state.
                 if (!requestApproved || state == not_receving) {
                     // We shouldn't be receiving
-                    ans = new ERROR(0);
+                    ans = new ERROR((short )0);
                     break;
                 }
 

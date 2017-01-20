@@ -2,10 +2,10 @@
 // Created by dorgreen on 1/17/17.
 //
 
-#include "../../include/BidiProtocol/EncoderDecoder.h"
+#include "include/BidiProtocol/EncoderDecoder.h"
 #include <iostream>
 #include <sstream>
-#include "../Packets/Packet.cpp"
+#include "Packets/Packet.cpp"
 #include <boost/algorithm/string/split.hpp>
 #include <boost/algorithm/string/classification.hpp>
 using namespace std;

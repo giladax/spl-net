@@ -1,53 +1,43 @@
 //
 // Created by dorgreen on 1/17/17.
 //
+#pragma once
 
-#ifndef CLIENT_PACKET_H
-#define CLIENT_PACKET_H
 
 #include <vector>
 
 using namespace std;
 
 
+enum Opcode {
+    _DATA = 3,
+    _ACK = 4,
+    _ERROR = 5,
+    _DIRQ = 6,
+};
+
+
 class Packet {
 
 public:
-    enum Opcode {
-        RRQ = 1,
-        WRQ = 2,
-        DATA = 3,
-        ACK = 4,
-        ERROR = 5,
-        DIRQ = 6,
-        LOGRQ = 7,
-        DELRQ = 8,
-        BCAST = 9,
-        DISC = 10
-    };
+
     Packet(Opcode opcode);
 
-
-
-    Opcode opcode;
-    Packet();
     virtual ~Packet();
-
     static short bytesToShort(char* bytesArr);
     static void  shortToBytes(short num, char *bytesArr);
     static void  insertByteArrayToVector(char* bytesArr, vector<char> vec, int size);
 
     // Only ERROR, DATA, ACK override this
-    virtual char* toBytes(){
-        return nullptr;
-    }
+    virtual char* toBytes();
 
     // Only ERROR, DATA, ACK override this
     // Needed for ConnectionHandler::sendBytes
-    virtual int getBytesCount(){
-        return 0;
-    }
+     virtual int getBytesCount();
+
+private:
+    Opcode opcode;
 };
 
 
-#endif //CLIENT_PACKET_H
+

@@ -1,11 +1,10 @@
 //
 // Created by dorgreen on 1/17/17.
-//
+
+#pragma once
 #include <string>
 #include <vector>
 
-#ifndef CLIENT_ENCODERDECODER_H
-#define CLIENT_ENCODERDECODER_H
 
 using namespace std;
 
@@ -21,4 +20,3 @@ public:
 };
 
 
-#endif //CLIENT_ENCODERDECODER_H

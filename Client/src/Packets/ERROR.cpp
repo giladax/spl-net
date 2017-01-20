@@ -2,7 +2,7 @@
 // Created by dorgreen on 1/17/17.
 //
 
-#include "../../include/Packets/ERROR.h"
+#include "include/Packets/ERROR.h"
 
 
 // @ Receives these packets ==> constructor from char*
@@ -14,7 +14,7 @@
 
 
 
-ERROR::ERROR(short error_code) : Packet(Packet::Opcode::ERROR), error_code(error_code) {}
+ERROR::ERROR(short error_code) : Packet(Opcode::_ERROR), error_code(error_code) {}
 
 ERROR::~ERROR() {}
 
@@ -22,6 +22,10 @@ ERROR::~ERROR() {}
 char *ERROR::toBytes() {
     //TODO: implement this shit
     return nullptr;
+}
+
+int ERROR::getBytesCount() {
+    return 4;
 }
 
 
