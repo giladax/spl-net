@@ -1,13 +1,9 @@
 #include <boost/thread.hpp>
-#include <stdlib.h>
-#include <iostream>
-#include <string>
 #include "../include/ConnectionHandler.h"
-#include "../include/Client.h"
 #include "../include/ClientTasks/KeyboardListener.h"
 #include "../include/ClientTasks/SocketListener.h"
 
-using namespace std;
+//using namespace std;
 
 /**
 * This code assumes that the server replies the exact text the client sent it (as opposed to the practical session example)
@@ -21,20 +17,20 @@ int main (int argc, char *argv[]) {
     }
 
     string host = argv[1];
-    short port = atoi(argv[2]);
+    short port = (short) atoi(argv[2]);
 
-    ConnectionHandler* connectionHandler = new ConnectionHandler(host, port);
-    if(!connectionHandler->connect()){
+    ConnectionHandler::getInstance();
+    if(!ConnectionHandler::getInstance().connect(host, port)){
         cout << "Error connecting to server @ " << host << " : " << port << endl;
         return -1;
     }
 
     // Initiate KeyboardListener, SocketListener
-    KeyboardListener* keyboardListener = new KeyboardListener(); // TODO: Create this class, run via BOOST
-    SocketListener* socketListener = new SocketListener();
+    KeyboardListener keyboardListener = KeyboardListener();
+    SocketListener socketListener = SocketListener();
 
-    boost::thread keyboardListenerThread(boost::bind(&KeyboardListener::run(), &keyboardListener));
-    boost::thread socketListenerThread(boost::bind(&SocketListener::run(), &socketListener));
+    boost::thread keyboardListenerThread(boost::bind(&KeyboardListener::run, &keyboardListener));
+    boost::thread socketListenerThread(boost::bind(&SocketListener::run, &socketListener));
 
 
     //Client client(host, port); // Will be dealt with @ Main. Class TO BE DELETED
@@ -44,9 +40,6 @@ int main (int argc, char *argv[]) {
     socketListenerThread.join();
 
 
-    delete keyboardListener;
-    delete connectionHandler;
-    delete socketListener;
 
     return 0;
 }

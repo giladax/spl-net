@@ -3,43 +3,38 @@
 //
 
 #include "../../include/Packets/ACK.h"
-#include "../../include/Packets/Packet.h"
 #include "Packet.cpp"
-#include <vector>
+
 
 using namespace std;
 
 // @ Sends these packets to server ==> constructor from data
 // @ Receives these packets ==> constructor from char*
-class ACK : public Packet {
+ACK::ACK(char *incoming) : Packet(Packet::Opcode::ACK) {
+    block_num = Packet::bytesToShort(incoming); // TODO: if does include the opcode in the char*, add logic here
+}
 
-public:
+ACK::ACK(short block_num) : Packet(Packet::Opcode::ACK), block_num(block_num) {}
 
-    ACK::ACK(char *incoming) : Packet(ACK) {
-        block_num = Packet::bytesToShort(incoming); // TODO: if does include the opcode in the char*, add logic here
-    }
 
-    ACK::ACK(short block_num) : Packet(ACK), block_num(block_num){}
 
-    ~ACK() {}
+char *ACK::toBytes() {
 
-    char* ACK::toBytes(){
+    char opcode_bytes[2];
+    shortToBytes(Packet::Opcode::ACK, opcode_bytes);
+    char block_num_bytes[2];
+    shortToBytes(block_num, block_num_bytes);
 
-        char* opcode_bytes;
-        shortToBytes((short)ACK,opcode_bytes);
-        char* block_num_bytes;
-        shortToBytes(block_num, block_num_bytes);
+    char *toReturn = new char[4]{opcode_bytes[0], opcode_bytes[1], block_num_bytes[0], block_num_bytes[1]};
 
-        char toReturn[] = {opcode_bytes[0], opcode_bytes[1], block_num_bytes[0], block_num_bytes[1]};
 
-        delete opcode_bytes;
-        delete  block_num_bytes;
-
-        return toReturn;
-
-    }
-
-private:
-    short block_num;
+    return toReturn;
 
 }
+
+ACK::~ACK() {
+
+}
+
+
+

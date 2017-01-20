@@ -13,8 +13,6 @@ using namespace std;
 class Packet {
 
 public:
-    Packet(Opcode opcode);
-
     enum Opcode {
         RRQ = 1,
         WRQ = 2,
@@ -27,12 +25,13 @@ public:
         BCAST = 9,
         DISC = 10
     };
+    Packet(Opcode opcode);
+
+
 
     Opcode opcode;
     Packet();
-    ~Packet();
-
-    virtual Packet* getPacket(char *incomming) = 0;
+    virtual ~Packet();
 
     static short bytesToShort(char* bytesArr);
     static void  shortToBytes(short num, char *bytesArr);
@@ -43,7 +42,11 @@ public:
         return nullptr;
     }
 
-    sta
+    // Only ERROR, DATA, ACK override this
+    // Needed for ConnectionHandler::sendBytes
+    virtual int getBytesCount(){
+        return 0;
+    }
 };
 
 

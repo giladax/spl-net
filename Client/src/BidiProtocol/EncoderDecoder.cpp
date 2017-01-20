@@ -3,29 +3,26 @@
 //
 
 #include "../../include/BidiProtocol/EncoderDecoder.h"
-#include <string>
-#include <vector>
-#include <cstring>
 #include <iostream>
-#include <iterator>
 #include <sstream>
 #include "../Packets/Packet.cpp"
+#include <boost/algorithm/string/split.hpp>
+#include <boost/algorithm/string/classification.hpp>
 using namespace std;
 
 // This gets an input from the user, returns data to be sent to server
 vector<char> EncoderDecoder::encode(string line) {
 
-    char *c;
+    char *c = nullptr;
 
     // Split input
-    vector<string> splitInput;
-    vector<char> toSend;
-    istringstream iss(line);
-    copy(istream_iterator<string>(iss),
-         istream_iterator<string>(),
-         back_inserter(splitInput));
+    //TODO : change this split func
+        std::vector<std::string> splitInput;
+        boost::split(splitInput, line, boost::is_any_of(" "));
 
-    if(splitInput[0].compare("DISC") == 0){
+
+
+        if(splitInput[0].compare("DISC") == 0){
         // Input is valid
         if(splitInput.size() == 1){
             // Get the Opcode to char*, into c
@@ -78,7 +75,7 @@ vector<char> EncoderDecoder::encode(string line) {
         cout << "Invalid operation!" << endl;
     }
 
-    delete splitInput;
+
     delete c;
     return toSend;
 
@@ -113,8 +110,7 @@ vector<char> EncoderDecoder::argumentsToStructuredCharArray(vector<string> split
         stringToChar(splitInput[1], stringConvertedToBytes);
         pushBytesToVector(stringConvertedToBytes, helper);
 
-        // Assign char* with chars held by the vector
-        c = helper.data();
+
 
         delete[] stringConvertedToBytes;
     }
@@ -125,4 +121,8 @@ vector<char> EncoderDecoder::argumentsToStructuredCharArray(vector<string> split
         cout << "Too few arguments!" << endl; // TODO: IS THAT THE RIGHT WAY TO TREAT THAT?
     }
     return helper;
+}
+
+EncoderDecoder::~EncoderDecoder() {
+
 }

@@ -8,16 +8,21 @@
 #include "Packet.h"
 
 class ERROR : public Packet {
-
+private:
     short error_code;
 public:
-    ERROR::ERROR() : Packet(ERROR);
 
-    ERROR::ERROR(short error_code) : Packet(ERROR), error_code(error_code);
+    ERROR(short error_code);
 
-    ERROR::~ERROR();
+    virtual ~ERROR();
 
-    Packet *ERROR::getPacket();
+    // Only ERROR, DATA, ACK override this
+    // Needed for ConnectionHandler::sendBytes
+    virtual int getBytesCount(){
+        return 4;
+    }
+
+    virtual char* toBytes();
 
 };
 

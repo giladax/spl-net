@@ -14,9 +14,17 @@ public:
     ACK(short block_num);
     virtual char* toBytes();
 
+    // Only ERROR, DATA, ACK override this
+    // Needed for ConnectionHandler::sendBytes
+    virtual int getBytesCount(){
+        return 4;
+    }
 
-    ~ACK();
 
+    virtual ~ACK();
+
+private:
+    short block_num;
 };
 
 

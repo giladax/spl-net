@@ -3,8 +3,8 @@
 //
 
 #include <vector>
-#include <string>
-#include "../../include/Packets/DATA.h"
+
+#include "include/Packets/DATA.h"
 
 using namespace std;
 
@@ -16,7 +16,10 @@ using namespace std;
  *
  */
 
-DATA::DATA(short block_num, vector<char> data) : Packet((Opcode) DATA), data(data), block_num(block_num) {
+// @ Sends these packets to server ==> constructor from data
+// @ Receives these packets ==> constructor from char*
+
+DATA::DATA(short block_num, vector<char> data) : Packet(Packet::Opcode::DATA), data(data), block_num(block_num) {
     packet_size = (short) data.size();
 }
 
@@ -24,10 +27,10 @@ char *DATA::toBytes() {
 
     // We'll delete that later!
     vector<char> packet;
-    char* bytes;
+    char bytes[2];
 
     // Opcode to Bytes
-    Packet::shortToBytes(Opcode(DATA), bytes);
+    Packet::shortToBytes(Packet::Opcode::DATA, bytes);
     // Insert to vector
     Packet::insertByteArrayToVector(bytes, packet, 2);
 
@@ -47,8 +50,8 @@ char *DATA::toBytes() {
     // Convert the vector to char*
     char* ans = packet.data();
     // Delete everything
-    delete bytes;
-    delete packet;
+
+
 
     return ans;
 
@@ -58,6 +61,15 @@ char *DATA::toBytes() {
 
 
 }
-// @ Sends these packets to server ==> constructor from data
-// @ Receives these packets ==> constructor from char*
+
+int DATA::getBytesCount() {
+    // Opcode, Packet Size, Block #, Data
+    return (2+2+2+packet_size);
+}
+
+DATA::~DATA() {
+
+
+}
+
 

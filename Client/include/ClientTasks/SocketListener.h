@@ -12,15 +12,12 @@
 
 class SocketListener {
 public:
-    SocketListener(ConnectionHandler& handler);
-    ~SocketListener();
+    SocketListener();
+    virtual ~SocketListener();
     void run();
 
 
 private:
-    ConnectionHandler handler;
-    EncoderDecoder encdec;
-
 
 };
 

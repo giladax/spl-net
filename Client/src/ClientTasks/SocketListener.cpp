@@ -2,22 +2,29 @@
 // Created by dorgreen on 1/17/17.
 //
 
-#include "../ClientTasks/"
-#include "../../include/ClientTasks/SocketListener.h"
-#include "../../include/Packets/Packet.h"
 
-SocketListener::SocketListener(ConnectionHandler& handler):
-        handler(handler){
+#include "include/ClientTasks/SocketListener.h"
+
+
+SocketListener::SocketListener() {
 
 
 }
 
 void SocketListener::run() {
-   char *bytes;
+   char *bytes = nullptr;
 
-   while (getBytes(bytes, 2)) {
-      Packet ans = handler.getPacket(bytes);
+   while (ConnectionHandler::getInstance().getBytes(bytes, 2)) {
+      Packet* ans = ConnectionHandler::getInstance().getPacket(bytes);
 
-      if()
+      if(ans != nullptr){
+         ConnectionHandler::getInstance().sendBytes(ans->toBytes(), ans->getBytesCount());
+      }
    }
+
+   delete bytes;
+}
+
+SocketListener::~SocketListener() {
+
 }

@@ -13,8 +13,9 @@ class DATA : public Packet {
 
 public:
     DATA(short block_num, vector<char> data);
-    DATA::~DATA() {}
+    virtual ~DATA();
     virtual char* toBytes();
+    virtual int getBytesCount();
 
 private:
     short packet_size;
@@ -22,5 +23,7 @@ private:
     vector<char> data;
 
 };
+
+#endif //CLIENT_DATA_H
 
 

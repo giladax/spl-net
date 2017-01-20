@@ -13,13 +13,13 @@
 
 class KeyboardListener {
 public:
-    KeyboardListener();
-    KeyboardListener(ConnectionHandler& handler);
+    KeyboardListener(){
+        shouldTerminate = false;
+    }
     void run();
     virtual ~KeyboardListener();
 
 private:
-    ConnectionHandler handler;
     bool disconnectOpReceived(string line);
     bool shouldTerminate;
 

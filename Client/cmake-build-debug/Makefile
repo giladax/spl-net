@@ -150,33 +150,6 @@ src/BidiProtocol/EncoderDecoder.cpp.s:
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/BidiProtocol/EncoderDecoder.cpp.s
 .PHONY : src/BidiProtocol/EncoderDecoder.cpp.s
 
-src/Client.o: src/Client.cpp.o
-
-.PHONY : src/Client.o
-
-# target to build an object file
-src/Client.cpp.o:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Client.cpp.o
-.PHONY : src/Client.cpp.o
-
-src/Client.i: src/Client.cpp.i
-
-.PHONY : src/Client.i
-
-# target to preprocess a source file
-src/Client.cpp.i:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Client.cpp.i
-.PHONY : src/Client.cpp.i
-
-src/Client.s: src/Client.cpp.s
-
-.PHONY : src/Client.s
-
-# target to generate assembly for a file
-src/Client.cpp.s:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Client.cpp.s
-.PHONY : src/Client.cpp.s
-
 src/ClientTasks/KeyboardListener.o: src/ClientTasks/KeyboardListener.cpp.o
 
 .PHONY : src/ClientTasks/KeyboardListener.o
@@ -258,33 +231,6 @@ src/ConnectionHandler.cpp.s:
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/ConnectionHandler.cpp.s
 .PHONY : src/ConnectionHandler.cpp.s
 
-src/EchoClient.o: src/EchoClient.cpp.o
-
-.PHONY : src/EchoClient.o
-
-# target to build an object file
-src/EchoClient.cpp.o:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/EchoClient.cpp.o
-.PHONY : src/EchoClient.cpp.o
-
-src/EchoClient.i: src/EchoClient.cpp.i
-
-.PHONY : src/EchoClient.i
-
-# target to preprocess a source file
-src/EchoClient.cpp.i:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/EchoClient.cpp.i
-.PHONY : src/EchoClient.cpp.i
-
-src/EchoClient.s: src/EchoClient.cpp.s
-
-.PHONY : src/EchoClient.s
-
-# target to generate assembly for a file
-src/EchoClient.cpp.s:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/EchoClient.cpp.s
-.PHONY : src/EchoClient.cpp.s
-
 src/Main.o: src/Main.cpp.o
 
 .PHONY : src/Main.o
@@ -339,33 +285,6 @@ src/Packets/ACK.cpp.s:
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/ACK.cpp.s
 .PHONY : src/Packets/ACK.cpp.s
 
-src/Packets/BCAST.o: src/Packets/BCAST.cpp.o
-
-.PHONY : src/Packets/BCAST.o
-
-# target to build an object file
-src/Packets/BCAST.cpp.o:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/BCAST.cpp.o
-.PHONY : src/Packets/BCAST.cpp.o
-
-src/Packets/BCAST.i: src/Packets/BCAST.cpp.i
-
-.PHONY : src/Packets/BCAST.i
-
-# target to preprocess a source file
-src/Packets/BCAST.cpp.i:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/BCAST.cpp.i
-.PHONY : src/Packets/BCAST.cpp.i
-
-src/Packets/BCAST.s: src/Packets/BCAST.cpp.s
-
-.PHONY : src/Packets/BCAST.s
-
-# target to generate assembly for a file
-src/Packets/BCAST.cpp.s:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/BCAST.cpp.s
-.PHONY : src/Packets/BCAST.cpp.s
-
 src/Packets/DATA.o: src/Packets/DATA.cpp.o
 
 .PHONY : src/Packets/DATA.o
@@ -392,87 +311,6 @@ src/Packets/DATA.s: src/Packets/DATA.cpp.s
 src/Packets/DATA.cpp.s:
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/DATA.cpp.s
 .PHONY : src/Packets/DATA.cpp.s
-
-src/Packets/DELRQ.o: src/Packets/DELRQ.cpp.o
-
-.PHONY : src/Packets/DELRQ.o
-
-# target to build an object file
-src/Packets/DELRQ.cpp.o:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/DELRQ.cpp.o
-.PHONY : src/Packets/DELRQ.cpp.o
-
-src/Packets/DELRQ.i: src/Packets/DELRQ.cpp.i
-
-.PHONY : src/Packets/DELRQ.i
-
-# target to preprocess a source file
-src/Packets/DELRQ.cpp.i:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/DELRQ.cpp.i
-.PHONY : src/Packets/DELRQ.cpp.i
-
-src/Packets/DELRQ.s: src/Packets/DELRQ.cpp.s
-
-.PHONY : src/Packets/DELRQ.s
-
-# target to generate assembly for a file
-src/Packets/DELRQ.cpp.s:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/DELRQ.cpp.s
-.PHONY : src/Packets/DELRQ.cpp.s
-
-src/Packets/DIRQ.o: src/Packets/DIRQ.cpp.o
-
-.PHONY : src/Packets/DIRQ.o
-
-# target to build an object file
-src/Packets/DIRQ.cpp.o:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/DIRQ.cpp.o
-.PHONY : src/Packets/DIRQ.cpp.o
-
-src/Packets/DIRQ.i: src/Packets/DIRQ.cpp.i
-
-.PHONY : src/Packets/DIRQ.i
-
-# target to preprocess a source file
-src/Packets/DIRQ.cpp.i:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/DIRQ.cpp.i
-.PHONY : src/Packets/DIRQ.cpp.i
-
-src/Packets/DIRQ.s: src/Packets/DIRQ.cpp.s
-
-.PHONY : src/Packets/DIRQ.s
-
-# target to generate assembly for a file
-src/Packets/DIRQ.cpp.s:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/DIRQ.cpp.s
-.PHONY : src/Packets/DIRQ.cpp.s
-
-src/Packets/DISC.o: src/Packets/DISC.cpp.o
-
-.PHONY : src/Packets/DISC.o
-
-# target to build an object file
-src/Packets/DISC.cpp.o:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/DISC.cpp.o
-.PHONY : src/Packets/DISC.cpp.o
-
-src/Packets/DISC.i: src/Packets/DISC.cpp.i
-
-.PHONY : src/Packets/DISC.i
-
-# target to preprocess a source file
-src/Packets/DISC.cpp.i:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/DISC.cpp.i
-.PHONY : src/Packets/DISC.cpp.i
-
-src/Packets/DISC.s: src/Packets/DISC.cpp.s
-
-.PHONY : src/Packets/DISC.s
-
-# target to generate assembly for a file
-src/Packets/DISC.cpp.s:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/DISC.cpp.s
-.PHONY : src/Packets/DISC.cpp.s
 
 src/Packets/ERROR.o: src/Packets/ERROR.cpp.o
 
@@ -501,33 +339,6 @@ src/Packets/ERROR.cpp.s:
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/ERROR.cpp.s
 .PHONY : src/Packets/ERROR.cpp.s
 
-src/Packets/LOGRQ.o: src/Packets/LOGRQ.cpp.o
-
-.PHONY : src/Packets/LOGRQ.o
-
-# target to build an object file
-src/Packets/LOGRQ.cpp.o:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/LOGRQ.cpp.o
-.PHONY : src/Packets/LOGRQ.cpp.o
-
-src/Packets/LOGRQ.i: src/Packets/LOGRQ.cpp.i
-
-.PHONY : src/Packets/LOGRQ.i
-
-# target to preprocess a source file
-src/Packets/LOGRQ.cpp.i:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/LOGRQ.cpp.i
-.PHONY : src/Packets/LOGRQ.cpp.i
-
-src/Packets/LOGRQ.s: src/Packets/LOGRQ.cpp.s
-
-.PHONY : src/Packets/LOGRQ.s
-
-# target to generate assembly for a file
-src/Packets/LOGRQ.cpp.s:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/LOGRQ.cpp.s
-.PHONY : src/Packets/LOGRQ.cpp.s
-
 src/Packets/Packet.o: src/Packets/Packet.cpp.o
 
 .PHONY : src/Packets/Packet.o
@@ -555,60 +366,6 @@ src/Packets/Packet.cpp.s:
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/Packet.cpp.s
 .PHONY : src/Packets/Packet.cpp.s
 
-src/Packets/RRQ.o: src/Packets/RRQ.cpp.o
-
-.PHONY : src/Packets/RRQ.o
-
-# target to build an object file
-src/Packets/RRQ.cpp.o:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/RRQ.cpp.o
-.PHONY : src/Packets/RRQ.cpp.o
-
-src/Packets/RRQ.i: src/Packets/RRQ.cpp.i
-
-.PHONY : src/Packets/RRQ.i
-
-# target to preprocess a source file
-src/Packets/RRQ.cpp.i:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/RRQ.cpp.i
-.PHONY : src/Packets/RRQ.cpp.i
-
-src/Packets/RRQ.s: src/Packets/RRQ.cpp.s
-
-.PHONY : src/Packets/RRQ.s
-
-# target to generate assembly for a file
-src/Packets/RRQ.cpp.s:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/RRQ.cpp.s
-.PHONY : src/Packets/RRQ.cpp.s
-
-src/Packets/WRQ.o: src/Packets/WRQ.cpp.o
-
-.PHONY : src/Packets/WRQ.o
-
-# target to build an object file
-src/Packets/WRQ.cpp.o:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/WRQ.cpp.o
-.PHONY : src/Packets/WRQ.cpp.o
-
-src/Packets/WRQ.i: src/Packets/WRQ.cpp.i
-
-.PHONY : src/Packets/WRQ.i
-
-# target to preprocess a source file
-src/Packets/WRQ.cpp.i:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/WRQ.cpp.i
-.PHONY : src/Packets/WRQ.cpp.i
-
-src/Packets/WRQ.s: src/Packets/WRQ.cpp.s
-
-.PHONY : src/Packets/WRQ.s
-
-# target to generate assembly for a file
-src/Packets/WRQ.cpp.s:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/src/Packets/WRQ.cpp.s
-.PHONY : src/Packets/WRQ.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -621,9 +378,6 @@ help:
 	@echo "... src/BidiProtocol/EncoderDecoder.o"
 	@echo "... src/BidiProtocol/EncoderDecoder.i"
 	@echo "... src/BidiProtocol/EncoderDecoder.s"
-	@echo "... src/Client.o"
-	@echo "... src/Client.i"
-	@echo "... src/Client.s"
 	@echo "... src/ClientTasks/KeyboardListener.o"
 	@echo "... src/ClientTasks/KeyboardListener.i"
 	@echo "... src/ClientTasks/KeyboardListener.s"
@@ -633,45 +387,21 @@ help:
 	@echo "... src/ConnectionHandler.o"
 	@echo "... src/ConnectionHandler.i"
 	@echo "... src/ConnectionHandler.s"
-	@echo "... src/EchoClient.o"
-	@echo "... src/EchoClient.i"
-	@echo "... src/EchoClient.s"
 	@echo "... src/Main.o"
 	@echo "... src/Main.i"
 	@echo "... src/Main.s"
 	@echo "... src/Packets/ACK.o"
 	@echo "... src/Packets/ACK.i"
 	@echo "... src/Packets/ACK.s"
-	@echo "... src/Packets/BCAST.o"
-	@echo "... src/Packets/BCAST.i"
-	@echo "... src/Packets/BCAST.s"
 	@echo "... src/Packets/DATA.o"
 	@echo "... src/Packets/DATA.i"
 	@echo "... src/Packets/DATA.s"
-	@echo "... src/Packets/DELRQ.o"
-	@echo "... src/Packets/DELRQ.i"
-	@echo "... src/Packets/DELRQ.s"
-	@echo "... src/Packets/DIRQ.o"
-	@echo "... src/Packets/DIRQ.i"
-	@echo "... src/Packets/DIRQ.s"
-	@echo "... src/Packets/DISC.o"
-	@echo "... src/Packets/DISC.i"
-	@echo "... src/Packets/DISC.s"
 	@echo "... src/Packets/ERROR.o"
 	@echo "... src/Packets/ERROR.i"
 	@echo "... src/Packets/ERROR.s"
-	@echo "... src/Packets/LOGRQ.o"
-	@echo "... src/Packets/LOGRQ.i"
-	@echo "... src/Packets/LOGRQ.s"
 	@echo "... src/Packets/Packet.o"
 	@echo "... src/Packets/Packet.i"
 	@echo "... src/Packets/Packet.s"
-	@echo "... src/Packets/RRQ.o"
-	@echo "... src/Packets/RRQ.i"
-	@echo "... src/Packets/RRQ.s"
-	@echo "... src/Packets/WRQ.o"
-	@echo "... src/Packets/WRQ.i"
-	@echo "... src/Packets/WRQ.s"
 .PHONY : help
 
 

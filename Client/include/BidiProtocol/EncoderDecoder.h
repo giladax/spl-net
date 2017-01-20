@@ -14,7 +14,6 @@ class EncoderDecoder {
 public:
     virtual ~EncoderDecoder();
     vector<char> encode(string line);
-    char *stringToChar(string line);
     void pushBytesToVector(char *bytes, std::vector<char> vec);
     void stringToChar(string line, char *cstr);
     vector<char> argumentsToStructuredCharArray(vector<string> splitInput, short opcode, char *c);
