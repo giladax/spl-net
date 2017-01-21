@@ -2,6 +2,7 @@ package bgu.spl171.net.srv;
 
 import bgu.spl171.net.api.MessageEncoderDecoder;
 import bgu.spl171.net.api.MessagingProtocol;
+import bgu.spl171.net.api.bidi.BidiMessagingProtocol;
 
 import java.util.function.Supplier;
 
@@ -14,7 +15,7 @@ public class ThreadPerClientServer<T> extends BaseServer<T> {
 
     public ThreadPerClientServer(
             int port,
-            Supplier<MessagingProtocol<T>> protocolFactory,
+            Supplier<BidiMessagingProtocol<T>> protocolFactory,
             Supplier<MessageEncoderDecoder<T>> encdecFactory) {
 
         super(port, protocolFactory, encdecFactory);
