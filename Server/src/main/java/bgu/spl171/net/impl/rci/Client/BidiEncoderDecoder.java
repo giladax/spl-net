@@ -33,9 +33,12 @@ public class BidiEncoderDecoder<T> implements MessageEncoderDecoder<Packet> {
             tmp = packet.getPacket(bytesRead, numOfBytes);
         }
 
-        // Packet is complete return it!
-        if(tmp!=null)
-            return packet;
+        // Packet is complete return it and reset the parameters for future usage by the client
+        if (tmp != null) {
+            tmp = packet;
+            reset();
+
+        }
 
         return tmp;
 
@@ -54,6 +57,12 @@ public class BidiEncoderDecoder<T> implements MessageEncoderDecoder<Packet> {
         short result = (short) ((byteArr[0] & 0xff) << 8);
         result += (short) (byteArr[1] & 0xff);
         return result;
+    }
+
+    public void reset() {
+        packet = null;
+        numOfBytes = 0;
+        bytesRead = new byte[1 << 13];
     }
 
 

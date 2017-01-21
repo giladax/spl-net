@@ -38,6 +38,12 @@ public abstract class Packet {
         OP_CODE = opCode;
     }
 
+    /*
+    // Copy constructor
+    public Packet(Packet packet){
+
+    }
+    */
 
     public short getOP_CODE() {
         return OP_CODE;
