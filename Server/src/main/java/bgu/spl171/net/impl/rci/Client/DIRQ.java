@@ -15,7 +15,6 @@ public class DIRQ extends Packet {
         return this;
     }
 
-    // TODO: IMPLEMENT
     @Override
     public Packet handle(MessagingProtocolImpl protocol) {
         protocol.sendFileListing(); // Initiates the sending process. a call from incoming ACK packet will continue it.
