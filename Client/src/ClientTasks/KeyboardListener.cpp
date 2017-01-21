@@ -4,9 +4,9 @@
 
 
 #include <string>
-#include "../../include/Packets/Packet.h"
-#include "../../include/ConnectionHandler.h"
-#include "../../include/ClientTasks/KeyboardListener.h"
+#include "include/Packets/Packet.h"
+#include "include/ConnectionHandler.h"
+#include "include/ClientTasks/KeyboardListener.h"
 
 using namespace std;
 

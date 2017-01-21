@@ -1,11 +1,7 @@
 //
 // Created by dorgreen on 1/17/17.
 //
-
-#ifndef CLIENT_ACK_H
-#define CLIENT_ACK_H
-
-
+#pragma once
 #include "Packet.h"
 
 class ACK : public Packet {
@@ -16,9 +12,7 @@ public:
 
     // Only ERROR, DATA, ACK override this
     // Needed for ConnectionHandler::sendBytes
-    virtual int getBytesCount(){
-        return 4;
-    }
+    virtual int getBytesCount();
 
 
     virtual ~ACK();
@@ -28,4 +22,4 @@ private:
 };
 
 
-#endif //CLIENT_ACK_H
+

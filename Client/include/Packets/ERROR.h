@@ -2,10 +2,11 @@
 // Created by dorgreen on 1/17/17.
 //
 
-#ifndef CLIENT_ERROR_H
-#define CLIENT_ERROR_H
-
+//#ifndef CLIENT_ERROR_H
+//#define CLIENT_ERROR_H
+#pragma once
 #include "Packet.h"
+
 
 class ERROR : public Packet {
 private:
@@ -18,13 +19,11 @@ public:
 
     // Only ERROR, DATA, ACK override this
     // Needed for ConnectionHandler::sendBytes
-    virtual int getBytesCount(){
-        return 4;
-    }
+    virtual int getBytesCount();
 
     virtual char* toBytes();
 
 };
 
 
-#endif //CLIENT_ERROR_H
+//#endif //CLIENT_ERROR_H

@@ -1,30 +1,14 @@
 
 
-#include "../../include/Packets/Packet.h"
+#include "include/Packets/Packet.h"
+
 
 
 using namespace std;
 
-
-
-
-Packet::Packet() {
-
-}
-
 Packet::Packet(Opcode opcode) : opcode(opcode) {}
 
 Packet::~Packet() {}
-
-// TODO: should this motherFucking shit exist?
-/*
- *
-
-Packet *Packet::getPacket(char *incomming) {
-    // All packets that shouldn't be responded will have that as default
-    return nullptr;
-}
- */
 
 /*
  * Supplied by BGU Staff
@@ -46,6 +30,14 @@ short Packet::bytesToShort(char *bytesArr) {
     short result = (short) ((bytesArr[0] & 0xff) << 8);
     result += (short) (bytesArr[1] & 0xff);
     return result;
+}
+
+char *Packet::toBytes() {
+    return nullptr;
+}
+
+int Packet::getBytesCount() {
+    return 0;
 }
 
 

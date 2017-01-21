@@ -1,12 +1,10 @@
-#ifndef CONNECTION_HANDLER__
-    #define CONNECTION_HANDLER__
-                                               
 
+#pragma once
     #include <iostream>
     #include <boost/asio.hpp>
     #include <string>
 
-    #include "../include/Packets/Packet.h"
+    #include "include/Packets/Packet.h"
 
 #include "BidiProtocol/EncoderDecoder.h"
 
@@ -69,4 +67,3 @@
         Packet* sendNextDataPacket(short block_num);
     }; //class ConnectionHandler
      
-    #endif 

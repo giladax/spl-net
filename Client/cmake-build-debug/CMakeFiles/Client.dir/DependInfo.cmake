@@ -4,24 +4,23 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/dorgreen/spl-net/Client/src/BidiProtocol/EncoderDecoder.cpp" "/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/src/BidiProtocol/EncoderDecoder.cpp.o"
-  "/Users/dorgreen/spl-net/Client/src/ClientTasks/KeyboardListener.cpp" "/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/src/ClientTasks/KeyboardListener.cpp.o"
-  "/Users/dorgreen/spl-net/Client/src/ClientTasks/SocketListener.cpp" "/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/src/ClientTasks/SocketListener.cpp.o"
-  "/Users/dorgreen/spl-net/Client/src/ConnectionHandler.cpp" "/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/src/ConnectionHandler.cpp.o"
-  "/Users/dorgreen/spl-net/Client/src/Main.cpp" "/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/src/Main.cpp.o"
-  "/Users/dorgreen/spl-net/Client/src/Packets/ACK.cpp" "/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/src/Packets/ACK.cpp.o"
-  "/Users/dorgreen/spl-net/Client/src/Packets/DATA.cpp" "/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/src/Packets/DATA.cpp.o"
-  "/Users/dorgreen/spl-net/Client/src/Packets/ERROR.cpp" "/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/src/Packets/ERROR.cpp.o"
-  "/Users/dorgreen/spl-net/Client/src/Packets/Packet.cpp" "/Users/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/src/Packets/Packet.cpp.o"
+  "/users/studs/bsc/2016/dorgreen/spl-net/Client/src/BidiProtocol/EncoderDecoder.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/src/BidiProtocol/EncoderDecoder.cpp.o"
+  "/users/studs/bsc/2016/dorgreen/spl-net/Client/src/ClientTasks/KeyboardListener.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/src/ClientTasks/KeyboardListener.cpp.o"
+  "/users/studs/bsc/2016/dorgreen/spl-net/Client/src/ClientTasks/SocketListener.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/src/ClientTasks/SocketListener.cpp.o"
+  "/users/studs/bsc/2016/dorgreen/spl-net/Client/src/ConnectionHandler.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/src/ConnectionHandler.cpp.o"
+  "/users/studs/bsc/2016/dorgreen/spl-net/Client/src/Main.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/src/Main.cpp.o"
+  "/users/studs/bsc/2016/dorgreen/spl-net/Client/src/Packets/ACK.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/src/Packets/ACK.cpp.o"
+  "/users/studs/bsc/2016/dorgreen/spl-net/Client/src/Packets/DATA.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/src/Packets/DATA.cpp.o"
+  "/users/studs/bsc/2016/dorgreen/spl-net/Client/src/Packets/ERROR.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/src/Packets/ERROR.cpp.o"
+  "/users/studs/bsc/2016/dorgreen/spl-net/Client/src/Packets/Packet.cpp" "/users/studs/bsc/2016/dorgreen/spl-net/Client/cmake-build-debug/CMakeFiles/Client.dir/src/Packets/Packet.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../."
   "../include"
   "../src"
-  "/usr/local/include"
   )
 
 # Targets to which this target links.

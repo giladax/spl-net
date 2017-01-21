@@ -2,13 +2,12 @@
 // Created by dorgreen on 1/17/17.
 //
 
-#ifndef CLIENT_KEYBOARDLISTENER_H
-#define CLIENT_KEYBOARDLISTENER_H
-
-#include "../ConnectionHandler.h"
-#include "../BidiProtocol/EncoderDecoder.h"
-#include "../Packets/Packet.h"
+#pragma once
+#include "ConnectionHandler.h"
+#include "BidiProtocol/EncoderDecoder.h"
+#include "Packets/Packet.h"
 #include <string>
+
 
 
 class KeyboardListener {
@@ -29,4 +28,4 @@ private:
 };
 
 
-#endif //CLIENT_KEYBOARDLISTENER_H
+

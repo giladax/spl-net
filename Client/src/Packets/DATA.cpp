@@ -2,7 +2,7 @@
 // Created by dorgreen on 1/17/17.
 //
 
-#include <vector>
+#include "vector"
 
 #include "include/Packets/DATA.h"
 
@@ -19,7 +19,7 @@ using namespace std;
 // @ Sends these packets to server ==> constructor from data
 // @ Receives these packets ==> constructor from char*
 
-DATA::DATA(short block_num, vector<char> data) : Packet(Packet::Opcode::DATA), data(data), block_num(block_num) {
+DATA::DATA(short block_num, vector<char> data) : Packet(Opcode::_DATA), data(data), block_num(block_num) {
     packet_size = (short) data.size();
 }
 
@@ -30,7 +30,7 @@ char *DATA::toBytes() {
     char bytes[2];
 
     // Opcode to Bytes
-    Packet::shortToBytes(Packet::Opcode::DATA, bytes);
+    Packet::shortToBytes(Opcode::_DATA, bytes);
     // Insert to vector
     Packet::insertByteArrayToVector(bytes, packet, 2);
 

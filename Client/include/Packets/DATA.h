@@ -2,12 +2,14 @@
 // Created by dorgreen on 1/17/17.
 //
 
-#ifndef CLIENT_DATA_H
-#define CLIENT_DATA_H
+//#ifndef CLIENT_DATA_H
+//#define CLIENT_DATA_H
 
-
+#pragma once
 #include "Packet.h"
-#include <vector>
+#include "vector"
+
+
 using  namespace std;
 class DATA : public Packet {
 
@@ -24,6 +26,6 @@ private:
 
 };
 
-#endif //CLIENT_DATA_H
+//#endif //CLIENT_DATA_H
 
 

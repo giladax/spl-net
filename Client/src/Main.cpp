@@ -1,7 +1,9 @@
+
 #include <boost/thread.hpp>
-#include "../include/ConnectionHandler.h"
-#include "../include/ClientTasks/KeyboardListener.h"
-#include "../include/ClientTasks/SocketListener.h"
+#include "include/ConnectionHandler.h"
+#include "include/ClientTasks/KeyboardListener.h"
+#include "include/ClientTasks/SocketListener.h"
+
 
 //using namespace std;
 
