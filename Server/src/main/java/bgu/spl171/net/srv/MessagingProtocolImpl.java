@@ -1,12 +1,9 @@
 package bgu.spl171.net.srv;
 
-import bgu.spl171.net.api.MessagingProtocol;
 import bgu.spl171.net.api.bidi.BidiMessagingProtocol;
 import bgu.spl171.net.api.bidi.Connections;
 
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
@@ -184,7 +181,7 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
         return false;
     }
 
-    public void broadcast(Packet.BCAST packet) {
+    public void broadcast(BCAST packet) {
         connections.broadcast(packet);
     }
 
@@ -193,11 +190,11 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
         try {
             Files.write(fileWritePath, dataRecived, APPEND);
         } catch (IOException e) {
-            connections.send(connectionId, new Packet.ERROR(2)); // ERROR: "Access violation – File cannot be written, read or deleted."
+            connections.send(connectionId, new ERROR(2)); // ERROR: "Access violation – File cannot be written, read or deleted."
             e.printStackTrace();
         }
 
-        broadcast(new Packet.BCAST(0, fileWritePath));
+        broadcast(new BCAST(0, fileWritePath.toString()));
 
         // Reset all parameters that holds data related to this transaction
         // TODO: if we decide that file should have .tmp endings, change it here
@@ -226,7 +223,7 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
 
         // Send just ONE packet
         if (packetSize > 0) {
-            connections.send(connectionId, new Packet.DATA(packetSize, sentPacketNum, buffer.array()));
+            connections.send(connectionId, new DATA((short) packetSize, (short) sentPacketNum, buffer.array()));
             ++sentPacketNum;
             buffer.clear();
         }
@@ -259,7 +256,7 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
             try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) {
                 for (Path p : stream) {
                     // TODO: IF ADDED .tmp TO FILES BEING TRANSFERRED, ADD 'if' HERE
-                    listing.concat(p.getFileName().toString()+ "/0"); // Separate lines with "\0", as per protocol
+                    listing.concat(p.getFileName().toString() + "/0"); // Separate lines with "\0", as per protocol
                 }
                 dirqToSend = listing.getBytes();
                 dirqPacketCounter = 0;
@@ -271,9 +268,9 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
         // Send the packet if it's not the last
         if (dirqPacketCounter < dirqPackets) {
             connections.send(connectionId,
-                    new Packet.DATA(
-                            MAX_PACKET_SIZE,
-                            dirqPacketCounter,
+                    new DATA(
+                            (short) MAX_PACKET_SIZE,
+                            (short) dirqPacketCounter,
                             Arrays.copyOfRange(dirqToSend, MAX_PACKET_SIZE * dirqPacketCounter, MAX_PACKET_SIZE * (dirqPacketCounter + 1))
                     ));
             ++dirqPacketCounter;
@@ -283,9 +280,9 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
         else {
             int lastPacketLength = dirqToSend.length % MAX_PACKET_SIZE;
             connections.send(connectionId,
-                    new Packet.DATA(
+                    new DATA(
                             (short) lastPacketLength,
-                            dirqPacketCounter,
+                            (short) dirqPacketCounter,
                             Arrays.copyOfRange(dirqToSend, MAX_PACKET_SIZE * dirqPacketCounter, dirqToSend.length)
                     ));
 
@@ -306,7 +303,13 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
 
         // File is being sent, continue sending it
         if (fileReadPath != null) {
-            sendFile();
+            try {
+                sendFile();
+            }
+            catch(IOException ex){
+                // TODO: maybe delete that print
+                ex.printStackTrace();
+            }
         }
 
         // Directory listing is being sent, continue sending it
@@ -315,13 +318,12 @@ public class MessagingProtocolImpl implements BidiMessagingProtocol<Packet> {
         }
     }
 
-    public boolean deleteFile(String fileName){
+    public boolean deleteFile(String fileName) {
         boolean ans = false;
-        try{
+        try {
             Files.delete(FileSystems.getDefault().getPath(FILES_DIR + fileName));
-            connections.broadcast(new Packet.BCAST(1, fileName));
-        }
-        catch(IOException ex){
+            connections.broadcast(new BCAST(1, fileName));
+        } catch (IOException ex) {
             return false;
         }
 

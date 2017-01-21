@@ -2,22 +2,24 @@ package bgu.spl171.net.srv;
 
 import bgu.spl171.net.api.MessageEncoderDecoder;
 import bgu.spl171.net.api.MessagingProtocol;
+import bgu.spl171.net.api.bidi.BidiMessagingProtocol;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
-public class BlockingConnectionHandler<T> implements Runnable, bgu.spl171.net.srv.ConnectionHandler<T> {
+public class BlockingConnectionHandler<Packet> implements Runnable, bgu.spl171.net.srv.ConnectionHandler<Packet> {
 
 
-    private final MessagingProtocol<T> protocol;
-    private final MessageEncoderDecoder<T> encdec;
+    private final BidiMessagingProtocol<Packet> protocol;
+    private final BidiEncoderDecoder<Packet> encdec;
     private final Socket sock;
     private BufferedInputStream in;
     private BufferedOutputStream out;
     private volatile boolean connected = true;
 
-    public BlockingConnectionHandler(Socket sock, MessageEncoderDecoder<T> reader, MessagingProtocol<T> protocol) {
+    public BlockingConnectionHandler(Socket sock, BidiEncoderDecoder<Packet> reader, BidiMessagingProtocol<Packet> protocol) {
         this.sock = sock;
         this.encdec = reader;
         this.protocol = protocol;
@@ -33,13 +35,10 @@ public class BlockingConnectionHandler<T> implements Runnable, bgu.spl171.net.sr
             out = new BufferedOutputStream(sock.getOutputStream());
 
             while (!protocol.shouldTerminate() && connected && (read = in.read()) >= 0) { // Changed as per staff instruction
-                T nextMessage = encdec.decodeNextByte((byte) read); // Not null <==> Packet is complete
+                Packet nextMessage = encdec.decodeNextByte((byte) read); // Not null <==> Packet is complete
                 if (nextMessage != null) {
-                    T response = protocol.process(nextMessage); // Protocol-specific logic is to be implemented in this function
-                    if (response != null) {
-                        out.write(encdec.encode(response));
-                        out.flush();
-                    }
+                    protocol.process(nextMessage); // Protocol-specific logic is to be implemented in this function
+
                 }
             }
 
@@ -56,13 +55,13 @@ public class BlockingConnectionHandler<T> implements Runnable, bgu.spl171.net.sr
     }
 
     @Override
-    public void send(T msg){
+    public void send(Packet msg) {
         try {
             out.write(encdec.encode(msg));
             out.flush();
-        }
-        catch (IOException ex){
+        } catch (IOException ex) {
             return;
         }
     }
 }
+
