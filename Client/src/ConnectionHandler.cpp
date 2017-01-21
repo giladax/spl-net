@@ -4,6 +4,7 @@
 #include <include/Packets/ERROR.h>
 #include <include/Packets/ACK.h>
 #include <include/Packets/DATA.h>
+#include "Utils.h"
 
 
 using boost::asio::ip::tcp;
@@ -119,7 +120,7 @@ Packet *ConnectionHandler::getPacket(char *bytes) {
     Packet *ans = nullptr;
 
 
-    short opcode = Packet::bytesToShort(bytes);
+    short opcode = Utils::bytesToShort(bytes);
     short block_num;
 
     switch (opcode) {
@@ -139,10 +140,10 @@ Packet *ConnectionHandler::getPacket(char *bytes) {
          */
         case 3: {
             this->getBytes(bytes, 2);
-            short packet_size = Packet::bytesToShort(bytes);
+            short packet_size = Utils::bytesToShort(bytes);
 
             this->getBytes(bytes, 2);
-            block_num = Packet::bytesToShort(bytes);
+            block_num = Utils::bytesToShort(bytes);
 
             // We indeed have packet_size bytes of data
             // bytes now hold the data part of the packet
@@ -212,7 +213,7 @@ Packet *ConnectionHandler::getPacket(char *bytes) {
         case 4: {
 
             this->getBytes(bytes, 2);
-            block_num = Packet::bytesToShort(bytes);
+            block_num = Utils::bytesToShort(bytes);
 
             cout << "ACK " << block_num << endl;
 
@@ -250,7 +251,7 @@ Packet *ConnectionHandler::getPacket(char *bytes) {
             */
         case 5: {
             this->getBytes(bytes, 2);
-            short error_code = Packet::bytesToShort(bytes);
+            short error_code = Utils::bytesToShort(bytes);
             cout << "ERROR " << error_code << endl;
 
             // TODO: the rest of the packet should still be in the buffer. We might want to pull it to clear the buffer even if it's not needed
@@ -310,7 +311,7 @@ Packet *ConnectionHandler::getPacket(char *bytes) {
 // We do this to avoid some weird ObjectOriented stuff
 bool ConnectionHandler::setRecievingState(vector<char> userInput) {
     char bytes[2] = {userInput[0], userInput[1]};
-    short newState = Packet::bytesToShort(bytes);
+    short newState = Utils::bytesToShort(bytes);
     bool ans = false;
     string set( userInput.begin(), userInput.end() );
     set = set.substr(2);

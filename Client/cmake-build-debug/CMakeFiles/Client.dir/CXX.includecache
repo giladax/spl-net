@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+.././Utils.h
+vector
+.././vector
+
 .././include/BidiProtocol/EncoderDecoder.h
 string
 -
@@ -80,10 +84,6 @@ BidiProtocol/EncoderDecoder.h
 vector
 -
 
-../src/Packets/Packet.cpp
-include/Packets/Packet.h
-../src/Packets/include/Packets/Packet.h
-
 /users/studs/bsc/2016/dorgreen/spl-net/Client/src/BidiProtocol/EncoderDecoder.cpp
 include/BidiProtocol/EncoderDecoder.h
 /users/studs/bsc/2016/dorgreen/spl-net/Client/src/BidiProtocol/include/BidiProtocol/EncoderDecoder.h
@@ -91,8 +91,8 @@ iostream
 -
 sstream
 -
-Packets/Packet.cpp
-/users/studs/bsc/2016/dorgreen/spl-net/Client/src/BidiProtocol/Packets/Packet.cpp
+Utils.h
+/users/studs/bsc/2016/dorgreen/spl-net/Client/src/BidiProtocol/Utils.h
 boost/algorithm/string/split.hpp
 -
 boost/algorithm/string/classification.hpp
@@ -123,6 +123,8 @@ include/Packets/ACK.h
 -
 include/Packets/DATA.h
 -
+Utils.h
+/users/studs/bsc/2016/dorgreen/spl-net/Client/src/Utils.h
 
 /users/studs/bsc/2016/dorgreen/spl-net/Client/src/Main.cpp
 boost/thread.hpp
@@ -137,12 +139,14 @@ include/ClientTasks/SocketListener.h
 /users/studs/bsc/2016/dorgreen/spl-net/Client/src/Packets/ACK.cpp
 include/Packets/ACK.h
 /users/studs/bsc/2016/dorgreen/spl-net/Client/src/Packets/include/Packets/ACK.h
-Packet.cpp
-/users/studs/bsc/2016/dorgreen/spl-net/Client/src/Packets/Packet.cpp
+Utils.h
+/users/studs/bsc/2016/dorgreen/spl-net/Client/src/Packets/Utils.h
 
 /users/studs/bsc/2016/dorgreen/spl-net/Client/src/Packets/DATA.cpp
 vector
 /users/studs/bsc/2016/dorgreen/spl-net/Client/src/Packets/vector
+Utils.h
+/users/studs/bsc/2016/dorgreen/spl-net/Client/src/Packets/Utils.h
 include/Packets/DATA.h
 /users/studs/bsc/2016/dorgreen/spl-net/Client/src/Packets/include/Packets/DATA.h
 
@@ -153,4 +157,8 @@ include/Packets/ERROR.h
 /users/studs/bsc/2016/dorgreen/spl-net/Client/src/Packets/Packet.cpp
 include/Packets/Packet.h
 /users/studs/bsc/2016/dorgreen/spl-net/Client/src/Packets/include/Packets/Packet.h
+
+/users/studs/bsc/2016/dorgreen/spl-net/Client/src/Utils.cpp
+Utils.h
+/users/studs/bsc/2016/dorgreen/spl-net/Client/src/Utils.h
 

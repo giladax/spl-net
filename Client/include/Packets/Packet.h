@@ -24,9 +24,7 @@ public:
     Packet(Opcode opcode);
 
     virtual ~Packet();
-    static short bytesToShort(char* bytesArr);
-    static void  shortToBytes(short num, char *bytesArr);
-    static void  insertByteArrayToVector(char* bytesArr, vector<char> vec, int size);
+
 
     // Only ERROR, DATA, ACK override this
     virtual char* toBytes();

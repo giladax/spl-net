@@ -3,7 +3,7 @@
 //
 
 #include "vector"
-
+#include "Utils.h"
 #include "include/Packets/DATA.h"
 
 using namespace std;
@@ -30,19 +30,19 @@ char *DATA::toBytes() {
     char bytes[2];
 
     // Opcode to Bytes
-    Packet::shortToBytes(Opcode::_DATA, bytes);
+    Utils::shortToBytes(Opcode::_DATA, bytes);
     // Insert to vector
-    Packet::insertByteArrayToVector(bytes, packet, 2);
+    Utils::insertByteArrayToVector(bytes, packet, 2);
 
     // Packet Size to Bytes
-    Packet::shortToBytes(packet_size, bytes);
+    Utils::shortToBytes(packet_size, bytes);
     // Insert to vector
-    Packet::insertByteArrayToVector(bytes,packet, 2);
+    Utils::insertByteArrayToVector(bytes,packet, 2);
 
     // Block # to Bytes
-    Packet::shortToBytes(block_num, bytes);
+    Utils::shortToBytes(block_num, bytes);
     // Insert to vector
-    Packet::insertByteArrayToVector(bytes,packet, 2);
+    Utils::insertByteArrayToVector(bytes,packet, 2);
 
     // Concate data to the end of the packet
     packet.insert(packet.end(), data.begin(), data.end());

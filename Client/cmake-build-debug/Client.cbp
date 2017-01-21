@@ -90,6 +90,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/Utils.h">
+			<Option target="Client"/>
+		</Unit>
 		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/include/BidiProtocol/EncoderDecoder.h">
 			<Option target="Client"/>
 		</Unit>
@@ -139,6 +142,9 @@
 			<Option target="Client"/>
 		</Unit>
 		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/src/Packets/Packet.cpp">
+			<Option target="Client"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/src/Utils.cpp">
 			<Option target="Client"/>
 		</Unit>
 		<Unit filename="/users/studs/bsc/2016/dorgreen/spl-net/Client/CMakeLists.txt">

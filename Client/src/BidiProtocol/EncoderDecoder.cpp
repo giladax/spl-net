@@ -5,7 +5,7 @@
 #include "include/BidiProtocol/EncoderDecoder.h"
 #include <iostream>
 #include <sstream>
-#include "Packets/Packet.cpp"
+#include "Utils.h"
 #include <boost/algorithm/string/split.hpp>
 #include <boost/algorithm/string/classification.hpp>
 using namespace std;
@@ -27,7 +27,7 @@ vector<char> EncoderDecoder::encode(string line) {
         if(splitInput.size() == 1){
             // Get the Opcode to char*, into c
             // That's all for this packet
-            Packet::shortToBytes((short)10, c);
+           Utils::shortToBytes((short)10, c);
         }
         // Input is INVALID
         else{
@@ -40,7 +40,7 @@ vector<char> EncoderDecoder::encode(string line) {
         if(splitInput.size() == 1){
             // Get the Opcode to char*, into c
             // That's all for this packet
-            Packet::shortToBytes((short)6, c);
+            Utils::shortToBytes((short)6, c);
         }
             // Input is INVALID
         else{
@@ -102,7 +102,7 @@ vector<char> EncoderDecoder::argumentsToStructuredCharArray(vector<string> split
     if(splitInput.size() == 2){
         // OpName and another argument, as required
         // Structure is: OPCODE | Argument | '0'
-        Packet::shortToBytes(opcode, c);
+        Utils::shortToBytes(opcode, c);
         pushBytesToVector(c, helper);
 
         // This char array is needed because convertion of string to char* returns const char*

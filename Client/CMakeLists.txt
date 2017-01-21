@@ -8,7 +8,7 @@ find_package(Boost COMPONENTS system filesystem REQUIRED)
 set(SOURCE_FILES
         src/ConnectionHandler.cpp
         include/ConnectionHandler.h
-        src/ClientTasks/KeyboardListener.cpp include/ClientTasks/KeyboardListener.h src/ClientTasks/SocketListener.cpp include/ClientTasks/SocketListener.h src/Main.cpp src/BidiProtocol/EncoderDecoder.cpp include/BidiProtocol/EncoderDecoder.h src/Packets/Packet.cpp include/Packets/Packet.h src/Packets/DATA.cpp include/Packets/DATA.h src/Packets/ACK.cpp include/Packets/ACK.h src/Packets/ERROR.cpp include/Packets/ERROR.h )
+        src/ClientTasks/KeyboardListener.cpp include/ClientTasks/KeyboardListener.h src/ClientTasks/SocketListener.cpp include/ClientTasks/SocketListener.h src/Main.cpp src/BidiProtocol/EncoderDecoder.cpp include/BidiProtocol/EncoderDecoder.h src/Packets/Packet.cpp include/Packets/Packet.h src/Packets/DATA.cpp include/Packets/DATA.h src/Packets/ACK.cpp include/Packets/ACK.h src/Packets/ERROR.cpp include/Packets/ERROR.h src/Utils.cpp Utils.h)
 
 include_directories(.)
 include_directories(include)
