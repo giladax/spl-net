@@ -1,13 +1,13 @@
 package bgu.spl171.net.srv;
 
 import bgu.spl171.net.api.MessageEncoderDecoder;
-import bgu.spl171.net.api.MessagingProtocol;
 import bgu.spl171.net.api.bidi.BidiMessagingProtocol;
+import bgu.spl171.net.impl.rci.Client.*;
 
 import java.io.Closeable;
 import java.util.function.Supplier;
 
-public interface Server<Packet> extends Closeable {
+public interface Server<T> extends Closeable {
 
     /**
      * The main loop of the server, Starts listening and handling new clients.
@@ -18,16 +18,16 @@ public interface Server<Packet> extends Closeable {
      *This function returns a new instance of a thread per client pattern server
      * @param port The port for the server socket
      * @param protocolFactory A factory that creats new MessagingProtocols
-     * @param encoderDecoderFactory A factory that creats new MessageEncoderDecoder
+     * @param encdecFactory A factory that creats new MessageEncoderDecoder
      * @param <T> The Message Object for the protocol
      * @return A new Thread per client server
      */
-    public static <T> Server<T>  threadPerClient(
+    public static <T> Server<T>  threadPerClient (
             int port,
             Supplier<BidiMessagingProtocol<T>> protocolFactory,
-            Supplier<MessageEncoderDecoder<T> > encoderDecoderFactory) {
+            Supplier<MessageEncoderDecoder<T>> encdecFactory) {
 
-        return new BaseServer<T>(port, protocolFactory, encoderDecoderFactory) {
+        return new BaseServer<T>(port, protocolFactory, encdecFactory) {
             @Override
             protected void execute(BlockingConnectionHandler<T>  handler) {
                 new Thread(handler).start();
@@ -49,7 +49,7 @@ public interface Server<Packet> extends Closeable {
             int nthreads,
             int port,
             Supplier<BidiMessagingProtocol<T>> protocolFactory,
-            Supplier<MessageEncoderDecoder<T>> encoderDecoderFactory) {
+            Supplier<BidiEncoderDecoder<T>> encoderDecoderFactory) {
         return new Reactor<T>(nthreads, port, protocolFactory, encoderDecoderFactory);
     }
 
