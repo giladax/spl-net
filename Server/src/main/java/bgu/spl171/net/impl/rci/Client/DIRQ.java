@@ -17,8 +17,13 @@ public class DIRQ extends Packet {
 
     @Override
     public Packet handle(MessagingProtocolImpl protocol) {
-        protocol.sendFileListing(); // Initiates the sending process. a call from incoming ACK packet will continue it.
-        return new ACK(ACK_SUCCESSFUL);
+        // Initiates the sending process and SENDS THE FIRST PACKET. a call from incoming ACK packet will continue it.
+        protocol.sendFileListing();
+
+        // No need to send anything as sendFileListing() will take case of this.
+        //return new ACK(ACK_SUCCESSFUL);
+
+        return null;
     }
 
     /**

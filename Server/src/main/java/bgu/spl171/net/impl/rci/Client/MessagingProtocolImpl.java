@@ -3,12 +3,8 @@ package bgu.spl171.net.impl.rci.Client;
 import bgu.spl171.net.api.bidi.BidiMessagingProtocol;
 import bgu.spl171.net.api.bidi.Connections;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.io.*;
 import java.nio.ByteBuffer;
-import java.nio.channels.FileChannel;
 import java.nio.file.DirectoryStream;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
@@ -36,8 +32,7 @@ public class MessagingProtocolImpl<T> implements BidiMessagingProtocol<Packet> {
     // RRQ HANDLING PARAMETERS
     // When the user asks for a file, this holds all of the data related to this transaction
     private Path fileReadPath = null;
-    private RandomAccessFile ramFile = null;
-    private FileChannel fileChannel = null;
+    private FileInputStream reader = null;
     private int sentPacketNum = 0;
     ByteBuffer buffer = ByteBuffer.allocate(MAX_PACKET_SIZE); // TODO: SHOULD WE KILL IT WHEN CLOSING CONNECTION?
 
@@ -128,12 +123,11 @@ public class MessagingProtocolImpl<T> implements BidiMessagingProtocol<Packet> {
         this.fileWritePath = FileSystems.getDefault().getPath(TEMP_DIR + fileName);
     }
 
-    public boolean moveCompleteFileToFilesFolder(){
-        Path newFilePath = fileWritePath.subpath(TEMP_DIR.length()-FILES_DIR.length(), fileWritePath.toString().length());
-        File newFile = new File(newFilePath.toString());
+    public boolean moveCompleteFileToFilesFolder() {
+        String newFilePath = FILES_DIR + fileWritePath.getFileName();
         File file = new File(fileWritePath.toString());
 
-        boolean ans = file.renameTo(newFile);
+        boolean ans = file.renameTo(new File(newFilePath));
 
         // Reset all parameters that holds data related to this transaction
         dataRecived = null;
@@ -146,7 +140,6 @@ public class MessagingProtocolImpl<T> implements BidiMessagingProtocol<Packet> {
         }
 
         return ans;
-
     }
 
     public boolean createFile() {
@@ -158,10 +151,11 @@ public class MessagingProtocolImpl<T> implements BidiMessagingProtocol<Packet> {
             //e.printStackTrace();
         }
     }
-
+/*
     public String getFileWritePath() {
         return fileWritePath.toString();
     }
+    */
 
 
     public void insertNewData(byte[] data, int packetNum) throws IOException {
@@ -172,7 +166,7 @@ public class MessagingProtocolImpl<T> implements BidiMessagingProtocol<Packet> {
 
         try(FileOutputStream writer = new FileOutputStream(fileWritePath.toString(),true)){
 
-            writer.write(data,0,data.length); // TODO: Might want to offset by packetNum * MAX_PACKET_SIZE
+            writer.write(data,0,data.length);
 
             if (data.length < MAX_PACKET_SIZE) {
                 moveCompleteFileToFilesFolder(); // TODO: this returns boolean so we could return an ERROR packet if needded
@@ -182,13 +176,6 @@ public class MessagingProtocolImpl<T> implements BidiMessagingProtocol<Packet> {
         catch (IOException e){
             connections.send(connectionId, new ERROR(2)); // Access violation
         }
-
-
-
-
-
-
-
     }
 
     public boolean isFileAvailable(String fileName) {
@@ -223,33 +210,33 @@ public class MessagingProtocolImpl<T> implements BidiMessagingProtocol<Packet> {
      */
     public void sendFile() throws IOException {
         // Read from the file "fileReadPath" into a buffer if not initiated
-        if (fileChannel == null || ramFile == null) {
-            ramFile = new RandomAccessFile(getFileReadPath(), "r");
-            fileChannel = ramFile.getChannel();
-
+        if (reader == null) {
+            reader = new FileInputStream(getFileReadPath());
         }
         // Fill the buffer with MAX_PACKET_SIZE bytes from file (or smaller if this is the terminal packet)
-        int packetSize = fileChannel.read(buffer, sentPacketNum * MAX_PACKET_SIZE);
-        buffer.flip();
+        byte[] buffer = new byte[MAX_PACKET_SIZE];
+        int packetSize = reader.read(buffer, 0,MAX_PACKET_SIZE); // Returns -1 if there are no more bytes to be read!
+
+        if(packetSize != MAX_PACKET_SIZE && packetSize != -1){
+            buffer = Arrays.copyOfRange(buffer,0,packetSize);
+        }
 
         // Send just ONE packet
         if (packetSize > 0) {
-            connections.send(connectionId, new DATA((short) packetSize, (short) sentPacketNum, buffer.array()));
+            connections.send(connectionId, new DATA((short) packetSize, (short) (sentPacketNum+1), buffer));
             ++sentPacketNum;
-            buffer.clear();
         }
 
         // IF THERE IS NOTHING MORE TO SEND, Reset all parameters that holds data related to this transaction
         else {
-
-            fileChannel.close();
-            fileChannel = null;
-            ramFile.close();
-            ramFile = null;
+            if(packetSize == -1){
+                byte[] empty = new byte[0];
+                connections.send(connectionId, new DATA((short) 0, (short) (sentPacketNum+1), empty));
+            }
+            reader.close();
+            reader = null;
             sentPacketNum = 0;
-            buffer.clear();
             fileWritePath = null;
-            // TODO: ADD ALL OF THE OTHER PARAMETERS HERE FOR RESTARTING
         }
     }
 

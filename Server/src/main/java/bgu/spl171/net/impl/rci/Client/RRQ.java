@@ -17,9 +17,10 @@ public class RRQ extends ZeroRecognizedPacket {
         protocol.setFileReadPath(fileName.substring(0,fileName.length()-1)); // Removing the "\0' at the end
 
         if (protocol.isFileAvailable(protocol.getFileReadPath())) {
-            ans = new ACK(ACK_SUCCESSFUL);
+            //ans = new ACK(ACK_SUCCESSFUL); // NOT NEEDED as per protocol
 
             // This handles separating into packets, sending, awaiting ACK and clearing parameters in the end
+            // First DATA packet is sent through here; therfore handle returns null by default.
             try {
                 protocol.sendFile();
             } catch (IOException ex) {
