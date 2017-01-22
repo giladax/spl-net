@@ -16,7 +16,7 @@ public:
     void pushBytesToVector(char *bytes, std::vector<char> vec);
     void stringToChar(string line, char *cstr);
     vector<char> argumentsToStructuredCharArray(vector<string> splitInput, short opcode, char *c);
-    vector<char> toSend;
+
 };
 
 

@@ -16,7 +16,8 @@ void KeyboardListener::run() {
 
     // Wait for user's input
     do {
-        std::cin>>line;
+        getline(cin, line);
+        cout<< line<< endl;
         string userInput = line.c_str(); // A deep copy. We'll need it.
 
         // Check if the client has requested to disconnect

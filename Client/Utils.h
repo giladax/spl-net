@@ -15,7 +15,7 @@ public:
     static short bytesToShort(char* bytesArr);
     static void  shortToBytes(short num, char *bytesArr);
     static void  insertByteArrayToVector(char* bytesArr, vector<char> vec, int size);
-
+//    static void printVector(vector vec);
 
 };
 

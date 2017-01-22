@@ -2,8 +2,9 @@
 // Created by dorgreen on 1/21/17.
 //
 
+#include <iostream>
 #include "Utils.h"
-
+using namespace std;
 /*
  * Supplied by BGU Staff
  */
@@ -24,4 +25,14 @@ short Utils::bytesToShort(char *bytesArr) {
     short result = (short) ((bytesArr[0] & 0xff) << 8);
     result += (short) (bytesArr[1] & 0xff);
     return result;
+
+
 }
+/*
+void Utils::printVector(vector vec) {
+    for (auto i = vec.begin(); i != vec.end(); ++i)
+
+        cout<< *i << ' ';
+
+}
+*/

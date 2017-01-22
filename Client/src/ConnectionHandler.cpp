@@ -88,8 +88,12 @@ void ConnectionHandler::sendLine(std::string &line) {
 
     // Receive user input incoded as a vector of chars
     vector<char> encodedLine = encdec->encode(line);
+    cout<<"made ir here"<<encodedLine.size();
+    //TODO: DELELTE THIS PRINT
 
-    //
+    for (auto i = encodedLine.begin(); i != encodedLine.end(); ++i)
+        std::cout << *i << ' ';
+    
     const char *bytes = encodedLine.data();
     sendBytes(bytes, (int) encodedLine.size());
 

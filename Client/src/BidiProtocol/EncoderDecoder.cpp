@@ -13,12 +13,16 @@ using namespace std;
 // This gets an input from the user, returns data to be sent to server
 vector<char> EncoderDecoder::encode(string line) {
 
+    vector<char> toSend;
     char *c = nullptr;
 
     // Split input
-    //TODO : change this split func
         std::vector<std::string> splitInput;
         boost::split(splitInput, line, boost::is_any_of(" "));
+
+        //TODO:: DELETE THIS PRINT
+    for (auto i = splitInput.begin(); i != splitInput.end(); ++i)
+        std::cout << *i << ' ';
 
 
 
@@ -49,9 +53,14 @@ vector<char> EncoderDecoder::encode(string line) {
     }
 
     else if(splitInput[0].compare("LOGRQ") == 0){
+            cout<<"LOgg"<<endl<<splitInput.size()<<endl;
+
+
 
         toSend = argumentsToStructuredCharArray(splitInput,(short)7, c);
 
+            //TODO:: DELETE THIS
+                cout<<"size OF TO SEND IS"<<toSend.size()<<endl;
 
     }
 
@@ -100,12 +109,21 @@ void EncoderDecoder::stringToChar(string line, char* cstr) {
 vector<char> EncoderDecoder::argumentsToStructuredCharArray(vector<string> splitInput, short opcode, char* c){
     vector<char> helper;
     if(splitInput.size() == 2){
+
         // OpName and another argument, as required
         // Structure is: OPCODE | Argument | '0'
-        Utils::shortToBytes(opcode, c);
-        pushBytesToVector(c, helper);
+        char bytes[2];
+        Utils::shortToBytes(opcode, bytes);
+        cout<<bytes[0]<<" SDF"<< bytes[1]<< endl;
+        pushBytesToVector(bytes, helper);
+        cout<<bytes[0]<<" SDF"<< bytes[1]<< endl;
+        for (auto i = helper.begin(); i != helper.end(); ++i) {
+            cout << *i << "SHIT" << endl;
+        }
 
-        // This char array is needed because convertion of string to char* returns const char*
+
+
+        // This char array is needed because conversion of string to char* returns const char*
         char *stringConvertedToBytes = new char[splitInput[1].length() + 1];
         stringToChar(splitInput[1], stringConvertedToBytes);
         pushBytesToVector(stringConvertedToBytes, helper);
@@ -120,6 +138,7 @@ vector<char> EncoderDecoder::argumentsToStructuredCharArray(vector<string> split
     else {
         cout << "Too few arguments!" << endl; // TODO: IS THAT THE RIGHT WAY TO TREAT THAT?
     }
+
     return helper;
 }
 
