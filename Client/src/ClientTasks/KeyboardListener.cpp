@@ -18,7 +18,6 @@ void KeyboardListener::run() {
     do {
         getline(cin, line);
         cout<< line<< endl;
-        string userInput = line.c_str(); // A deep copy. We'll need it.
 
         // Check if the client has requested to disconnect
         shouldTerminate = this->disconnectOpReceived(line);
@@ -26,17 +25,17 @@ void KeyboardListener::run() {
         // Also resets the state, just in case.
         ConnectionHandler::getInstance().sendLine(line);
 
-        std::vector<char> data(line.begin(), line.end());
+        //std::vector<char> data(line.begin(), line.end());
 
         // This updates the state, as well as updating requestedFile string
-        ConnectionHandler::getInstance().setRecievingState(data);
+        ConnectionHandler::getInstance().setRecievingState(line);
 
 
     }while (!shouldTerminate);
 
 }
 
-bool KeyboardListener::disconnectOpReceived(string line) {
+bool KeyboardListener::disconnectOpReceived(string& line) {
     bool ans = line.compare("DISC") == 0;
     ConnectionHandler::getInstance().setShouldTerminate(ans);
     return (ans);

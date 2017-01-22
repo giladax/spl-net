@@ -12,7 +12,7 @@ SocketListener::SocketListener() {
 }
 
 void SocketListener::run() {
-   char *bytes = nullptr;
+   char bytes [2];
 
    while (ConnectionHandler::getInstance().getBytes(bytes, 2)) {
       Packet* ans = ConnectionHandler::getInstance().getPacket(bytes);
@@ -21,8 +21,6 @@ void SocketListener::run() {
          ConnectionHandler::getInstance().sendBytes(ans->toBytes(), ans->getBytesCount());
       }
    }
-
-   delete bytes;
 }
 
 SocketListener::~SocketListener() {

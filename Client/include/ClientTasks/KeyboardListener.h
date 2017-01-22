@@ -19,7 +19,7 @@ public:
     virtual ~KeyboardListener();
 
 private:
-    bool disconnectOpReceived(string line);
+    bool disconnectOpReceived(string& line);
     bool shouldTerminate;
 
 

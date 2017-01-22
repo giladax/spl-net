@@ -19,7 +19,7 @@ using namespace std;
 // @ Sends these packets to server ==> constructor from data
 // @ Receives these packets ==> constructor from char*
 
-DATA::DATA(short block_num, vector<char> data) : Packet(Opcode::_DATA), data(data), block_num(block_num) {
+DATA::DATA(short block_num, vector<char>& data) : Packet(Opcode::_DATA), data(data), block_num(block_num) {
     packet_size = (short) data.size();
 }
 
@@ -51,15 +51,7 @@ char *DATA::toBytes() {
     char* ans = packet.data();
     // Delete everything
 
-
-
     return ans;
-
-
-
-
-
-
 }
 
 int DATA::getBytesCount() {

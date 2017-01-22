@@ -22,7 +22,7 @@
         EncoderDecoder *encdec;
         bool shouldTerminate;
         string requestedFile;
-
+        string dirqResult = "";
         bool requestApproved = false;
         const short MAX_PACKET_SIZE = 512;
         const short ACK_SUCCESSFUL_RESPONSE = 0;
@@ -37,9 +37,9 @@
         virtual ~ConnectionHandler();
         static ConnectionHandler& getInstance();
         // Connect to the remote machine
-        bool connect(std::string host, short port);
+        bool connect(std::string& host, short port);
 
-        Packet * getPacket(char* bytes);
+        Packet* getPacket(char* bytes);
      
         // Read a fixed number of bytes from the server - blocking.
         // Returns false in case the connection is closed before bytesToRead bytes can be read.
@@ -60,9 +60,9 @@
         void setShouldTerminate(bool value);
 
 
-        void setRequestedFile(string file);
+        void setRequestedFile(string& file);
 
-        bool setRecievingState(vector<char>);
+        bool setRecievingState(string& userInput);
 
         Packet* sendNextDataPacket(short block_num);
     }; //class ConnectionHandler

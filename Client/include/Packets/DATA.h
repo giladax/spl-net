@@ -14,7 +14,7 @@ using  namespace std;
 class DATA : public Packet {
 
 public:
-    DATA(short block_num, vector<char> data);
+    DATA(short block_num, vector<char>& data);
     virtual ~DATA();
     virtual char* toBytes();
     virtual int getBytesCount();
