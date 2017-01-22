@@ -43,4 +43,8 @@ public class DISC extends Packet {
         return null;
     }
 
+    @Override
+    public boolean isComplete() {
+        return true;
+    }
 }

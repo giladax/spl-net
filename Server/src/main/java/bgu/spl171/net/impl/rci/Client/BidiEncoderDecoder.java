@@ -18,6 +18,11 @@ public class BidiEncoderDecoder<T> implements MessageEncoderDecoder<Packet> {
 
     @Override
     public Packet decodeNextByte(byte nextByte) {
+
+        // Previous packet was already sent. Reset for the next one
+        if(packet != null && packet.isComplete()){
+            reset();
+        }
         bytesRead[numOfBytes] = nextByte;
         ++numOfBytes;
         Packet tmp = null;
@@ -31,13 +36,6 @@ public class BidiEncoderDecoder<T> implements MessageEncoderDecoder<Packet> {
 
             // Get packet will return null if there are more bytes to be read
             tmp = packet.getPacket(bytesRead, numOfBytes);
-        }
-
-        // Packet is complete return it and reset the parameters for future usage by the client
-        if (tmp != null) {
-            tmp = packet;
-            reset();
-
         }
 
         return tmp;

@@ -10,11 +10,11 @@ public class RRQ extends ZeroRecognizedPacket {
         super((short) 1);
     }
 
-    // TODO: IMPLEMENT
     @Override
     public Packet handle(MessagingProtocolImpl protocol) {
         Packet ans = null;
-        protocol.setFileReadPath(new String(packetContent)); // TODO: this already has the '/0' at the end, make sure this isn't an issue
+        String fileName = new String(packetContent);
+        protocol.setFileReadPath(fileName.substring(0,fileName.length()-1)); // Removing the "\0' at the end
 
         if (protocol.isFileAvailable(protocol.getFileReadPath())) {
             ans = new ACK(ACK_SUCCESSFUL);

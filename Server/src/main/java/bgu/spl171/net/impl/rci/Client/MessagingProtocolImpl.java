@@ -3,6 +3,8 @@ package bgu.spl171.net.impl.rci.Client;
 import bgu.spl171.net.api.bidi.BidiMessagingProtocol;
 import bgu.spl171.net.api.bidi.Connections;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
@@ -28,7 +30,8 @@ public class MessagingProtocolImpl<T> implements BidiMessagingProtocol<Packet> {
     private Connections<Packet> connections;
     private String username;
     private static ConcurrentHashMap<String, BidiMessagingProtocol> users;
-    private final String FILES_DIR = "Files/";
+    private final String FILES_DIR = "Files" + File.separator;
+    private final String TEMP_DIR = FILES_DIR + "TEMP" + File.separator;
 
     // RRQ HANDLING PARAMETERS
     // When the user asks for a file, this holds all of the data related to this transaction
@@ -82,7 +85,7 @@ public class MessagingProtocolImpl<T> implements BidiMessagingProtocol<Packet> {
         Packet packet = message.handle(this);
 
         if (packet != null) {
-            connections.send(connectionId, packet); // TODO: MAYBE THIS SHOULD BE packet.toBytes() ???
+            connections.send(connectionId, packet);
         }
     }
 
@@ -121,8 +124,29 @@ public class MessagingProtocolImpl<T> implements BidiMessagingProtocol<Packet> {
         return fileReadPath.toString();
     }
 
-    public void setFileWritePath(String fileName) {
-        this.fileWritePath = FileSystems.getDefault().getPath(FILES_DIR + fileName);
+    public void setFileWritePathTempFolder(String fileName) {
+        this.fileWritePath = FileSystems.getDefault().getPath(TEMP_DIR + fileName);
+    }
+
+    public boolean moveCompleteFileToFilesFolder(){
+        Path newFilePath = fileWritePath.subpath(TEMP_DIR.length()-FILES_DIR.length(), fileWritePath.toString().length());
+        File newFile = new File(newFilePath.toString());
+        File file = new File(fileWritePath.toString());
+
+        boolean ans = file.renameTo(newFile);
+
+        // Reset all parameters that holds data related to this transaction
+        dataRecived = null;
+        packetsReceived = 0;
+        numOfPacketsToReceive = 0;
+        fileWritePath = null;
+
+        if(ans){
+            broadcast(new BCAST(0, fileWritePath.toString()));
+        }
+
+        return ans;
+
     }
 
     public boolean createFile() {
@@ -140,45 +164,39 @@ public class MessagingProtocolImpl<T> implements BidiMessagingProtocol<Packet> {
     }
 
 
-    // TODO: How do we know the length of the array? maybe use some other data structure? String is weird but could work!
-    public void initiateDataArray(int packets) {
-        this.dataRecived = new byte[packets * MAX_PACKET_SIZE];
-    }
-
-    public void insertIntoDataArray(byte[] data, int packetNum) throws IOException {
+    public void insertNewData(byte[] data, int packetNum) throws IOException {
         // Data packets does not care for order, We'll just insert the data
         // According to protocol, each packet has 512 bytes of data, unless it's the last one
         // This also checks for completeness, saves the file and clear parameters used for this WRQ
 
-        for (int i = 0; i < data.length; ++i) {
-            dataRecived[(packetNum - 1) * MAX_PACKET_SIZE + i] = data[i]; // packetNum starts with 1 not 0
+
+        try(FileOutputStream writer = new FileOutputStream(fileWritePath.toString(),true)){
+
+            writer.write(data,0,data.length); // TODO: Might want to offset by packetNum * MAX_PACKET_SIZE
+
+            if (data.length < MAX_PACKET_SIZE) {
+                moveCompleteFileToFilesFolder(); // TODO: this returns boolean so we could return an ERROR packet if needded
+            }
         }
 
-        if (data.length < MAX_PACKET_SIZE) {
-            this.numOfPacketsToReceive = packetNum;
+        catch (IOException e){
+            connections.send(connectionId, new ERROR(2)); // Access violation
         }
 
-        ++packetsReceived;
 
-        if (numOfPacketsToReceive == packetsReceived && numOfPacketsToReceive != 0) {
-            saveReceivedFile();
-        }
+
+
+
+
 
     }
 
     public boolean isFileAvailable(String fileName) {
 
-        Path path = FileSystems.getDefault().getPath(FILES_DIR);
-        try (DirectoryStream<Path> dirStream = Files.newDirectoryStream(path)) {
-            for (Path p : dirStream) {
-                if (p.getFileName().toString().compareTo(fileName) == 0) { // TODO: toString() might return FULL PATH not filename.
-                    return true;
-                }
-            }
+        File file = new File(fileName);
+        File tempFile = new File(TEMP_DIR+fileName);
+        return (file.exists() || tempFile.exists());
 
-        } catch (IOException ex) {
-        }
-        return false;
     }
 
     public void broadcast(BCAST packet) {
@@ -194,14 +212,7 @@ public class MessagingProtocolImpl<T> implements BidiMessagingProtocol<Packet> {
             e.printStackTrace();
         }
 
-        broadcast(new BCAST(0, fileWritePath.toString()));
 
-        // Reset all parameters that holds data related to this transaction
-        // TODO: if we decide that file should have .tmp endings, change it here
-        dataRecived = null;
-        packetsReceived = 0;
-        numOfPacketsToReceive = 0;
-        fileWritePath = null;
 
     }
 
@@ -255,8 +266,8 @@ public class MessagingProtocolImpl<T> implements BidiMessagingProtocol<Packet> {
             String listing = "";
             try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) {
                 for (Path p : stream) {
-                    // TODO: IF ADDED .tmp TO FILES BEING TRANSFERRED, ADD 'if' HERE
-                    listing.concat(p.getFileName().toString() + "/0"); // Separate lines with "\0", as per protocol
+                    // TODO: DO NOT REPORT FILES THAT ARE IN /TMP FOLDER
+                    listing = listing.concat(p.getFileName().toString() + '\0'); // Separate lines with "\0", as per protocol
                 }
                 dirqToSend = listing.getBytes();
                 dirqPacketCounter = 0;
@@ -266,11 +277,11 @@ public class MessagingProtocolImpl<T> implements BidiMessagingProtocol<Packet> {
         }
 
         // Send the packet if it's not the last
-        if (dirqPacketCounter < dirqPackets) {
+        if (dirqPacketCounter < dirqPackets && dirqPackets > 1) {
             connections.send(connectionId,
                     new DATA(
                             (short) MAX_PACKET_SIZE,
-                            (short) dirqPacketCounter,
+                            (short) (dirqPacketCounter + 1),
                             Arrays.copyOfRange(dirqToSend, MAX_PACKET_SIZE * dirqPacketCounter, MAX_PACKET_SIZE * (dirqPacketCounter + 1))
                     ));
             ++dirqPacketCounter;
@@ -305,8 +316,7 @@ public class MessagingProtocolImpl<T> implements BidiMessagingProtocol<Packet> {
         if (fileReadPath != null) {
             try {
                 sendFile();
-            }
-            catch(IOException ex){
+            } catch (IOException ex) {
                 // TODO: maybe delete that print
                 ex.printStackTrace();
             }

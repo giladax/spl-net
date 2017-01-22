@@ -28,4 +28,9 @@ public class DIRQ extends Packet {
     public byte[] toBytes() {
         return null;
     }
+
+    @Override
+    public boolean isComplete() {
+        return true;
+    }
 }

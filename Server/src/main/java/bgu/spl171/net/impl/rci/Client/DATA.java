@@ -52,8 +52,8 @@ public class DATA extends Packet {
     public Packet handle(MessagingProtocolImpl protocol) {
         Packet ans = null;
         try {
-            // If all data received, insertIntoDataArray will take care of everything, e.g save the file, broadcast the new file and reset parameters
-            protocol.insertIntoDataArray(data, blockNumber);
+            // If all data received, this will take care of everything, e.g save the file, broadcast the new file and reset parameters
+            protocol.insertNewData(data, blockNumber);
             ans = new ACK(blockNumber);
 
         } catch (ArrayIndexOutOfBoundsException ex) {
@@ -89,4 +89,11 @@ public class DATA extends Packet {
         return ans;
     }
 
+    @Override
+    public boolean isComplete() {
+        if (data == null) {
+            return false;
+        }
+        return data.length == packetSize;
+    }
 }

@@ -20,4 +20,9 @@ public abstract class ZeroRecognizedPacket extends Packet {
             return null;
         }
     }
+
+    @ Override
+    public boolean isComplete(){
+        return (packetContent!=null);
+    }
 }

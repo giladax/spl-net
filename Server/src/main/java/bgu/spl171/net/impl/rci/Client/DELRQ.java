@@ -12,7 +12,8 @@ public class DELRQ extends ZeroRecognizedPacket {
     @Override
     public Packet handle(MessagingProtocolImpl protocol) {
         Packet ans;
-        String fileName = new String(packetContent); // TODO: already has the "/0" at the end. Is that correct?
+        String fileName = new String(packetContent);
+        fileName = fileName.substring(0, fileName.length()-1); // Remove "\0" at the end
         if (!protocol.isFileAvailable(fileName)) {
             ans = new ERROR(1); // FILE NOT FOUND
         }

@@ -1,5 +1,7 @@
 package bgu.spl171.net.impl.rci.Client;
 
+import java.util.Arrays;
+
 /**
  * Created by dorgreen on 20/01/2017.
  */
@@ -20,7 +22,13 @@ public class ERROR extends Packet {
     // If server can receive these, implement. otherwise, return null by default
     @Override
     public Packet getPacket(byte[] bytes, int numOfBytes) {
-        return null;
+        if (bytes[numOfBytes - 1] == (byte) 0) {
+            packetContent = Arrays.copyOfRange(bytes, OP_CODE_SIZE, numOfBytes); //Maybe numOfBytes-1 ?
+            this.error_code = bytesToShort(Arrays.copyOfRange(packetContent,0,2 )); // 2 is the length of the ErrorCode
+            return this;
+        } else {
+            return null;
+        }
     }
 
     // TODO: IMPLEMENT
@@ -43,4 +51,9 @@ public class ERROR extends Packet {
         return ans;
     }
 
+
+    @Override
+    public boolean isComplete() {
+        return false;
+    }
 }

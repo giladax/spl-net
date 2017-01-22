@@ -8,21 +8,25 @@ import java.util.Arrays;
 public class ACK extends Packet {
 
     protected int block_number;
+    private boolean isComplete = false;
 
     public ACK() {
         super((short) 4);
         block_number = ACK_SUCCESSFUL; // Defined in the protocol as the default value for anything but data packets
+        isComplete = false;
     }
 
     public ACK(int block_number) {
         super((short) 4);
         this.block_number = block_number;
+        isComplete = true;
     }
 
     @Override
     public Packet getPacket(byte[] bytes, int numOfBytes) {
         if (numOfBytes == 4) {
             this.block_number = bytesToShort(Arrays.copyOfRange(bytes, 2, 4));
+            isComplete = true;
             return this;
         } else return null;
     }
@@ -46,5 +50,10 @@ public class ACK extends Packet {
         insertArrayIntoArray(ans, shortToBytes(OP_CODE), 0);
         insertArrayIntoArray(ans, shortToBytes((short) block_number), 2);
         return ans;
+    }
+
+    @Override
+    public boolean isComplete() {
+        return isComplete;
     }
 }

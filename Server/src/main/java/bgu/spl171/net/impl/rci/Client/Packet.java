@@ -101,6 +101,7 @@ public abstract class Packet {
         return result;
     }
 
+    public abstract boolean isComplete();
 
 }
 

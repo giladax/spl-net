@@ -44,4 +44,9 @@ public class BCAST extends Packet {
         return ans;
     }
 
+    @Override
+    // Meaningless since server never receives that
+    public boolean isComplete() {
+        return false;
+    }
 }

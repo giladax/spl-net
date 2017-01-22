@@ -12,11 +12,11 @@ public class WRQ extends ZeroRecognizedPacket {
     @Override
     public Packet handle(MessagingProtocolImpl protocol) {
         Packet ans = null;
-        String fileName = new String(packetContent); // TODO: this already has the '/0' at the end, make sure this isn't an issue
-
+        String fileName = new String(packetContent);
+        fileName = fileName.substring(0, fileName.length() - 1); // Remove "\0" in the end
         if (!protocol.isFileAvailable(fileName)) {
 
-            protocol.setFileWritePath(fileName);
+            protocol.setFileWritePathTempFolder(fileName);
             if (protocol.createFile()) {
                 // After the file was created, everything is being handled by incoming DATA packets.
                 ans = new ACK(ACK_SUCCESSFUL);
